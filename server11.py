@@ -76,7 +76,9 @@ def learn(lesson_id):
     
     return render_template('learn.html', lesson = lesson)
 
-
+@app.route('/teamlayout')
+def teamlayout():
+    return render_template('team-layout.html')  
 
 
 if __name__ == '__main__':
