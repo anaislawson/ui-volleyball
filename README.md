@@ -8,3 +8,4 @@ hey I created a navbar and the basic idea of the homepage. The buttons are not f
 * What needs to be done: - Create the "see it in action page" with the gif. - make the see it in action button working. - implement the first learn page. 
 * (By: Mari)
 -- still need to work on back button ...Anaïs
+.
