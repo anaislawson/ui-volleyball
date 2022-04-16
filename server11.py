@@ -67,7 +67,10 @@ def home_page():
 
     return render_template('home_page.html')  
 
-
+@app.route('/teamlayout')
+def teamlayout():
+    return render_template('team-layout.html') 
+    
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
     
@@ -75,10 +78,7 @@ def learn(lesson_id):
 
     
     return render_template('learn.html', lesson = lesson)
-
-@app.route('/teamlayout')
-def teamlayout():
-    return render_template('team-layout.html')  
+ 
 
 
 if __name__ == '__main__':

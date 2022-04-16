@@ -18,12 +18,37 @@
 }
 
 .strategies_row {
-  margin-top: 50px;
+  margin-top: 175px;
   justify-content: center;
 }
 .quiz_row {
   justify-content: center;
 }
-.homebuttons {
-  border-radius: 5px;
+#homebuttons {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 15px;
+}
+#homebuttons2 {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 14px;
+  padding-right: 55px;
+  padding-left: 55px;
+}
+.strategy_pic_row {
+  padding-left: 150px;
+  padding-top: 30px;
+}
+#strategy_picture {
+  width: 700px;
+  height: auto;
+}
+.strategy_button_row {
+  margin-top: 85px;
+}
+#see_it_in_action {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 15px;
 }
