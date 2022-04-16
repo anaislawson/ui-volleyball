@@ -70,6 +70,10 @@ def home_page():
 @app.route('/teamlayout')
 def teamlayout():
     return render_template('team-layout.html') 
+
+@app.route('/inaction')
+def inaction():
+    return render_template('inaction.html') 
     
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
@@ -77,7 +81,7 @@ def learn(lesson_id):
     lesson = lessons[lesson_id]
 
     
-    return render_template('learn.html', lesson = lesson)
+    return render_template('learn.html', lesson = lesson, lesson_id = lesson_id)
  
 
 

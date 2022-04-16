@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+  
+	 <script>
+        let lesson = {{lesson|tojson}} 
+        console.log(lesson)
+
+		let lesson_id = {{lesson_id|tojson}} 
+        console.log(lesson)
+    </script>
+    <div class="base container">
+		<div id="info">
+		</div>
+		<div class="row strategy_button_row justify-content-center">
+			<button type="button" id="learn1">Learn Strategy 1/5 ➜</button> 
+		</div>
+	</div>
+	
+{% endblock %}
