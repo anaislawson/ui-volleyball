@@ -7,8 +7,13 @@ function view_inaction(){
     let url = "/inaction"
     window.location.href = url
     
-  }
+}
 
+function view_learn(idval){
+    let url = "/learn/"+idval
+    window.location.href = url
+    
+  }
 $(document).ready(function(){                       
 
   //displayPopular(data)
@@ -18,6 +23,9 @@ $(document).ready(function(){
   })
   $("#see_it_in_action").click(function(){
     view_inaction();         
+  })
+  $("#learn1").click(function(){
+    view_learn("1");                                    
   })
 //   $("#quiz").click(function(){
 //     let idval = $(this).attr('id');
