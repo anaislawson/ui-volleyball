@@ -6,3 +6,4 @@ hey I created a navbar and the basic idea of the homepage. The buttons are not f
 *I guess we both created the next page so I just pasted my changes because I updated the buttons to look like the prototype in both first pages. 
 *Homepage strategy button now works to redirect to the next page, pictures are displaying and aligned. 
 * What needs to be done: - Create the "see it in action page" with the gif. - make the see it in action button working. - implement the first learn page. 
+* (By: Mari)
