@@ -77,7 +77,7 @@ def inaction():
     
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
-    
+    print(lesson_id)
     lesson = lessons[lesson_id]
 
     

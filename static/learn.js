@@ -6,20 +6,20 @@ function displayInfo(lesson){
     $(row).append(showinfo)
     let title = "<div class='title'>"+lesson["title"]+"</div>"
     $(showinfo).append(title)
-    let textinfo = "<div class='textinfo'>"+lesson["title"]+"</div>"
+    let textinfo = "<div class='textinfo'>"+lesson["text"]+"</div>"
     $(showinfo).append(textinfo)
-    let demands = "<div class='demands'>"+lesson["title"]+"</div>"
+    let demands = "<div class='demands'>"+lesson["demands"]+"</div>"
     $(showinfo).append(demands)
     let image = "<div style='padding: 0px;'><img src='"+lesson["image"]+"' alt='picture of volleyball lesson' width=250px>"
     $(showinfo).append(image)
     let gif = "<div style='padding: 0px;'><img src='"+lesson["gif"]+"' alt='picture of volleyball gif' width=250px>"
     $(showinfo).append(gif)
     if(lesson["next_lesson"]!= "end"){
-        let btn =  "<button type='button' id='learn'>Learn Strategy '"+lesson["next_lesson"]+"'/5 ➜</button> "
+        let btn =  "<button type='button' id='learn'>Learn Strategy "+lesson["next_lesson"]+"/5 ➜</button> "
         $(".strategy_button_row").append(btn)
     }
     else{
-        let btn =  "<button type='button' id='gotoquiz'>Challenge yourself➜</button> "
+        let btn =  "<button type='button'  id='gotoquiz'>Challenge yourself➜</button> "
         $(".strategy_button_row").append(btn)
     }
     
@@ -41,9 +41,10 @@ function get_and_view_quiz(idval){
 $(document).ready(function(){
     displayInfo(lesson)
 
+
     $("#learn").click(function(){
-        let idval = $(this).attr('next_lesson');
-        get_and_view_lesson(idval)           
+        
+        get_and_view_lesson(lesson["next_lesson"])           
     })
 
     $("#gotoquiz").click(function(){       
