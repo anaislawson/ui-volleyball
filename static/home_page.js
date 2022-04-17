@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     $("#homebuttons2").click(function() {
 
-
+        window.location.href = "/quiz";
     })
 
 

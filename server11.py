@@ -237,11 +237,13 @@ def check():
     question = json_data["id"]
     lv = json_data["level"]
 
+    print(user_ans, question, lv)
     correct_ans = '0'
     correct = False
 
     if lv == 1:
-        correct_ans = quiz_level_1.get(question).get('answer_id')
+        correct_ans_id = quiz_level_1.get(question).get('answer_id')
+        correct_ans = quiz_level_1.get(question).get('options').get(correct_ans_id)
 
     if lv == 3:
         correct_ans = quiz_level_3.get(question).get('answer_id')
@@ -250,7 +252,6 @@ def check():
         correct = True
         score += 1
 
-    # send back the WHOLE array of data, so the client can redisplay it
     return jsonify(correct=correct, answer=correct_ans)
 
 

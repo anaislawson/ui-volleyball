@@ -4,7 +4,11 @@
 {% block content %}
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'inaction.js') }}"></script>
 
+<div class="row no-gutters" id="button_row_inaction">
+    <button type='button' id='back'>←</button>
+</div>
 <div class ="row strategy_pic_row justify-content-center">
     <div class="col-md-5">
     <img src="https://i.ibb.co/zrkXLnP/ezgif-com-gif-maker.gif" id="strategy_picture" alt="volleyball animation">
@@ -26,7 +30,5 @@
 <div class="row strategy_button_row justify-content-center">
     <button type="button" id="learn1">Learn Strategy 1/5 ➜</button> 
 </div>
-
-
 
 {% endblock %}

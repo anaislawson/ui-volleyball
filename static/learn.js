@@ -60,16 +60,12 @@ function get_and_view_lesson(idval){
     
 }
 
-function get_and_view_quiz(idval){
-    let url = "/quiz/"+idval
+function get_and_view_quiz(){
+    let url = "/quiz";
     window.location.href = url
     
 }
 
-// function return_to_previous_page(idval){
-//     let url = "/learn/"+idval
-//     window.location.href = url
-// }
 
 $(document).ready(function(){
 
@@ -82,11 +78,12 @@ $(document).ready(function(){
     })
 
     $("#gotoquiz").click(function(){       
-        get_and_view_quiz(idval)           
+        get_and_view_quiz()           
     })
     
     $("#back").click(function(){
-        window.location.href = "www.google.com";
+        parent.history.back();
+  		return false;
     })
    
 
