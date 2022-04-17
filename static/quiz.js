@@ -32,8 +32,34 @@ function displayQuestion(question) {
     }
 }
 
+function check(question){
+    let ans = $('#question input[type=\'radio\']:checked').val();
+    let data_to_save = {"answer": ans, "id": question.question_id, "level": 1}  
+    console.log(data_to_save)       
+    $.ajax({
+        type: "POST",
+        url: "/check",                
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(data_to_save),
+        success: function(correct, answer){
+            console.log(correct, answer)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+}
+
 
 $(document).ready(function () {
     console.log('Inside doc.ready')
     displayQuestion(question)
+    $("#question").submit(function(e){
+        e.preventDefault();
+        check(question)
+    })
 })
