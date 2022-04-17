@@ -44,19 +44,25 @@
   padding-left: 55px;
 }
 .strategy_pic_row {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 #strategy_picture {
   width: 600px;
   height: auto;
+  text-align: center;
+}
+#strategy_picture_image{
+  width: 800px;
+  height: auto;
 }
 .strategy_button_row {
-  margin-top: 65px;
+  margin-top: 55px;
 }
 #see_it_in_action {
   font-size: 25px;
   border-radius: 10px;
   padding: 15px;
+  margin-top: 50px;
 }
 #learn1 {
   font-size: 25px;
@@ -119,4 +125,8 @@
 .audio_row{
   justify-content: center;
   margin-top: 10px;
+}
+#button_row_inaction{
+  padding-left: 175px;
+  padding-top: 45px;
 }

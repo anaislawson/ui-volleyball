@@ -22,3 +22,16 @@ Sat 3:20am - Mari:
   (Button works, audio works, gif is playing and everything is aligned, BUT...)
   I think we should have a "previous" button here too, not sure... (in this case it wouldn't be complete), we need to discuss.
   Didn't get to work on back button.
+
+Sun 2:57pm - Mari:
+
+*Both home buttons work
+*Back buttons were implemented and work (I added one in the third page (action page) because I thought we needed but pending on your opnions)
+
+- "Learning experience" clicking is fully working.
+- Challenge yourself button at the end of learning experience is working.
+
+To do:
+_ Later on we need to implement some type of focus for when the "back button" is pressed, the page goes down instead of staying centered.
+_ Align and fix the design (alignment) of learning pages
+\_ It seems there is no feedback for quiz 1, I think assigment says we need at least return a score for the quiz.
