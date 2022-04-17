@@ -4,7 +4,7 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 
-
+score = 0
 lessons = {
  
     "1": {
@@ -210,6 +210,35 @@ def quiz_lv1(quiz_id):
     question = quiz_level_1[quiz_id]
     return render_template('quiz1.html', question = question, quiz_id = quiz_id)
 
+# ajax for checking answer (LV 2, 3)
+@app.route('/check', methods=['GET', 'POST'])
+def check():
+    global data 
+    global current_id 
+
+    json_data = request.get_json()   
+   
+    user_ans = json_data["answer"] 
+    question = json_data["id"]
+    lv = json_data["level"]
+
+    correct_ans = '0'
+    correct = False
+
+    if lv == 1:
+        correct_ans = quiz_level_1.get(question).get('answer_id')
+    
+    if lv == 2:
+        correct_ans = quiz_level_2.get(question).get('answer_id')
+
+    if user_ans == correct_ans:
+        correct = True
+        score += 1
+
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(correct = correct, answer = correct_ans)
+ 
+
 @app.route('/quiz/2/<quiz_id>')
 def quiz_lv2():
     roles = quiz_level_2.get('roles')
@@ -224,7 +253,7 @@ def quiz_lv3(quiz_id):
 @app.route('/quiz/end')
 def quiz_fin():
     # end page with score
-    return render_template('quiz_end.html') 
+    return render_template('quiz_end.html', score = score) 
 
 if __name__ == '__main__':
    app.run(debug = True)
