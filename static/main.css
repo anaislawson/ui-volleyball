@@ -120,3 +120,14 @@
   justify-content: center;
   margin-top: 10px;
 }
+
+.incorrect_option{
+  color: darkred;
+  font-weight: bold;
+}
+
+.correct_option{
+  color: green;
+  font-weight: bold;
+}
+

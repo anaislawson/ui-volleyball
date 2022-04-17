@@ -4,11 +4,10 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
     <script>
-        let question = {{ question | tojson }}
-            console.log(question)
-
-        let question_id = {{ question_id | tojson }}
-            console.log(question_id)
+        let question = {{ question | tojson }};
+            {#console.log(question)#}
+        let question_id = {{ question_id | tojson }};
+            {#console.log(question_id)#}
     </script>
 
 
@@ -17,7 +16,15 @@
         </div>
         <div id="level_1_question">
         </div>
+        <br>
         <div id="level_1_options">
+        </div>
+        <br>
+        <div id="level_1_score_div">
+            Score :
+            <span id="level_1_score">
+
+            </span>
         </div>
         <button id="submit">Submit</button>
     </div>
