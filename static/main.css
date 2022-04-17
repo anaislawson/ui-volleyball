@@ -44,15 +44,14 @@
   padding-left: 55px;
 }
 .strategy_pic_row {
-  padding-left: 150px;
   padding-top: 30px;
 }
 #strategy_picture {
-  width: 700px;
+  width: 600px;
   height: auto;
 }
 .strategy_button_row {
-  margin-top: 85px;
+  margin-top: 65px;
 }
 #see_it_in_action {
   font-size: 25px;
@@ -73,10 +72,6 @@
   font-size: 25px;
   border-radius: 10px;
   padding: 15px;
-}
-.pictureformat{
-  width: 300px;
-  height: auto;
 }
 #back{
   font-size: 25px;
@@ -111,8 +106,17 @@
   color: #797573;
   background-color: #fce5cd;
   border-radius: 5px;
-  width: 470px;
-  height: 200px;
-  align-items: center;
-  border: 15px solid FCE5CD;
+  width:fit-content;
+  height: fit-content;
+  padding-left: 15px;
+  padding-top: 15px;
+  justify-content: center;
+  margin-left: 40px;
+  font-size: 14px;
+  margin-top: 20px;
+  
+}
+.audio_row{
+  justify-content: center;
+  margin-top: 10px;
 }

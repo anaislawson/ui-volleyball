@@ -15,3 +15,10 @@ Sat 2:48am - Mari:
 - home page now is almost complete, only quiz button is not working.
 - video plays in auto play BUT the user has to tap on the volume button for the audio to play (weird, this needs to be fixed before final result but not necessarily in this assignment).
   To do: implement quiz button.
+
+Sat 3:20am - Mari:
+
+- animation plage is complete!
+  (Button works, audio works, gif is playing and everything is aligned, BUT...)
+  I think we should have a "previous" button here too, not sure... (in this case it wouldn't be complete), we need to discuss.
+  Didn't get to work on back button.
