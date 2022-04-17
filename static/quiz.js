@@ -1,13 +1,39 @@
-const quizContainer = document.getElementById('quiz_container');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
+function displayQuestion(question) {
+    console.log('Inside display_questions')
 
-function buildQuiz(){}
+    let quizHeaderContainer = document.getElementById('level_1_question_header');
+    let questionContainer = document.getElementById('level_1_question');
+    let optionContainer = document.getElementById('level_1_options');
 
-function showResults(){}
+    quizHeaderContainer.append('Question ' + question.question_id)
+    questionContainer.append(question.question)
+    console.log(question.options)
 
-// display quiz right away
-buildQuiz();
+    for (let option in question.options) {
+        let option_text = question.options[option]
+        let radiobox = document.createElement('input');
 
-// on submit, show results
-submitButton.addEventListener('click', showResults);
+        radiobox.type = 'radio';
+        radiobox.name = 'question' + question.question_id
+        radiobox.id = option;
+        radiobox.value = option_text;
+
+        let label = document.createElement('label')
+        label.htmlFor = option;
+
+        let description = document.createTextNode(option_text);
+        label.appendChild(description);
+
+        let newline = document.createElement('br');
+
+        optionContainer.appendChild(radiobox);
+        optionContainer.appendChild(label);
+        optionContainer.appendChild(newline);
+    }
+}
+
+
+$(document).ready(function () {
+    console.log('Inside doc.ready')
+    displayQuestion(question)
+})

@@ -76,7 +76,7 @@ quiz_level_1 = {
                     '2': 'Ball',
                     '3': 'Whistle',
                     '4': 'Court'},
-        'answer_index': '3',
+        'answer_id': '3',
         'next_id': '2'
     },
     '2': {
@@ -214,10 +214,14 @@ def learn(lesson_id):
     return render_template('learn.html', lesson=lesson, lesson_id=lesson_id)
 
 
-@app.route('/quiz/1/<quiz_id>')
-def quiz_lv1(quiz_id):
-    question = quiz_level_1[quiz_id]
-    return render_template('quiz1.html', question=question, quiz_id=quiz_id)
+@app.route('/quiz')
+def quiz():
+    return quiz_lv1('1')
+
+@app.route('/quiz/1/<question_id>')
+def quiz_lv1(question_id):
+    question = quiz_level_1[question_id]
+    return render_template('quiz_level_1.html', question=question, question_id=question_id)
 
 
 # ajax for checking answer (LV 1, 3)
@@ -225,6 +229,7 @@ def quiz_lv1(quiz_id):
 def check():
     global data
     global current_id
+    global score
 
     json_data = request.get_json()
 

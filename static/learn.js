@@ -83,8 +83,4 @@ $(document).ready(function(){
     $("#gotoquiz").click(function(){       
         get_and_view_quiz(idval)           
     })
-    
-   
-
-  
 })
