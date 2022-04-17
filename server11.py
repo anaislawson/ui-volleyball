@@ -229,7 +229,7 @@ def check():
         correct_ans = quiz_level_1.get(question).get('answer_id')
     
     if lv == 2:
-        correct_ans = quiz_level_2.get(question).get('answer_id')
+        correct_ans = quiz_level_3.get(question).get('answer_id')
 
     if user_ans == correct_ans:
         correct = True
