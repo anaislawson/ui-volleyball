@@ -228,7 +228,7 @@ def check():
     if lv == 1:
         correct_ans = quiz_level_1.get(question).get('answer_id')
     
-    if lv == 2:
+    if lv == 3:
         correct_ans = quiz_level_3.get(question).get('answer_id')
 
     if user_ans == correct_ans:
