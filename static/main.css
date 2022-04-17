@@ -134,3 +134,15 @@
   max-width: 100%;
   height: auto;
 }
+
+.incorrect_option{
+  color: darkred;
+  font-weight: bold;
+}
+
+.correct_option{
+  color: green;
+  font-weight: bold;
+}
+
+
