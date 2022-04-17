@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+    <script>
+        let question = {{question|tojson}};
+        console.log(question)
+
+        let question_id = {{question_id|tojson}};
+        console.log(question_id)
+    </script>
+
+    <div id="quiz_container" class="container">
+    <div class="level_1_question_header">
+         Question {{ question_id }}
+    </div>
+    <button id="submit">Submit</button>
+    </div>
+
+{% endblock %}
