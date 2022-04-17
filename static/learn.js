@@ -66,6 +66,11 @@ function get_and_view_quiz(idval){
     
 }
 
+// function return_to_previous_page(idval){
+//     let url = "/learn/"+idval
+//     window.location.href = url
+// }
+
 $(document).ready(function(){
     displayInfo(lesson)
 
@@ -79,6 +84,7 @@ $(document).ready(function(){
         get_and_view_quiz(idval)           
     })
     
+   
 
   
 })
