@@ -2,23 +2,30 @@
   background-color: #f8f8fa;
 }
 
+.homepage_first_row{
+  justify-content: center;
+  align-items: center;
+}
 .homepage_text {
   color: #797573;
-  margin-top: 50px;
-  margin-left: 150px;
-  /* padding: 15px; */
+  margin-left: 50%;
+  padding-top: 20px;
   padding-left: 25px;
   padding-right: 15px;
   background-color: #fce5cd;
   border-radius: 13% 13% 13% 8% / 30% 30% 0% 30%;
-  width: 470px;
-  height: 200px;
+  width:fit-content;
+  height: fit-content;
   align-items: center;
   border: 15px solid FCE5CD;
-}
 
+}
+.homepage_video{
+  padding-top: 150px;
+  justify-content: end;
+}
 .strategies_row {
-  margin-top: 175px;
+  margin-top: 55px;
   justify-content: center;
 }
 .quiz_row {
@@ -37,15 +44,14 @@
   padding-left: 55px;
 }
 .strategy_pic_row {
-  padding-left: 150px;
   padding-top: 30px;
 }
 #strategy_picture {
-  width: 700px;
+  width: 600px;
   height: auto;
 }
 .strategy_button_row {
-  margin-top: 85px;
+  margin-top: 65px;
 }
 #see_it_in_action {
   font-size: 25px;
@@ -66,10 +72,6 @@
   font-size: 25px;
   border-radius: 10px;
   padding: 15px;
-}
-.pictureformat{
-  width: 300px;
-  height: auto;
 }
 #back{
   font-size: 25px;
@@ -99,4 +101,22 @@
 }
 .demands {
   text-align: left;
+}
+#inaction_text{
+  color: #797573;
+  background-color: #fce5cd;
+  border-radius: 5px;
+  width:fit-content;
+  height: fit-content;
+  padding-left: 15px;
+  padding-top: 15px;
+  justify-content: center;
+  margin-left: 40px;
+  font-size: 14px;
+  margin-top: 20px;
+  
+}
+.audio_row{
+  justify-content: center;
+  margin-top: 10px;
 }

@@ -72,6 +72,7 @@ function get_and_view_quiz(idval){
 // }
 
 $(document).ready(function(){
+
     displayInfo(lesson)
 
 
@@ -83,4 +84,11 @@ $(document).ready(function(){
     $("#gotoquiz").click(function(){       
         get_and_view_quiz(idval)           
     })
+    
+    $("#back").click(function(){
+        window.location.href = "www.google.com";
+    })
+   
+
+  
 })
