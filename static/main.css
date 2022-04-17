@@ -130,3 +130,7 @@
   padding-left: 175px;
   padding-top: 45px;
 }
+.pictureformat{
+  max-width: 100%;
+  height: auto;
+}
