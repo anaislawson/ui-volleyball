@@ -210,7 +210,7 @@ def quiz_lv1(quiz_id):
     question = quiz_level_1[quiz_id]
     return render_template('quiz1.html', question = question, quiz_id = quiz_id)
 
-# ajax for checking answer (LV 2, 3)
+# ajax for checking answer (LV 1, 3)
 @app.route('/check', methods=['GET', 'POST'])
 def check():
     global data 
