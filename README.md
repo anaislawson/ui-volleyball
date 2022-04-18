@@ -35,3 +35,5 @@ To do:
 _ Later on we need to implement some type of focus for when the "back button" is pressed, the page goes down instead of staying centered.
 _ Align and fix the design (alignment) of learning pages
 \_ It seems there is no feedback for quiz 1, I think assigment says we need at least return a score for the quiz.
+
+--HIIII this is anais
