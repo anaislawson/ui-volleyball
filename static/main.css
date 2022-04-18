@@ -130,6 +130,10 @@
   padding-left: 175px;
   padding-top: 45px;
 }
+.pictureformat{
+  max-width: 100%;
+  height: auto;
+}
 
 .incorrect_option{
   color: darkred;
@@ -140,4 +144,5 @@
   color: green;
   font-weight: bold;
 }
+
 
