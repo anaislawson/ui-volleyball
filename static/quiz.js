@@ -1,15 +1,13 @@
-let score = 0;
 
 function displayQuestion(question) {
 
     let quizHeaderContainer = $('#level_1_question_header');
     let questionContainer = $('#level_1_question');
     let optionContainer = $('#level_1_options');
-    let scoreContainer = $('#level_1_score');
 
     quizHeaderContainer.append('Question ' + question.question_id)
     questionContainer.append(question.question)
-    scoreContainer.append(score)
+    getScore()
 
     for (let option in question.options) {
         let option_text = question.options[option]
@@ -53,25 +51,53 @@ function submitAnswer() {
     formatAndGrading(chosen_id, answer_id)
     disableButtons()
     createNextButton()
-    //  $.ajax({
-    //     type: "POST",
-    //     url: "check",
-    //     dataType : "json",
-    //     contentType: "application/json; charset=utf-8",
-    //     data : JSON.stringify({"id": question.question_id,
-    //                                  "answer"}),
-    //     success: function(result){
-    //         let featured = result["featured"]
-    //         displayFeaturedList(featured)
-    //         // console.log(data);
-    //     },
-    //     error: function(request, status, error){
-    //         console.log("Error");
-    //         console.log(request)
-    //         console.log(status)
-    //         console.log(error)
-    //     }
-    // });
+}
+
+function updateScore(score) {
+    console.log(score)
+    let scoreContainer = $('#level_1_score');
+    scoreContainer.text(score)
+}
+
+function getScore() {
+    console.log('Inside getScore')
+    $.ajax({
+        type: "GET",
+        url: "/get_score",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(result){
+            let score = result['score']
+            updateScore(score)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+}
+
+
+function increaseScore() {
+    console.log('Inside getScore')
+    $.ajax({
+        type: "GET",
+        url: "/increase_score",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(result){
+            let score = result['score']
+            updateScore(score)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
 }
 
 function createNextButton() {
@@ -91,16 +117,18 @@ function createNextButton() {
 }
 
 function formatAndGrading(chosen_id, answer_id) {
+    console.log('Chosen : ' + chosen_id)
+    console.log('Correct : ' + answer_id)
     let chosen_option = $('#label_' + chosen_id)
     let answer_option = $('#label_' + answer_id)
     if (chosen_id === answer_id) {
         answer_option.addClass('correct_option')
-        score += 1
-    } else {
+        increaseScore()
+    } else
+    {
         answer_option.addClass('correct_option')
         chosen_option.addClass('incorrect_option')
     }
-    $('#level_1_score').text(score)
 }
 
 
@@ -109,5 +137,4 @@ $(document).ready(function () {
     $("#submit").click(function () {
         submitAnswer()
     })
-    $("#next").click()
 })

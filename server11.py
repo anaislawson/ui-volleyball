@@ -86,7 +86,7 @@ quiz_level_1 = {
                     '2': 'six',
                     '3': 'seven',
                     '4': 'eight'},
-        'answer_index': '3',
+        'answer_id': '3',
         'next_id': '3'
     },
     '3': {
@@ -96,7 +96,7 @@ quiz_level_1 = {
                     '2': 'block',
                     '3': 'hit',
                     '4': 'serve'},
-        'answer_index': '4',
+        'answer_id': '4',
         'next_id': '4'
     },
     '4': {
@@ -106,7 +106,7 @@ quiz_level_1 = {
                     '2': 'two',
                     '3': 'three',
                     '4': 'four'},
-        'answer_index': '3',
+        'answer_id': '3',
         'next_id': '5'
     },
     '5': {
@@ -116,7 +116,7 @@ quiz_level_1 = {
                     '2': 'dig',
                     '3': 'kill',
                     '4': 'block'},
-        'answer_index': '3',
+        'answer_id': '3',
         'next_id': '0'
     },
 }
@@ -253,6 +253,20 @@ def check():
         score += 1
 
     return jsonify(correct=correct, answer=correct_ans)
+
+
+@app.route('/get_score', methods=['GET'])
+def get_score():
+    global score
+    print('Inside get_score')
+    return jsonify(score=str(score))
+
+
+@app.route('/increase_score', methods=['GET'])
+def increase_score():
+    global score
+    score += 1
+    return jsonify(score=str(score))
 
 
 @app.route('/quiz/2/<quiz_id>')
