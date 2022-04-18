@@ -4,7 +4,6 @@ from flask import Response, request, jsonify
 
 app = Flask(__name__)
 
-score = 0
 lessons = {
 
     "1": {
@@ -13,7 +12,8 @@ lessons = {
         "image": "https://i.ibb.co/tKTB75g/setter.png",
         "gif": "https://i.ibb.co/9cct0C4/setting.gif",
         "text": "You are the quarterback of the team!",
-        "summary": "Setters set the ball up for the attackers/hitters to score. A coach must be able to rely on the setter to make sound, consistent decisions.",
+        "summary": "Setters set the ball up for the attackers/hitters to score. A coach must be able to rely on the "
+                   "setter to make sound, consistent decisions.",
         "demands": ["1.Ability to set the ball to the left-front position", "2. Move all around the court",
                     "3. Set high enough and position properly for the hitter to attack."],
         "next_lesson": "2"
@@ -25,7 +25,8 @@ lessons = {
         "image": "https://i.ibb.co/4Vmy6mp/libero.png",
         "gif": "https://i.ibb.co/mBKLpGy/libero.gif",
         "text": "You are the defender of the team.",
-        "summary": "As the libero you know you’ll be receiving serves all day long. Adapt and make changes when your teammates are getting picked on.",
+        "summary": "As the libero you know you’ll be receiving serves all day long. Adapt and make changes when your "
+                   "teammates are getting picked on.",
         "demands": ["1. Always play in the back row.", "2. Receive opponent’s attacks and serves",
                     "3. Wear a different color jersey."],
         "next_lesson": "3"
@@ -37,7 +38,8 @@ lessons = {
         "image": "https://i.ibb.co/K7c3Hfg/outsidehitter.png",
         "gif": "https://i.ibb.co/qx9J19b/outside-hitter.gif",
         "text": "You are the “bag of tools”. ",
-        "summary": "You play both the front row and the back row and should develop a variety of ways to attack the ball.",
+        "summary": "You play both the front row and the back row and should develop a variety of ways to attack the "
+                   "ball.",
         "demands": ["1. After the serve place yourself to the left front position",
                     "2. Read the opponent’s defense and call out hitters."],
         "next_lesson": "4"
@@ -49,7 +51,9 @@ lessons = {
         "image": "https://i.ibb.co/HKZhsVf/middleblocker.png",
         "gif": "https://i.ibb.co/4SypYDP/blocker.gif",
         "text": "You are the team’s tallest athlete! ",
-        "summary": "Your role is to block the opposing team’s attack so be ready for the opponent’s quick middle attacks. But also move to either side to help teammates close blocks with the opposite hitter and outside hitter.",
+        "summary": "Your role is to block the opposing team’s attack so be ready for the opponent’s quick middle "
+                   "attacks. But also move to either side to help teammates close blocks with the opposite hitter and "
+                   "outside hitter.",
         "demands": ["1. Also work as a hitter to attack.",
                     "2. Quick evaluation skills to anticipate the opposing team’s attack."],
         "next_lesson": "5"
@@ -61,7 +65,8 @@ lessons = {
         "image": "https://i.ibb.co/dGkJ8XH/oppositehitter.png",
         "gif": "https://i.ibb.co/MV62r1r/opposite.gif",
         "text": "You most often scores the most points in the team - no pressure!",
-        "summary": "Your role is to score and block the ball. Be the backup of the setter when the traditional setter is unable to get to the ball.",
+        "summary": "Your role is to score and block the ball. Be the backup of the setter when the traditional setter "
+                   "is unable to get to the ball.",
         "demands": ["1. Attack the ball when receiving a set.", "2. Work with the middle hitter on blocks.",
                     "3. Best for left-handed players."],
         "next_lesson": "end"
@@ -86,7 +91,7 @@ quiz_level_1 = {
                     '2': 'six',
                     '3': 'seven',
                     '4': 'eight'},
-        'answer_id': '3',
+        'answer_id': '2',
         'next_id': '3'
     },
     '3': {
@@ -110,14 +115,14 @@ quiz_level_1 = {
         'next_id': '5'
     },
     '5': {
-        'question_id': '4',
+        'question_id': '5',
         'question': 'If a player grounds the ball on the opponent’s court, he/she scores a point by making a _____.',
-        'options': {'1': 'fault',
+        'options': {'1': 'kill',
                     '2': 'dig',
-                    '3': 'kill',
+                    '3': 'fault',
                     '4': 'block'},
-        'answer_id': '3',
-        'next_id': '0'
+        'answer_id': '1',
+        'next_id': 'end'
     },
 }
 
@@ -161,7 +166,8 @@ quiz_level_3 = {
             'question_id': '3',
             'question_prompt': 'You are the quarterback of the team. \n '
                                'The coach relies on you to make sound consistent decisions. \n '
-                               'By applying your strategy well, you should position properly for the hitter to attack. \n ',
+                               'By applying your strategy well, you should position properly for the hitter to '
+                               'attack. \n ',
             'answer_id': '4',
             'next_id': '4'
         },
@@ -179,7 +185,8 @@ quiz_level_3 = {
         '5': {
             'question_id': '5',
             'question_prompt': 'You are the “bag of tools. \n '
-                               'You play both the front row and the back row and should develop a variety of ways to <b> attack </b> the ball. \n '
+                               'You play both the front row and the back row and should develop a variety of ways to '
+                               '<b> attack </b> the ball. \n '
                                'You should read the opponent’s defense and call out hitters. \n',
             'answer_id': '1',
             'next_id': '0'
@@ -187,6 +194,10 @@ quiz_level_3 = {
 
     }
 }
+
+score = 0
+
+quiz_level_1_responses = dict()
 
 
 # ROUTES
@@ -216,12 +227,10 @@ def learn(lesson_id):
 
 @app.route('/quiz')
 def quiz():
-    return quiz_lv1('1')
+    global score
 
-@app.route('/quiz/1/<question_id>')
-def quiz_lv1(question_id):
-    question = quiz_level_1[question_id]
-    return render_template('quiz_level_1.html', question=question, question_id=question_id)
+    score = 0
+    return quiz_lv1('1')
 
 
 # ajax for checking answer (LV 1, 3)
@@ -262,11 +271,32 @@ def get_score():
     return jsonify(score=str(score))
 
 
+@app.route('/update_response', methods=['GET', 'POST'])
+def update_response():
+    global quiz_level_1_responses
+
+    json_data = request.get_json()
+    question_id = json_data["question_id"]
+    option_id = json_data["option_id"]
+
+    quiz_level_1_responses[question_id] = option_id
+
+    return jsonify(responses=quiz_level_1_responses)
+
+
 @app.route('/increase_score', methods=['GET'])
 def increase_score():
     global score
     score += 1
     return jsonify(score=str(score))
+
+
+@app.route('/quiz/1/<question_id>')
+def quiz_lv1(question_id):
+    if question_id == 'end':
+        return render_template('quiz_intertitle.html', score=score)
+    question = quiz_level_1[question_id]
+    return render_template('quiz_level_1.html', question=question, question_id=question_id)
 
 
 @app.route('/quiz/2/<quiz_id>')
@@ -290,4 +320,3 @@ def quiz_fin():
 
 if __name__ == '__main__':
     app.run(debug=True)
-

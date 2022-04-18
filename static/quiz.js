@@ -1,4 +1,3 @@
-
 function displayQuestion(question) {
 
     let quizHeaderContainer = $('#level_1_question_header');
@@ -16,6 +15,7 @@ function displayQuestion(question) {
         radiobox.type = 'radio';
         radiobox.name = 'question' + question.question_id
         radiobox.id = option;
+        radiobox.class = 'quiz_level_1_radioboxes'
         radiobox.value = option_text;
 
         let label = document.createElement('label')
@@ -38,7 +38,7 @@ function displayQuestion(question) {
 function disableButtons() {
     let question_name = 'question' + question.question_id
     let radioboxes = $("input[name='" + question_name + "']");
-    radioboxes.each(function (i) {
+    radioboxes.each(function () {
         $(this).attr('disabled', 'disabled');
     });
     $('#submit').attr('disabled', 'disabled');
@@ -56,7 +56,29 @@ function submitAnswer() {
 function updateScore(score) {
     console.log(score)
     let scoreContainer = $('#level_1_score');
-    scoreContainer.text(score)
+    scoreContainer.text(score + '/ 5')
+}
+
+function updateResponse(question_id, option_id) {
+    console.log('Inside updateResponses')
+    $.ajax({
+        type: "POST",
+        url: "/update_response",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify({"question_id": question_id,
+                                     "option_id": option_id}),
+        success: function(result){
+            let responses = result['responses']
+            console.log(responses)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
 }
 
 function getScore() {
@@ -78,7 +100,6 @@ function getScore() {
         }
     });
 }
-
 
 function increaseScore() {
     console.log('Inside getScore')
@@ -104,13 +125,16 @@ function createNextButton() {
     $('<button/>',{
         id: 'next',
         text: 'Next',
+        class:'quiz_buttons quiz_button_2',
         click: function () {
-        console.log('Next clicked')
-        if(question.next_id === "0"){
-            window.location.href = "/quiz/2"
-        }else{
+            console.log('Next clicked');
             window.location.href ="/quiz/1/" + question.next_id
-        }
+        // if(question.next_id === "e"){
+        //     window.location.href = "/quiz/2"
+        // }else{
+        //     window.location.href ="/quiz/1/" + question.next_id
+        // }
+
     }
     }).appendTo('#quiz_container');
 
@@ -129,8 +153,8 @@ function formatAndGrading(chosen_id, answer_id) {
         answer_option.addClass('correct_option')
         chosen_option.addClass('incorrect_option')
     }
+    updateResponse(question.question_id, chosen_id)
 }
-
 
 $(document).ready(function () {
     displayQuestion(question)
