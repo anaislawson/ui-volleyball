@@ -37,3 +37,7 @@ _ Align and fix the design (alignment) of learning pages
 \_ It seems there is no feedback for quiz 1, I think assigment says we need at least return a score for the quiz.
 
 --HIIII this is anais
+
+Mari - Wed 2:09
+Created quiz 2 html but haven't added anything to the js or from backend.
+Question, should we be using the back end at all for the drag and drop since we did everything through js before? I think we might just need the back end for the score for quiz 2 and 3 but I could be wrong.
