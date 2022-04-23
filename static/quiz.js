@@ -156,9 +156,24 @@ function formatAndGrading(chosen_id, answer_id) {
     updateResponse(question.question_id, chosen_id)
 }
 
+function get_and_view_quiz2(idval){
+    let url = "/quiz/2/"+idval;
+    window.location.href = url
+    //go to quiz 2
+    
+}
+
+
 $(document).ready(function () {
-    displayQuestion(question)
+    if(question_id != "end"){
+        displayQuestion(question)
+    }
+    
     $("#submit").click(function () {
         submitAnswer()
     })
+    $("#quiz_intertile_button_2").click(function () {
+        get_and_view_quiz2("1")
+    })
+    
 })

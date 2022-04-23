@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
         <script>
         let score = {{ score | tojson }};
+        let question_id = {{ question_id | tojson }};
     </script>
 
     <div id="quiz_intertile_container" class="container">
@@ -16,7 +17,7 @@
         </div>
         <br>
         <button id="quiz_intertile_button_1" href="quiz" class="quiz_buttons quiz_button_1">Replay {TBD} </button>
-        <button id="quiz_intertile_button_2" class="quiz_buttons quiz_button_2">In Construction</button>
+        <button id="quiz_intertile_button_2" class="quiz_buttons quiz_button_2">Level 2➜</button>
     </div>
 
 {% endblock %}
