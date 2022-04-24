@@ -18,6 +18,7 @@
                 Drag the correct answer to the submission box:
             </div>
         </div>
+    <br>
         <div class="row">
             <div class="col-md-3  color_test">
                 <img class="quiz_img"
@@ -30,31 +31,41 @@
                         Question {{ question_id }}
                     </div>
                     <div class="col-md-12 question_prompt color_test">
-                        {{ question.question_prompt }}
+                        {{ question.question_prompt + '\n'}}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 question_submit color_test">
-                        <div
-                                class="submit_box color_test">
+                    <div class="col-md-6 question_submit color_test">
+                        <div class="drag_box submit_box color_test">
                             Drag Answer Here
-                        </div><button
-                                    class="btn btn-outline-success my-2 my-sm-0"
-                                    type="submit">
-                                Submit
-                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button
+                                class="submit_btn btn btn-outline-success my-2 my-sm-0"
+                                type="submit">
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="col-md-3 color_test">
                 <div class = "roles">
                 </div>
+=======
+            <div class="col-md-3 options_div color_test">
+                {% for id, role in roles.items() %}
+                    <div class="row drag_box options_box" id="{{ id }}">
+                        {{ role.upper() }}
+                    </div>
+                {% endfor %}
+>>>>>>> 51291dc5a11feb87e91e1358a2fed03ed312b348
             </div>
         </div>
         <div id="level_3_score_div">
             Score :
             <span id="level_3_score">
-
             </span>
         </div>
         <br>

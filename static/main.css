@@ -232,7 +232,6 @@ label {
 }
 
 .color_test {
-  border:1px solid black;
 }
 
 .quiz_img {
@@ -245,9 +244,6 @@ label {
   white-space:pre-line;
 }
 
-.submit_box {
-  max-width: 50%;
-}
 
 .quiz_2_photo{
   float: left;
@@ -262,7 +258,7 @@ label {
 
 #learn_icon{
   width: 120px;
-  
+
 }
 
 #quiz_icon{
@@ -285,11 +281,40 @@ label {
   padding: 5px;
   border-radius: 5px;
 }
+
 #level_2_score_div{
   margin-top: 10px;
   text-align: center;
   color: #7f5e94 ;
   font-weight: bold;
   font-size: 20px;
-  
+}
+
+.options_div{
+  padding: 40px 25px;
+  font-size: 18px;
+}
+
+.options_box{
+  margin: 10px 10px;
+  color: #bf9000;
+  background: #fff2ccff;
+  font-weight: bold;
+}
+
+.submit_box {
+  max-width: 100%;
+  color: #797573;
+}
+
+.drag_box {
+  width: 180px;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  border: 2px solid black;
+  height: auto;
+}
+
+.submit_btn{
 }
