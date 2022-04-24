@@ -2,24 +2,24 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_1.js') }}"></script>
     <script>
         let question = {{ question | tojson }};
-            {#console.log(question)#}
+            console.log(question)
         let question_id = {{ question_id | tojson }};
             {#console.log(question_id)#}
     </script>
 
 
-    <div id="quiz_container" class="container level_1_text">
+    <div id="quiz_container" class="container quiz_text">
         <br>
-        <div id="level_1_question_instructions">
-            <span id="level_1">
+        <div id="level_1_question_instructions" class="question_instructions">
+            <span id="level_1" class="level_no">
                 LEVEL 1 -
             </span>
             Select the correct answer from the options:
         </div>
-        <div id="level_1_question_header">
+        <div id="level_1_question_header" class="question_no">
         </div>
         <div id="level_1_question">
         </div>

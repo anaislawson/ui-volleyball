@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_3.js') }}"></script>
+    <script>
+        let question = {{ question | tojson }};
+        let question_id = {{ question_id | tojson }};
+        let roles = {{ roles | tojson }};
+        console.log(roles);
+    </script>
+
+
+    <div id="quiz_container" class="container quiz_text">
+        <div class="row">
+            <div class="col-md-12 question_instructions">
+            <span id="level_3" class="level_no">
+                LEVEL 3 -
+            </span>
+                Drag the correct answer to the submission box:
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3  color_test">
+                <img class="quiz_img"
+                     src="/static/images/volleyball-player.png">
+            </div>
+            <div class="col-md-6 color_test">
+                <div class="row">
+
+                    <div class="col-md-12 question_no color_test">
+                        Question {{ question_id }}
+                    </div>
+                    <div class="col-md-12 question_prompt color_test">
+                        {{ question.question_prompt }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 question_submit color_test">
+                        <div
+                                class="submit_box color_test">
+                            Drag Answer Here
+                        </div><button
+                                    class="btn btn-outline-success my-2 my-sm-0"
+                                    type="submit">
+                                Submit
+                            </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 color_test">
+                {% for id, role in roles.items() %}
+                    <div class="row color_test">
+                        {{ role }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="level_3_score_div">
+            Score :
+            <span id="level_3_score">
+
+            </span>
+        </div>
+        <br>
+
+        <button id="submit" class="quiz_buttons quiz_button_1">Submit</button>
+    </div>
+
+{% endblock %}

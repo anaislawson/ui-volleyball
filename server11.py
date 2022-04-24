@@ -302,14 +302,14 @@ def quiz_lv1(question_id):
 @app.route('/quiz/2/<quiz_id>')
 def quiz_lv2():
     roles = quiz_level_2.get('roles')
-    return render_template('quiz2.html', roles=roles)
+    return render_template('quiz_level_2.html', roles=roles)
 
 
-@app.route('/quiz/3/<quiz_id>')
-def quiz_lv3(quiz_id):
-    question = quiz_level_3[quiz_id]
-    roles = quiz_level_3.get('roles')
-    return render_template('quiz3.html', question=question, quiz_id=quiz_id, roles=roles)
+@app.route('/quiz/3/<question_id>')
+def quiz_lv3(question_id):
+    question = quiz_level_3['questions'][question_id]
+    roles = quiz_level_3['roles']
+    return render_template('quiz_level_3.html', question=question, question_id=question_id, roles=roles)
 
 
 @app.route('/quiz/end')
