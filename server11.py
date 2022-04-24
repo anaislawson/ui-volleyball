@@ -304,7 +304,6 @@ def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
     return render_template('quiz_level_2.html', roles=roles)
 
-
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):
     question = quiz_level_3['questions'][question_id]
