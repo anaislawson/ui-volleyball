@@ -1,41 +1,23 @@
 // testing js dict 
 
-roles =[       
-    {
-        '1': 'Setter',
-        '2': 'Libero',
-        '3': 'Outside hitter',
-        '4': 'Outside hitter (left)',
-        '5': 'Opposite hitter',
-        '6': 'Middle blocker'
-    }
-]       
+roles =['setter','libero','outside hitter','Outside hitter (left)','Opposite hitter','Middle blocker']       
 
-empty_dic =
-[
-    {
-        '1': '',
-        '2': '',
-        '3': '',
-        '4': '',
-        '5': '',
-        '6': ''
-    }
-]
-
+new_dict = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6' }
 
 function display_roles(r){
     $("#quiz_2_roles_first").empty();
     
     $.each(roles, function(index,value){
-        $.each(value, function(index,value){
-            let new_div_per_value = ('<div class="roles_div ui-widget-content">'+value+'</div>');
+        // $.each(value, function(index,value){
+            let new_div_per_value = ('<div class="roles_div ui-widget-content" id="left_id_'+ index +'">'+value+'</div>');
             $("#quiz_2_roles_first").append(new_div_per_value);
+            
             $(".ui-widget-content").draggable({
                 revert: "invalid",
 
+                
             })
-        })
+        // })
     })
 
     console.log(roles)
@@ -46,16 +28,46 @@ function display_roles(r){
 function display_role_destination(r){
    
     $("#quiz_2_roles_second").empty();
-    
-    $.each(empty_dic, function(index,value){
-        $.each(value, function(index,value){
+    console.log(new_dict)
+
+    $.each(new_dict, function(index,value){
+        // $.each(value, function(index,value){
             
-            let empty_div_per_value = ('<div class="roles_div ui-widget-content">'+index+'</div>');
+        // let id = this.id 
+            let empty_div_per_value = ('<div class="roles_div ui-widget-content" id="right_id_'+ index +'">'+value+'</div>');
             $("#quiz_2_roles_second").append(empty_div_per_value);
 
+
+             // droppable 
+
+            $("#quiz_2_roles_second").droppable({
+                accept: ".roles_div",
+                activeClass: "active",
+
+                drop: function(event,ui){
+                    // console.log(id)
+                    let name_dropped = $(ui.draggable)[0].innerHTML
+                    console.log(name_dropped)
+                    $(roles.splice($.inArray(name_dropped, roles),1))
+                    
+                    
+                    // new_dict[id.toString()]= name_dropped
+                
+                    
+                    // new_dict.push(name_dropped)
+                    
+                    console.log(new_dict)
+                    console.log(roles)
+                    display_role_destination(new_dict)
+
+                }
+
+            })
+
         })
+    // })
         $("#quiz_2_roles_second").prepend('<div class="title_roles ui-widget-header" id="titles_drags">MATCH</div>');
-    })
+    // })
 
 
 }
@@ -65,33 +77,5 @@ $(document).ready(function() {
     display_roles(roles)
     display_role_destination(roles)
 
-     // droppable 
-     $("#quiz_2_roles_second").droppable({
-        accept: ".roles_div",
-        activeClass: "active",
-
-        drop: function(event,ui){
-            $(this)
-            // .find("p")
-            
-            let name_dropped = $(ui.draggable)[0].innerHTML
-            console.log(name_dropped)
-            // $.each(empty_dic, function(index,value){
-            //     $.each(value, function(index,value){
-                    $(empty_dic.splice($.inArray(index,1,value)))
-                    
-            //     })
-            // })
-            // empty_dic.push(name_dropped);
-            console.log(empty_dic)
-            // console.log(empty_dic)
-            // $(roles.splice($.inArray(name_dropped, roles),1))
-            
-            // display_roles(roles)
-            // display_role_destination(roles)
-            
-        }
-
-    })
 
 })

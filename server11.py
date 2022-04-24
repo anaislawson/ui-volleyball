@@ -319,6 +319,25 @@ def quiz_lv2(quiz_id):
     test_roles = quiz_level_2_empty_dic.get('empty_roles')
     return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles)
 
+# ajax for quiz2
+
+
+# @app.route('/check_quiz_2', methods=['POST'])
+# def check_quiz_2():
+
+#     current_id_2 += 1
+#     json_data = request.get_json()
+#     new_role = json_data[0]
+
+#     confirmed_dict = {
+
+#         "id": current_id_2,
+#         "role": new_role
+
+#     }
+
+#     return jsonify(confirmed_dict=confirmed_dict)
+
 
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):
