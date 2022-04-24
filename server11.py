@@ -294,13 +294,13 @@ def increase_score():
 @app.route('/quiz/1/<question_id>')
 def quiz_lv1(question_id):
     if question_id == 'end':
-        return render_template('quiz_intertitle.html', score=score)
+        return render_template('quiz_intertitle.html', question_id=question_id, score=score)
     question = quiz_level_1[question_id]
     return render_template('quiz_level_1.html', question=question, question_id=question_id)
 
 
 @app.route('/quiz/2/<quiz_id>')
-def quiz_lv2():
+def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
     return render_template('quiz_level_2.html', roles=roles)
 

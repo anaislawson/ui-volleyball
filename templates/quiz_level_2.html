@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_2.js') }}"></script>
+
+<div id="quiz_container" class="container level_1_text">
+    <br>
+    <div id="level_1_question_instructions">
+        <span id="level_1">
+            LEVEL 2 -
+        </span>
+        MATCH THE PLAYER TO ITS ROLE
+    </div>
+    <div class ="row quiz_2_row">
+        <div class="col-md-4" id="quiz_2_photo">
+        <img class="pictureformat" src="https://i.ibb.co/mySpg0L/QUIZ2.png"> 
+        <!-- I changed the image size but definitely add a different class to resize how you desire -->
+        </div>
+        <div class="col-md-4" id="quiz_2_roles_drag">
+        </div>
+        <div class="col-md-4" id="quiz_2_roles_drag">
+        </div>
+    <br>
+    <div id="level_2_score_div">
+        Score :
+        <span id="level_2_score"></span>
+    </div>
+    <br>
+</div>
+
+{% endblock %}
