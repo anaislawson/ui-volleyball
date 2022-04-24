@@ -1,6 +1,17 @@
 .container-fluid {
   background-color: #f8f8fa;
 }
+/* .home_cont{
+  background-color: #eceffc;
+} */
+
+.Home_title{
+  padding-top: 20px;
+ text-align: center;
+ color: #FD9800;
+ font-size: 75px;
+ font-family: 'Cinzel Decorative', cursive;
+}
 
 .homepage_first_row{
   justify-content: center;
@@ -21,7 +32,7 @@
 
 }
 .homepage_video{
-  padding-top: 150px;
+  padding-top: 80px;
   justify-content: end;
 }
 .strategies_row {
@@ -34,14 +45,18 @@
 #homebuttons {
   font-size: 25px;
   border-radius: 10px;
-  padding: 15px;
+  padding-left: 45px;
+  padding-right: 45px;
+  color:#797573;
+
 }
 #homebuttons2 {
   font-size: 25px;
   border-radius: 10px;
-  padding: 14px;
-  padding-right: 55px;
-  padding-left: 55px;
+  padding: 8px;
+  padding-right: 50px;
+  padding-left: 50px;
+  color:#797573;
 }
 .strategy_pic_row {
   padding-top: 15px;
@@ -245,5 +260,36 @@ label {
   cursor: pointer;
 }
 
+#learn_icon{
+  width: 120px;
+  
+}
 
+#quiz_icon{
+  width: 60px;
+}
 
+#titles_drags{
+  text-align: center;
+  background-color: lightgray;
+}
+
+.quiz_2_row{
+  margin-top: 50px;
+}
+
+.quiz_button_2{
+  color:  #7f5e94;
+  background-color: #eceffc ;
+  float: right;
+  padding: 5px;
+  border-radius: 5px;
+}
+#level_2_score_div{
+  margin-top: 10px;
+  text-align: center;
+  color: #7f5e94 ;
+  font-weight: bold;
+  font-size: 20px;
+  
+}

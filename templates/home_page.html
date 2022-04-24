@@ -4,27 +4,39 @@
 {% block content %}
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'home_page.js') }}"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+ 
 
-  
-<div class ="row homepage_first_row flex-nowrap">
-    <div class="col-md-4 homepage_text">
-        ➜ Played by two teams of six players on each side <br>
-        ➜ Players use their hands to bat a ball back and forth over a high net<br>
-        ➜ Score by trying to make the ball touch the court within the opponent's’ side before it can be returned. <br>
-        ➜ Strategies work by designing roles and positions to the players who should work as a team to win the game.</br></br>       
+<!-- <div class="container-fluid home_cont"> -->
+    <div class="Home_title">
+        Volleyball
     </div>
-    <div class="col-md-6 homepage_video">
-        <iframe src="https://streamable.com/e/0ryx2n?autoplay=1&loop=0" width="160" height="206" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+    <div class ="row homepage_first_row flex-nowrap">
+        <div class="col-md-4 homepage_text">
+            ➜ Played by two teams of six players on each side <br>
+            ➜ Players use their hands to bat a ball back and forth over a high net<br>
+            ➜ Score by trying to make the ball touch the court within the opponent's’ side before it can be returned. <br>
+            ➜ Strategies work by designing roles and positions to the players who should work as a team to win the game.</br></br>       
+        </div>
+        <div class="col-md-6 homepage_video">
+            <iframe src="https://streamable.com/e/0ryx2n?" width="160" height="206" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
-</div>
     <div class="row strategies_row">
-        <button type="button" id="homebuttons">Learn Volleyball Strategies</button> 
+        <button type="button" id="homebuttons">Learn 
+        <img id="learn_icon" src="https://i.ibb.co/L5L2NYG/volleyball-player-2931915-2464052.png">
+    </button>
     </div>
     <p></p>
     <div class="row quiz_row">
-        <button type="button" id="homebuttons2">Challenge Yourself</button> 
-    </div>
+        <button type="button" id="homebuttons2">Challenge 
+            <img id="quiz_icon" src="https://i.ibb.co/JpBWk63/challenge.png">
+        </button> 
 
+    </div>
+<!-- </div> -->
 
 
 {% endblock %}
