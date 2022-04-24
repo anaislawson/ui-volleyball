@@ -161,6 +161,7 @@
 .question_instructions {
   color: darkorange;
   font-size: xx-large;
+  justify-content: center;
 }
 
 .level_no {
@@ -233,8 +234,16 @@ label {
   max-width: 50%;
 }
 
+.quiz_2_photo{
+  float: left;
+}
+.pictureformat{
+  width: 120%;
+}
 
-
+.ui-widget-content{
+  cursor: pointer;
+}
 
 
 

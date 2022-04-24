@@ -127,12 +127,13 @@ quiz_level_1 = {
 }
 
 quiz_level_2 = {
-    'roles': {'1': 'Outside Hitter',
-              '2': 'Middle Blocker',
-              '3': 'Libero',
-              '4': 'Setter',
-              '5': 'Opposite Hitter (Left)',
-              '6': 'Opposite Hitter (Right)'},
+    'roles': {'1': 'Setter',
+              '2': 'Libero',
+              '3': 'Outside hitter',
+              '4': 'Outside hitter (left)',
+              '5': 'Opposite hitter',
+              '6': 'Middle blocker'
+              },
 }
 
 quiz_level_3 = {
@@ -199,6 +200,18 @@ score = 0
 
 quiz_level_1_responses = dict()
 
+quiz_level_2_empty_dic = {
+    'empty_roles':
+    {
+        '1': '',
+        '2': '',
+        '3': '',
+        '4': '',
+        '5': '',
+        '6': ''
+    },
+}
+
 
 # ROUTES
 
@@ -252,7 +265,8 @@ def check():
 
     if lv == 1:
         correct_ans_id = quiz_level_1.get(question).get('answer_id')
-        correct_ans = quiz_level_1.get(question).get('options').get(correct_ans_id)
+        correct_ans = quiz_level_1.get(question).get(
+            'options').get(correct_ans_id)
 
     if lv == 3:
         correct_ans = quiz_level_3.get(question).get('answer_id')
@@ -302,7 +316,9 @@ def quiz_lv1(question_id):
 @app.route('/quiz/2/<quiz_id>')
 def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
-    return render_template('quiz_level_2.html', roles=roles)
+    test_roles = quiz_level_2_empty_dic.get('empty_roles')
+    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles)
+
 
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):

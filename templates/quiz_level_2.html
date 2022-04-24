@@ -5,32 +5,35 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_2.js') }}"></script>
     <script>
         let roles = {{roles|tojson}};
-        console.log(roles);
+        let empty_dic = {{test_roles|tojson}}
+
     </script>
 
     <div id="quiz_container" class="container level_1_text">
     <br>
-    <div id="level_1_question_instructions">
-        <span id="level_1">
-            LEVEL 2 -
-        </span>
-        MATCH THE PLAYER TO ITS ROLE
-    </div>
-    <div class ="row quiz_2_row">
-        <div class="col-md-4" id="quiz_2_photo">
-        <img class="pictureformat" src="https://i.ibb.co/mySpg0L/QUIZ2.png"> 
-        <!-- I changed the image size but definitely add a different class to resize how you desire -->
+        <div class="row question_instructions">
+            <span id="level_1">
+                <b>LEVEL 2 </b>-
+            </span>
+           MATCH THE PLAYER TO ITS ROLE
         </div>
-        <div class="col-md-4" id="quiz_2_roles_first">
+        <br>
+        <div class ="row quiz_2_row">
+            <div class="col-md-6" id="quiz_2_photo">
+                <img class="pictureformat" src="https://i.ibb.co/mySpg0L/QUIZ2.png"> 
+            <!-- I changed the image size but definitely add a different class to resize how you desire -->
+            </div>
+            <div class="col-md-3" id="quiz_2_roles_first">
+            </div>
+            <div class="col-md-3" id="quiz_2_roles_second">
+            </div>
         </div>
-        <div class="col-md-4" id="quiz_2_roles_second">
+        <br>
+        <div id="level_2_score_div">
+            Score :
+            <span id="level_2_score"></span>
         </div>
-    <br>
-    <div id="level_2_score_div">
-        Score :
-        <span id="level_2_score"></span>
-    </div>
-    <br>
+        <br>
 </div>
 
 {% endblock %}
