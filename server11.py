@@ -137,11 +137,13 @@ quiz_level_2 = {
 }
 
 quiz_level_3 = {
-    'roles': {'1': 'Outside Hitter',
-              '2': 'Middle Blocker',
-              '3': 'Libero',
-              '4': 'Setter',
-              '5': 'Opposite Hitter'},
+    'roles':{
+        '1': "Outside Hitter",
+        '2': "Middle Blocker",
+        '3': "Libero",
+        '4': "Setter",
+        '5': "Opposite Hitter"
+    },
     'questions': {
         '1': {
             'question_id': '1',
@@ -149,7 +151,7 @@ quiz_level_3 = {
                                'You receive serves all day long. \n '
                                'You always play in the back row \n '
                                'You should wear a different color jersey',
-            'answer_id': '3',
+            'answer_id': 3,
             'next_id': '2'
         },
 
@@ -159,7 +161,7 @@ quiz_level_3 = {
                                'You should block the opposing team’s attack \n '
                                'You should also hit to attack \n '
                                'You should act as a decoy to help confuse opponents and spread out their blockers.',
-            'answer_id': '2',
+            'answer_id': 2,
             'next_id': '3'
         },
 
@@ -169,7 +171,7 @@ quiz_level_3 = {
                                'The coach relies on you to make sound consistent decisions. \n '
                                'By applying your strategy well, you should position properly for the hitter to '
                                'attack. \n ',
-            'answer_id': '4',
+            'answer_id': 4,
             'next_id': '4'
         },
 
@@ -179,7 +181,7 @@ quiz_level_3 = {
                                'You should not only score but also block the ball.  \n '
                                'Sometimes you are the backup of the setter. \n '
                                'Work with the middle hitter on blocks.',
-            'answer_id': '5',
+            'answer_id': 5,
             'next_id': '5'
         },
 
@@ -189,7 +191,7 @@ quiz_level_3 = {
                                'You play both the front row and the back row and should develop a variety of ways to '
                                '<b> attack </b> the ball. \n '
                                'You should read the opponent’s defense and call out hitters. \n',
-            'answer_id': '1',
+            'answer_id': 1,
             'next_id': '0'
         },
 
@@ -297,6 +299,21 @@ def update_response():
 
     return jsonify(responses=quiz_level_1_responses)
 
+@app.route('/submit_role', methods=['GET', 'POST'])
+def submit_role():
+    json_data = request.get_json()
+    question_id = json_data["question_id"]
+   
+    user_answer = json_data["answer"]
+    
+    correct = False
+
+    answer = quiz_level_3.get('questions')[question_id].get("answer_id")
+    print(user_answer, answer)
+    if user_answer == answer:
+        correct=True
+    
+    return jsonify(correct=correct)
 
 @app.route('/increase_score', methods=['GET'])
 def increase_score():
@@ -341,15 +358,11 @@ def quiz_lv2(quiz_id):
 
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):
+    if(question_id == "0"):
+        return render_template('home_page.html')
+
     question = quiz_level_3['questions'][question_id]
-    roles = quiz_level_3['roles']
-    return render_template('quiz_level_3.html', question=question, question_id=question_id, roles=roles)
-
-
-@app.route('/quiz/end')
-def quiz_fin():
-    # end page with score
-    return render_template('quiz_end.html', score=score)
+    return render_template('quiz_level_3.html', question=question, question_id=question_id)
 
 
 if __name__ == '__main__':
