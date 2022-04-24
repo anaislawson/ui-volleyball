@@ -214,6 +214,13 @@ quiz_level_2_empty_dic = {
     },
 }
 
+quiz_level_3_active_roles = [
+     "Outside Hitter",
+     "Middle Blocker",
+     "Libero",
+     "Setter",
+     "Opposite Hitter"
+]  
 
 # ROUTES
 
@@ -299,6 +306,7 @@ def update_response():
 
     return jsonify(responses=quiz_level_1_responses)
 
+# for quiz 3
 @app.route('/submit_role', methods=['GET', 'POST'])
 def submit_role():
     json_data = request.get_json()
@@ -313,6 +321,7 @@ def submit_role():
     if user_answer == answer:
         correct=True
     
+    del quiz_level_3_active_roles[answer-1] 
     return jsonify(correct=correct)
 
 @app.route('/increase_score', methods=['GET'])
@@ -362,7 +371,7 @@ def quiz_lv3(question_id):
         return render_template('home_page.html')
 
     question = quiz_level_3['questions'][question_id]
-    return render_template('quiz_level_3.html', question=question, question_id=question_id)
+    return render_template('quiz_level_3.html', roles=quiz_level_3_active_roles, question=question, question_id=question_id)
 
 
 if __name__ == '__main__':

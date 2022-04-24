@@ -1,13 +1,5 @@
 // testing js dict 
 
-var roles =[
-     "Outside Hitter",
-     "Middle Blocker",
-     "Libero",
-     "Setter",
-     "Opposite Hitter"
-]       
-
 var used = []
 var ans = 0
 

@@ -4,6 +4,7 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_3.js') }}"></script>
     <script>
+        let roles = {{roles | tojson}};
         let question = {{ question | tojson }};
         let question_id = {{ question_id | tojson }};
     </script>
