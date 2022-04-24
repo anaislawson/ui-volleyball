@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-3 options_div color_test">
                 {% for id, role in roles.items() %}
-                    <div class="row drag_box options_box">
+                    <div class="row drag_box options_box" id="{{ id }}">
                         {{ role.upper() }}
                     </div>
                 {% endfor %}
