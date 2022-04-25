@@ -102,22 +102,33 @@
   padding: 15px;
   margin-top: 50px;
 }
-
+/* Learning part I */
 .learn_first_row{
   padding-top: 35px;
+  margin-left: -30px;
 }
 #back_button_for_learn{
-
  text-align: center;
 }
 
 #first_row_learning{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #titles_div{
   text-align: center;
 }
 
+#you_are_column{
+  text-align: right;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+#strategy_column_learn{
+  margin-left: 60px;
+  /* align-items: center;
+  align-items: flex-end;
+  text-align: end; */
+}
 #learn1 {
   font-size: 25px;
   border-radius: 10px;
@@ -128,6 +139,8 @@
   border-radius: 10px;
   padding: 15px;
 }
+
+/* Quiz */
 #gotoquiz {
   font-size: 25px;
   border-radius: 10px;
@@ -204,6 +217,7 @@
   margin: auto;
   width: 60%;
   padding-top: 20px;
+  /* background-color: #cbe6ef63; */
 }
 
 #quiz_intertile_container {
@@ -293,6 +307,10 @@ label {
 }
 .pictureformat{
   width: 120%;
+}
+
+.gif_format{
+  width: fit-content;
 }
 
 .ui-widget-content{

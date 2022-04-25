@@ -15,14 +15,14 @@ function displayInfo(lesson){
 // first row
     let firstrow = $("<div class='row' id='first_row_learning'>")
     $('#info').append(firstrow)
-    let explanation = $("<div class='col-md-5 col-sm-12'>")
+    let explanation = $("<div class='col-md-5 col-sm-12' id='you_are_column'>")
     $(firstrow).append(explanation)
     let textinfo = "<div class='textinfo'>"+lesson["text"]+"</div>"
     $(explanation).append(textinfo)
     let summary = "<div class='summary'>"+lesson["summary"]+"</div>"
     $(explanation).append(summary)
     let image = "<div class='infograophicssize'><img src='"+lesson["image"]+"' alt='picture of volleyball lesson' class='pictureformat'>"
-    let imagespace = $("<div class='col-md-5 col-sm-12'>")
+    let imagespace = $("<div class='col-md-5 col-sm-12' id='strategy_column_learn'>")
     $(firstrow).append(imagespace)
     $(imagespace).append(image)
     // second row
@@ -38,7 +38,7 @@ function displayInfo(lesson){
     }) 
     let gifspace = $("<div class='col-md-6 col-sm-12'>")
     $(secondrow).append(gifspace)
-    let gif = "<div class='infograophicssize'><img src='"+lesson["gif"]+"' alt='picture of volleyball gif' class='pictureformat'>"
+    let gif = "<div class='infograophicssize'><img src='"+lesson["gif"]+"' alt='picture of volleyball gif' class='gif_format'>"
     $(gifspace).append(gif)
 
     //button
