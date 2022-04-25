@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_3.js') }}"></script>
+    <script>
+        let score = {{score}};
+    </script>
+
+    <div id="quiz_container" class="container ">
+        <br>
+        <div class="row">
+            <div class="col-md-6 final_text">
+                <div class="congrats_text">
+                    YOU MASTERED ALL
+                </div>
+                <div class="congrats_text">
+                    THREE LEVELS
+                </div>
+                <div class="congrats_text orange">
+                    CONGRATULATIONS!
+                </div>
+                <div class="final_score">
+                    TOTAL SCORE: {{ score }}/16
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="quiz_img"
+                     src="/static/images/dancing-volleyball-player.png"
+                     alt="Celebratory Volleyball Player">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="replay" class="quiz_buttons quiz_button_1">Replay</button>
+                <button id="home" class="quiz_buttons quiz_button_2">Home</button>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

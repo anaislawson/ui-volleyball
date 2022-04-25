@@ -126,4 +126,12 @@ $(document).ready(function() {
     $("#submit").click(function () {
         submitAnswer()
     });
+
+    $("#replay").click(function () {
+         window.location.href = '/quiz/'
+    });
+
+    $("#home").click(function () {
+         window.location.href = '/'
+    });
 })
