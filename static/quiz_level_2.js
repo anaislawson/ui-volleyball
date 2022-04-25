@@ -1,90 +1,3 @@
-// // testing js dict 
-
-// roles =['setter','libero','outside hitter','Outside hitter (left)','Opposite hitter','Middle blocker']       
-
-// new_dict = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6' }
-// new_dict = {1:[], 2:[], 3:'3', 4:'4', 5:'5', 6:'6' }
-
-
-// function display_roles(r){
-//     $("#quiz_2_roles_first").empty();
-    
-//     $.each(roles, function(index,value){
-//         // $.each(value, function(index,value){
-//             let new_div_per_value = ('<div class="roles_div ui-widget-content" id="left_id_'+ index +'">'+value+'</div>');
-//             $("#quiz_2_roles_first").append(new_div_per_value);
-            
-//             $(".ui-widget-content").draggable({
-//                 revert: "invalid",
-
-                
-//             })
-//         // })
-//     })
-
-//     console.log(roles)
-//     $("#quiz_2_roles_first").prepend('<div class="title_roles ui-widget-header" id="titles_drags">ROLES</div>');
-
-// }
-
-// function display_role_destination(r){
-   
-//     $("#quiz_2_roles_second").empty();
-//     console.log(new_dict)
-
-//     $.each(new_dict, function(index,value){
-//         // $.each(value, function(index,value){
-            
-//         // let id = this.id 
-//             let empty_div_per_value = ('<div class="roles_div ui-widget-content dropdiv" id="right_id_'+ index +'">'+value+'</div>');
-//             $("#quiz_2_roles_second").append(empty_div_per_value);
-
-
-//              // droppable 
-
-//             $("#quiz_2_roles_second").droppable({
-//                 accept: ".roles_div",
-//                 activeClass: "active",
-
-//                 drop: function(event,ui){
-//                     let divname = $(this).attr('id');
-
-//                     console.log(divname);
-//                     // console.log(id)
-//                     let name_dropped = $(ui.draggable)[0].innerHTML
-//                     console.log(name_dropped)
-//                     $(roles.splice($.inArray(name_dropped, roles),1))
-
-                    
-//                     // new_dict[id.toString()]= name_dropped
-                
-                // drop: function(event,ui){
-                //     let name_dropped = $(ui.draggable)[0].innerHTML
-                //     console.log(name_dropped)
-                //     $(roles.splice($.inArray(name_dropped, roles),1))
-                //     // $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(index);
-                    
-                    
-                //     // new_dict = name_dropped
-                //     new_dict.splice(0, index) + name_dropped + new_dict.slice(index);
-                    
-//                     // new_dict.push(name_dropped)
-                    
-//                     console.log(new_dict)
-//                     console.log(roles)
-//                     display_role_destination(new_dict)
-
-//                 }
-
-//             })
-
-//         })
-//     // })
-//         $("#quiz_2_roles_second").prepend('<div class="title_roles ui-widget-header" id="titles_drags">MATCH</div>');
-//     // })
-
-
-// }
 
 var correctCards = 0;
 $( init );
@@ -106,7 +19,15 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
+<<<<<<< Updated upstream
   let roledict = {1:'setter', 2:'libero', 3:'outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter', 6:'Middle blocker'};
+=======
+  var numbers = [ 1, 2, 3, 4, 5, 6];
+  let players = ['setter','libero','outside hitter','Outside hitter (left)','Opposite hitter(right)','Middle blocker']
+
+
+  let roledict = {1:'setter', 2:'libero', 3:'outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter(right)', 6:'Middle blocker'};
+>>>>>>> Stashed changes
 
   for ( var key in roledict ) {
     $('<div>' + roledict[key] + '</div>').data( 'number', key ).attr( 'id', 'card'+key ).appendTo( '#cardPile' ).draggable( {

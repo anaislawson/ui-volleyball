@@ -359,98 +359,70 @@ label {
   font-size: 1.5em;
 }
 
-/* Slots for final card positions */
 
+/* only for purple container for droppables  */
 #cardSlots {
   /* margin: 50px auto 0 auto; */
   background: #ddf;
+  width: fit-content;
 }
 
-/* The initial pile of unsorted cards */
 
+/* only of yellow container for roles */
 #cardPile {
-  
-  background: #ffd;
+  background-color: #ffffdd;
+  margin-right: 20px;
+
 }
 
 #cardSlots, #cardPile {
-  width: 250px;
-  height: fit-content;
-  padding: 5px;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  border-radius: 3px;
+  box-shadow: 0 0 .1em rgba(0, 0, 0, .8);
 }
 
-/* Individual cards and slots */
 
+/* for both orange and purple smaller boxes */
 #cardSlots div, #cardPile div {
-  float: left;
-  width: 58px;
-  height: 58px;
-  padding: 10px;
-  padding-top: 10px;
-  padding-bottom: 0;
+  width: 100px;
+  height: 60px;
   border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
-  margin: 0 0 0 10px;
+  margin-bottom: 3px;
   background: #fff;
-}
-
-#cardSlots div:first-child, #cardPile div:first-child {
-  margin-left: 0;
+  text-align:center;
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 23%;
+  
 }
 
 #cardSlots div.hovered {
   background: #aaa;
 }
 
+/* only for purple smaller boxes */
 #cardSlots div {
   border-style: dashed;
+  background-color: rgb(244, 239, 252);
 }
 
+/*  only for orange smaller boxes */
 #cardPile div {
-  background: rgb(162, 161, 161);
-  color: #fff;
-  font-size: 9px;
-  text-shadow: 0 0 1px #000;
-  font-weight: bold;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  width: min-content;
+  background-color: #FEEDD9;
+  border-color: #FF9901;
   
-
-#cardPile div.ui-draggable-dragging {
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
 }
-
-/* Individually coloured cards */
-
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-
 
 /* "You did it!" message */
-#successMessage {
+/* #successMessage {
   position: absolute;
   left: 580px;
   top: 250px;
   width: 0;
   height: 0;
   z-index: 100;
-  background: rgba(64, 159, 64, 0.598);
-  border: 2px solid #333;
+  background: rgba(82, 144, 82, 0.783);
+  border: 2px solid rgba(82, 144, 82, 0.783);
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -458,5 +430,5 @@ label {
   -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
   box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
   padding: 20px;
-}
+} */
 
