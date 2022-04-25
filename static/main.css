@@ -1,9 +1,9 @@
-.container-fluid {
-  background-color: #f8f8fa;
+
+.home_cont{
+  /* background-color: #eceffc;
+   */
+   background-color: #EEE6F0;
 }
-/* .home_cont{
-  background-color: #eceffc;
-} */
 
 .Home_title{
   padding-top: 20px;
@@ -43,9 +43,17 @@
 
 }
 .homepage_video{
-  padding-top: 80px;
-  justify-content: end;
+  padding-top: 60px;
+  justify-content:right;
+  background-image: url(https://i.ibb.co/NpvTZMS/Picture1.png);
+   background-repeat: no-repeat;
+   background-size: 350px;
+   background-position-x: -135px;
+   background-position-y: -30px;
+  padding-right: 50px;
+
 }
+
 .strategies_row {
   margin-top: 55px;
   justify-content: center;
