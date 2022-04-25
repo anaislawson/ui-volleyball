@@ -2,11 +2,12 @@
 .home_cont{
   /* background-color: #eceffc;
    */
-   background-color: #EEE6F0;
+   /* background-color: #EEE6F0; */
+   background-color: #cbe6ef63;
 }
 
 .Home_title{
-  padding-top: 20px;
+  padding-top: 10px;
  text-align: center;
  color: #FD9800;
  font-size: 75px;
@@ -35,7 +36,7 @@
   padding-left: 25px;
   padding-right: 15px;
   background-color: #fce5cd;
-  border-radius: 13% 13% 13% 8% / 30% 30% 0% 30%;
+  border-radius: 13% 13% 13% 13% / 30% 30% 30% 30%;
   width:fit-content;
   height: fit-content;
   align-items: center;
@@ -43,13 +44,13 @@
 
 }
 .homepage_video{
-  padding-top: 60px;
+  padding-top: 7px;
   justify-content:right;
-  background-image: url(https://i.ibb.co/NpvTZMS/Picture1.png);
+  background-image: url(https://i.ibb.co/HP30wtd/Picture1.png);
    background-repeat: no-repeat;
-   background-size: 350px;
-   background-position-x: -135px;
-   background-position-y: -30px;
+   background-size: 162px;
+   background-position-x: -16px;
+   background-position-y: -2px;
   padding-right: 50px;
 
 }
@@ -92,12 +93,31 @@
 .strategy_button_row {
   margin-top: 55px;
 }
+.second_page_div{
+  margin-left: 250px;
+}
 #see_it_in_action {
   font-size: 25px;
   border-radius: 10px;
   padding: 15px;
   margin-top: 50px;
 }
+
+.learn_first_row{
+  padding-top: 35px;
+}
+#back_button_for_learn{
+
+ text-align: center;
+}
+
+#first_row_learning{
+  margin-top: 30px;
+}
+#titles_div{
+  text-align: center;
+}
+
 #learn1 {
   font-size: 25px;
   border-radius: 10px;

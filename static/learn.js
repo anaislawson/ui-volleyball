@@ -2,27 +2,27 @@ function displayInfo(lesson){
     $("#header").empty()
     $("#info").empty()
 
-    let headerrow = $("<div class='row'>")
+    let headerrow = $("<div class='row learn_first_row'>")
     $('#header').append(headerrow)
-    let backbtninfo = $("<div class='col-md-2 col-sm-12'>")
+    let backbtninfo = $("<div class='col-md-2 col-sm-12' id='back_button_for_learn'>")
     $(headerrow).append(backbtninfo)
     let backbtn =  "<button type='button' id='back'>←</button> "
     $(backbtninfo).append(backbtn)
-    let headerinfo = $("<div class='col-md-10 col-sm-12'>")
+    let headerinfo = $("<div class='col-md-8 col-sm-12' id='titles_div'>")
     $(headerrow).append(headerinfo)
     let title = "<div class='title'>"+lesson["title"]+"</div>"
     $(headerinfo).append(title)
 // first row
-    let firstrow = $("<div class='row'>")
+    let firstrow = $("<div class='row' id='first_row_learning'>")
     $('#info').append(firstrow)
-    let explanation = $("<div class='col-md-6 col-sm-12'>")
+    let explanation = $("<div class='col-md-5 col-sm-12'>")
     $(firstrow).append(explanation)
     let textinfo = "<div class='textinfo'>"+lesson["text"]+"</div>"
     $(explanation).append(textinfo)
     let summary = "<div class='summary'>"+lesson["summary"]+"</div>"
     $(explanation).append(summary)
     let image = "<div class='infograophicssize'><img src='"+lesson["image"]+"' alt='picture of volleyball lesson' class='pictureformat'>"
-    let imagespace = $("<div class='col-md-6 col-sm-12'>")
+    let imagespace = $("<div class='col-md-5 col-sm-12'>")
     $(firstrow).append(imagespace)
     $(imagespace).append(image)
     // second row
