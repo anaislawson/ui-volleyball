@@ -235,6 +235,8 @@ label {
     font-size: 25px;
     border-radius: 10px;
     padding: 15px;
+    color:  #7f5e94;
+    background-color: #eceffc ;
 }
 
 .quiz_button_1 {
@@ -245,9 +247,11 @@ label {
     float: right;
 }
 
-#level_1_score_div {
-    text-align:center;
-    font-weight: bold;
+.score {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  color: #7f5e94;
 }
 
 .color_test {
@@ -293,20 +297,12 @@ label {
   margin-top: 50px;
 }
 
-.quiz_button_2{
-  color:  #7f5e94;
-  background-color: #eceffc ;
-  float: right;
-  padding: 5px;
-  border-radius: 5px;
-}
-
 #level_2_score_div{
-  margin-top: 10px;
-  text-align: center;
-  color: #7f5e94 ;
-  font-weight: bold;
-  font-size: 20px;
+  /*margin-top: 10px;*/
+  /*text-align: center;*/
+  /*color: #7f5e94 ;*/
+  /*font-weight: bold;*/
+  /*font-size: 20px;*/
 }
 
 .options_div{
@@ -440,3 +436,32 @@ label {
   padding: 20px;
 } */
 
+.congrats_text {
+  text-align: center;
+  margin: auto;
+  font-size: xxx-large;
+  font-weight: bold;
+  color: gray;
+}
+
+.orange {
+  color: darkorange;
+}
+
+.final_score {
+  margin: auto;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  height: auto;
+  color: #bf9000;
+  background: #fff2ccff;
+  font-weight: bold;
+  text-align: center;
+  width: 50%
+
+}
+
+.final_text {
+  padding: 140px 15px;
+}

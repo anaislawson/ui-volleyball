@@ -193,7 +193,7 @@ quiz_level_3 = {
                                '<b> attack </b> the ball. \n '
                                'You should read the opponent’s defense and call out hitters. \n',
             'answer_id': 1,
-            'next_id': '0'
+            'next_id': 'end'
         },
 
     }
@@ -329,10 +329,10 @@ def quiz2_intertitle():
 
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):
-    if(question_id == "0"):
-        return render_template('home_page.html')
-    
-    global score 
+    global score
+
+    if(question_id == "end"):
+        return render_template('quiz_final_score.html', score=score)
 
     active = {
      1: "Outside Hitter",
