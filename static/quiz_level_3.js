@@ -1,13 +1,13 @@
 // testing js dict 
 
 var used = []
-var ans = 0
+var ans = "default"
 
 function display_roles(roles){
     $("#roles").html("");
     console.log(roles)
     $.each(roles, function(index,value){
-        let newRole = ('<div class="role row drag_box options_box" data-role='+value+' data-ans='+(index+1)+'>'+ value + '</div>');
+        let newRole = ('<div class="role row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
         $("#roles").append(newRole);
         $(".ui-widget-content").draggable({
             revert: "invalid",
@@ -51,7 +51,6 @@ function submitAnswer(){
                 text: 'Next',
                 class:'quiz_buttons quiz_button_2',
                 click: function () {
-                    console.log('Next clicked');
                     window.location.href ="/quiz/3/" + question.next_id
             }
             }).appendTo('#submission-buttons');
@@ -77,11 +76,8 @@ $(document).ready(function() {
         
         //get dropped name
         let role_name = $(ui.draggable).data("role");
-        ans = $(ui.draggable).data("ans");
+        ans = role_name
         
-        //update roles array
-        roles.splice($.inArray(role_name, roles), 1);
-
         //update used array to display ans
         used.push(role_name);
         console.log(roles)
