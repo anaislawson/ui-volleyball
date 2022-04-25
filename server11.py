@@ -4,6 +4,7 @@ from flask import Response, request, jsonify
 
 app = Flask(__name__)
 
+score = 0
 lessons = {
 
     "1": {
@@ -198,8 +199,6 @@ quiz_level_3 = {
     }
 }
 
-score = 0
-
 quiz_level_1_responses = dict()
 
 quiz_level_2_empty_dic = {
@@ -250,7 +249,6 @@ def learn(lesson_id):
 @app.route('/quiz')
 def quiz():
     global score
-
     score = 0
     return quiz_lv1('1')
 
@@ -276,6 +274,7 @@ def update_response():
 # for quiz 3
 @app.route('/submit_role', methods=['GET', 'POST'])
 def submit_role():
+    global score 
     json_data = request.get_json()
     question_id = json_data["question_id"]
    
@@ -287,6 +286,7 @@ def submit_role():
     answer = quiz_level_3.get('roles').get(str(answer_id))
     print(user_answer, answer)
     if user_answer == answer:
+        score +=1 
         correct=True
     
     return jsonify(correct=correct)
@@ -337,6 +337,8 @@ def quiz_lv3(question_id):
     if(question_id == "0"):
         return render_template('home_page.html')
     
+    global score 
+
     active = {
      1: "Outside Hitter",
      2: "Middle Blocker",
@@ -349,7 +351,7 @@ def quiz_lv3(question_id):
         active.pop(int(quiz_level_3.get('questions').get(str(x+1)).get('answer_id')))
 
     question = quiz_level_3['questions'][question_id]
-    return render_template('quiz_level_3.html', roles=active, question=question, question_id=question_id)
+    return render_template('quiz_level_3.html', roles=active, score=score, question=question, question_id=question_id)
 
 
 if __name__ == '__main__':

@@ -7,6 +7,7 @@
         let roles = {{roles | tojson}};
         let question = {{ question | tojson }};
         let question_id = {{ question_id | tojson }};
+        let score = {{score | tojson}};
     </script>
 
 
@@ -58,7 +59,7 @@
             </div>
         </div>
         <div id="level_3_score_div">
-            Score :
+            Score : {{score}}
             <span id="level_3_score">
             </span>
         </div>
