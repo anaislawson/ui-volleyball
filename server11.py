@@ -213,14 +213,6 @@ quiz_level_2_empty_dic = {
     },
 }
 
-quiz_level_3_active_roles = [
-     "Outside Hitter",
-     "Middle Blocker",
-     "Libero",
-     "Setter",
-     "Opposite Hitter"
-]  
-
 # ROUTES
 
 

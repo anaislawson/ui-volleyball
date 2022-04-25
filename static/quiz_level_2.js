@@ -3,6 +3,8 @@
 // roles =['setter','libero','outside hitter','Outside hitter (left)','Opposite hitter','Middle blocker']       
 
 // new_dict = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6' }
+// new_dict = {1:[], 2:[], 3:'3', 4:'4', 5:'5', 6:'6' }
+
 
 // function display_roles(r){
 //     $("#quiz_2_roles_first").empty();
@@ -56,6 +58,15 @@
                     
 //                     // new_dict[id.toString()]= name_dropped
                 
+                // drop: function(event,ui){
+                //     let name_dropped = $(ui.draggable)[0].innerHTML
+                //     console.log(name_dropped)
+                //     $(roles.splice($.inArray(name_dropped, roles),1))
+                //     // $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(index);
+                    
+                    
+                //     // new_dict = name_dropped
+                //     new_dict.splice(0, index) + name_dropped + new_dict.slice(index);
                     
 //                     // new_dict.push(name_dropped)
                     
