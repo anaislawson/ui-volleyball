@@ -374,9 +374,9 @@ label {
 }
 
 #cardSlots, #cardPile {
-  width: 320px;
-  height: 120px;
-  padding: 20px;
+  width: 250px;
+  height: fit-content;
+  padding: 5px;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -416,11 +416,14 @@ label {
 }
 
 #cardPile div {
-  background: #666;
+  background: rgb(162, 161, 161);
   color: #fff;
-  font-size: 10px;
-  text-shadow: 0 0 3px #000;
-}
+  font-size: 9px;
+  text-shadow: 0 0 1px #000;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: min-content;
+  
 
 #cardPile div.ui-draggable-dragging {
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -446,7 +449,7 @@ label {
   width: 0;
   height: 0;
   z-index: 100;
-  background: #dfd;
+  background: rgba(64, 159, 64, 0.598);
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
