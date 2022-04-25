@@ -289,7 +289,7 @@ def submit_role():
         score +=1 
         correct=True
     
-    return jsonify(correct=correct)
+    return jsonify(correct=correct, answer=answer)
 
 @app.route('/increase_score', methods=['GET'])
 def increase_score():
