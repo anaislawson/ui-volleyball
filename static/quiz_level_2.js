@@ -149,6 +149,7 @@ function handleCardDrop( event, ui ) {
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
+    updateScore(correctCards)
   } 
   
   // If all the cards have been placed correctly then display a message
@@ -170,6 +171,12 @@ function handleCardDrop( event, ui ) {
     // } );
   }
 
+}
+
+function updateScore(score) {
+    console.log(score)
+    let scoreContainer = $('#level_2_score_div');
+    scoreContainer.text('Score: ' + score + '/ 6')
 }
 
 function get_and_view_quiz3(idval){
