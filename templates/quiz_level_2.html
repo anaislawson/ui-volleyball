@@ -5,7 +5,10 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_2.js') }}"></script>
     <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_2_alternative.js') }}"></script> -->
   
+    <script>
+        let totalquizscore = {{ totalquizscore | tojson }};
 
+    </script>
     <div id="quiz_container" class="container level_1_text">
     <br>
         <div class="row question_instructions">
@@ -27,13 +30,14 @@
                 <div class="col-md-6" id="cardSlots"> </div>
         </div>
         <br>
-        <div class="row float-right">
-            <button id="submit" class="quiz_button_2">Submit</button>
-        </div>
-        <br>
+        
         <div id="level_2_score_div">
             
             Score : 0/6
+        </div>
+        <br>
+        <div class="newbtn row float-right">
+            
         </div>
         <br>
 </div>

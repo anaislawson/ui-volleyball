@@ -106,10 +106,6 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
-  var numbers = [ 1, 2, 3, 4, 5, 6];
-  let players = ['setter','libero','outside hitter','Outside hitter (left)','Opposite hitter','Middle blocker']
-
-
   let roledict = {1:'setter', 2:'libero', 3:'outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter', 6:'Middle blocker'};
 
   for ( var key in roledict ) {
@@ -122,7 +118,6 @@ function init() {
   }
 
   // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six'];
   for ( var i=1; i<=6; i++ ) {
     $('<div>' + i + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -156,11 +151,11 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == 6 ) {
-    $("#submit").click(function () {
-        
-        get_and_view_quiz3("1")
-        
-    })
+    // let ttlscore = 6
+    // ttlscore+=totalquizscore
+    // updateScore(ttlscore)
+    display_btn()
+    
     // $('#successMessage').show();
     // $('#successMessage').animate( {
     //   left: '380px',
@@ -185,6 +180,17 @@ function get_and_view_quiz3(idval){
     //go to quiz 2
     
 }
+
+
+function display_btn(){
+    $(".newbtn").empty()
+    let btn = "<button id='submit' class='quiz_button_2'> Level 3➜ </button>"
+    $(".newbtn").append(btn)
+    $("#submit").click(function () {
+        get_and_view_quiz3("1")      
+    })
+  }
+
 $(document).ready(function() {
 
     init()

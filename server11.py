@@ -302,7 +302,7 @@ def quiz_lv1(question_id):
 def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
     test_roles = quiz_level_2_empty_dic.get('empty_roles')
-    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles)
+    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles,totalquizscore=score)
 
 # ajax for quiz2
 
