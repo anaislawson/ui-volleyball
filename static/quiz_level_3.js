@@ -1,13 +1,13 @@
 // testing js dict 
-
+var roles_labels =[]
 var used = []
-var ans = 0
+var ans = "default"
 
 function display_roles(roles){
     $("#roles").html("");
     console.log(roles)
     $.each(roles, function(index,value){
-        let newRole = ('<div class="role row drag_box options_box" data-role='+value+' data-ans='+(index+1)+'>'+ value + '</div>');
+        let newRole = ('<div class="role row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
         $("#roles").append(newRole);
         $(".ui-widget-content").draggable({
             revert: "invalid",
@@ -21,11 +21,26 @@ function display_roles(roles){
 function display_answer(){
     $.each(used, function(index, value){
         //make the draggable name object
-        newName = $("<div class='role row options_box' data-role=" + value + ">").text(value);
+        newName = $("<div class='role row answer options_box' id = 'answer' data-role=" + value + ">").text(value);
         $("#submission").append(newName);
     });
 }
-
+function display_correct_answer(ans){
+    $("#roles").html("");
+    $.each(roles, function(index,value){
+        let newRole = ('<div class="role row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
+        
+        if(value == ans){
+            newRole = ('<div class="role correct row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
+        }
+        
+        $("#roles").append(newRole);
+        $(".ui-widget-content").draggable({
+            revert: "invalid",
+        });
+    });
+    newName = "";
+}
 function submitAnswer(){
     $.ajax({
         type: "POST",
@@ -36,10 +51,15 @@ function submitAnswer(){
                                     "answer": ans}),
         success: function(result){
             let correct = result['correct']
+            let correct_answer = result['answer']
+
             if(correct){
                 $("#submission-results").append("Correct")
+                $(".answer").addClass("correct")
             } else {
+                display_correct_answer(correct_answer)
                 $("#submission-results").append("Incorrect")
+                $(".answer").addClass("incorrect")
             }
 
             let button = document.querySelector("#submit");
@@ -51,7 +71,6 @@ function submitAnswer(){
                 text: 'Next',
                 class:'quiz_buttons quiz_button_2',
                 click: function () {
-                    console.log('Next clicked');
                     window.location.href ="/quiz/3/" + question.next_id
             }
             }).appendTo('#submission-buttons');
@@ -67,8 +86,11 @@ function submitAnswer(){
 }
 
 $(document).ready(function() {
+    $.each(roles, function(index,value){
+        roles_labels.push(value)
+    });
 
-    display_roles(roles)
+    display_roles(roles_labels)
     $(".role").draggable({ cursor: "crosshair", revert: "invalid", helper: "clone", stack: ".name"});
     $(".submit_box").addClass("droppable");
 
@@ -77,11 +99,11 @@ $(document).ready(function() {
         
         //get dropped name
         let role_name = $(ui.draggable).data("role");
-        ans = $(ui.draggable).data("ans");
-        
-        //update roles array
-        roles.splice($.inArray(role_name, roles), 1);
 
+        roles_labels.splice($.inArray(role_name, roles_labels), 1);
+
+        ans = role_name
+        
         //update used array to display ans
         used.push(role_name);
         console.log(roles)
@@ -92,7 +114,7 @@ $(document).ready(function() {
         button.disabled = false;
         
         //update the interface
-        display_roles(roles);
+        display_roles(roles_labels);
         display_answer();
     },
     over: function(event,ui){

@@ -13,6 +13,17 @@
  font-family: 'Cinzel Decorative', cursive;
 }
 
+.correct{
+  background-color:lightgreen !important;
+  color: darkgreen !important;
+  
+}
+
+.incorrect{
+  background-color: rgb(237, 183, 183) !important;
+  color: red !important;
+}
+
 .homepage_first_row{
   justify-content: center;
   align-items: center;

@@ -4,6 +4,7 @@ from flask import Response, request, jsonify
 
 app = Flask(__name__)
 
+score = 0
 lessons = {
 
     "1": {
@@ -198,8 +199,6 @@ quiz_level_3 = {
     }
 }
 
-score = 0
-
 quiz_level_1_responses = dict()
 
 quiz_level_2_empty_dic = {
@@ -213,14 +212,6 @@ quiz_level_2_empty_dic = {
         '6': ''
     },
 }
-
-quiz_level_3_active_roles = [
-     "Outside Hitter",
-     "Middle Blocker",
-     "Libero",
-     "Setter",
-     "Opposite Hitter"
-]  
 
 # ROUTES
 
@@ -250,42 +241,8 @@ def learn(lesson_id):
 @app.route('/quiz')
 def quiz():
     global score
-
     score = 0
     return quiz_lv1('1')
-
-
-# ajax for checking answer (LV 1, 3)
-@app.route('/check', methods=['GET', 'POST'])
-def check():
-    global data
-    global current_id
-    global score
-
-    json_data = request.get_json()
-
-    user_ans = json_data["answer"]
-    question = json_data["id"]
-    lv = json_data["level"]
-
-    print(user_ans, question, lv)
-    correct_ans = '0'
-    correct = False
-
-    if lv == 1:
-        correct_ans_id = quiz_level_1.get(question).get('answer_id')
-        correct_ans = quiz_level_1.get(question).get(
-            'options').get(correct_ans_id)
-
-    if lv == 3:
-        correct_ans = quiz_level_3.get(question).get('answer_id')
-
-    if user_ans == correct_ans:
-        correct = True
-        score += 1
-
-    return jsonify(correct=correct, answer=correct_ans)
-
 
 @app.route('/get_score', methods=['GET'])
 def get_score():
@@ -309,6 +266,7 @@ def update_response():
 # for quiz 3
 @app.route('/submit_role', methods=['GET', 'POST'])
 def submit_role():
+    global score 
     json_data = request.get_json()
     question_id = json_data["question_id"]
    
@@ -316,13 +274,14 @@ def submit_role():
     
     correct = False
 
-    answer = quiz_level_3.get('questions')[question_id].get("answer_id")
+    answer_id = quiz_level_3.get('questions')[question_id].get("answer_id")
+    answer = quiz_level_3.get('roles').get(str(answer_id))
     print(user_answer, answer)
     if user_answer == answer:
+        score +=1 
         correct=True
     
-    del quiz_level_3_active_roles[answer-1] 
-    return jsonify(correct=correct)
+    return jsonify(correct=correct, answer=answer)
 
 @app.route('/increase_score', methods=['GET'])
 def increase_score():
@@ -369,9 +328,22 @@ def quiz_lv2(quiz_id):
 def quiz_lv3(question_id):
     if(question_id == "0"):
         return render_template('home_page.html')
+    
+    global score 
+
+    active = {
+     1: "Outside Hitter",
+     2: "Middle Blocker",
+     3: "Libero",
+     4: "Setter",
+     5: "Opposite Hitter"
+    }
+
+    for x in range(int(question_id)-1):
+        active.pop(int(quiz_level_3.get('questions').get(str(x+1)).get('answer_id')))
 
     question = quiz_level_3['questions'][question_id]
-    return render_template('quiz_level_3.html', roles=quiz_level_3_active_roles, question=question, question_id=question_id)
+    return render_template('quiz_level_3.html', roles=active, score=score, question=question, question_id=question_id)
 
 
 if __name__ == '__main__':
