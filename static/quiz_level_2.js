@@ -57,8 +57,9 @@ function handleCardDrop( event, ui ) {
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
-    updateScore(correctCards)
-  } 
+    increaseScore() //increase global score
+    updateScore(correctCards) //increase local score
+  }
   
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
@@ -90,23 +91,79 @@ function updateScore(score) {
 function get_and_view_quiz3(idval){
     let url = "/quiz/3/"+idval;
     window.location.href = url
-    //go to quiz 2
+    //go to quiz 3
     
 }
+
+function get_and_view_intertitle2(){
+    let url = "/quiz2_intertitle"
+    window.location.href = url
+    //go to quiz 2 intertitle
+    
+}
+function getScore() {
+    console.log('Inside getScore')
+    $.ajax({
+        type: "GET",
+        url: "/get_score",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(result){
+            let score = result['score']
+            updateScore(score)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+}
+
+function increaseScore() {
+    console.log('Inside getScore')
+    $.ajax({
+        type: "GET",
+        url: "/increase_score",
+        dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        success: function(result){
+            let score = result['score']
+            //updateScore(score)
+        },
+        error: function(request, status, error){
+            console.log("Error");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+        }
+    });
+}
+
+
+
+
 
 
 function display_btn(){
     $(".newbtn").empty()
-    let btn = "<button id='submit' class='quiz_button_2'> Level 3➜ </button>"
+    let btn = "<button id='results' class='quiz_button_2'> Results➜ </button>"
     $(".newbtn").append(btn)
-    $("#submit").click(function () {
-        get_and_view_quiz3("1")      
+    $("#results").click(function () {
+        get_and_view_intertitle2()      
     })
+    
+    
+
   }
 
 $(document).ready(function() {
 
     init()
+    $("#quiz2_intertile_button_2").click(function () {
+        get_and_view_quiz3("1")      
+    })
 
 
 })

@@ -304,6 +304,9 @@ def quiz_lv2(quiz_id):
     test_roles = quiz_level_2_empty_dic.get('empty_roles')
     return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles,totalquizscore=score)
 
+@app.route('/quiz2_intertitle')
+def quiz2_intertitle():
+    return render_template('quiz2_intertitle.html',score=score)
 # ajax for quiz2
 
 

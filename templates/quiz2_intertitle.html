@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_2.js') }}"></script>
+    <script>
+        let score = {{ score | tojson }}
+    </script>
+
+    <div id="quiz_intertile_container" class="container">
+    <br>
+        <br>
+        <div id="quiz_intertile_header">
+            Level Completed
+        </div>
+        <div id="quiz_intertile_body">
+            Score : {{ score }} / 11
+        </div>
+        <br>
+        <button id="quiz2_intertile_button_2" class="quiz_buttons quiz_button_2">Level 3➜</button>
+    </div>
+
+{% endblock %}
