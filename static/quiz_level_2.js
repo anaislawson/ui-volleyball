@@ -124,7 +124,7 @@ function init() {
   // Create the card slots
   var words = [ 'one', 'two', 'three', 'four', 'five', 'six'];
   for ( var i=1; i<=6; i++ ) {
-    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+    $('<div>' + i + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
       drop: handleCardDrop
