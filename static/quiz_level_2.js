@@ -155,16 +155,28 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == 6 ) {
-    $('#successMessage').show();
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
-    } );
+    $("#submit").click(function () {
+        
+        get_and_view_quiz3("1")
+        
+    })
+    // $('#successMessage').show();
+    // $('#successMessage').animate( {
+    //   left: '380px',
+    //   top: '200px',
+    //   width: '400px',
+    //   height: '100px',
+    //   opacity: 1
+    // } );
   }
 
+}
+
+function get_and_view_quiz3(idval){
+    let url = "/quiz/3/"+idval;
+    window.location.href = url
+    //go to quiz 2
+    
 }
 $(document).ready(function() {
 
