@@ -1,9 +1,7 @@
 
 .home_cont{
-  /* background-color: #eceffc;
-   */
-   /* background-color: #EEE6F0; */
    background-color: #cbe6ef63;
+   height: 100vh;
 }
 
 .Home_title{
@@ -214,10 +212,10 @@
 
 /*For Quiz*/
 #quiz_container {
-  margin: auto;
-  width: 60%;
-  padding-top: 20px;
-  /* background-color: #cbe6ef63; */
+  padding-top: 10px;
+  background-color: #cbe6ef63;
+  height: 100vh;
+  
 }
 
 #quiz_intertile_container {
@@ -253,6 +251,7 @@
   font-size: xx-large;
 }
 
+/* not sure if needed */
 .quiz_text {
   font-size: x-large;
 }
@@ -288,9 +287,6 @@ label {
   color: #7f5e94;
 }
 
-.color_test {
-}
-
 .quiz_img {
   max-width: 100%;
   max-height: 100%;
@@ -300,7 +296,6 @@ label {
 .question_prompt {
   white-space:pre-line;
 }
-
 
 .quiz_2_photo{
   float: left;
