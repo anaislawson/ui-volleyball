@@ -1,9 +1,14 @@
 # ui-volleyball
 
-SAT April 24th - 3:58am: Mari
+TO DOs for Homework 13/Soft turn in
 
-Did: Fixed homepage a bit, added a title, pictures in the buttons and turned auto-play OFF.
-Quiz 2: Implemented data and created drag and drops, implemented a button for submission as well.
+Anaïs: Choose a lighter orange for the title of homepage, move text and video to second page, and mix roles of quiz 2 so that it is challenging for the user. Change the gif to the gif + voice over -> instead of text and audio.
 
-To DO: Drag and Drop don't work properly still, we need to decide on how to deal with it,
-either JS or backend. I tried both, my assumption is if we go with back end we will need json to update lists, if we go with JS we will need to figure a way to update the dictionary. Will look more into it tom!
+Mari: Design pages between levels - passed level / final page
+
+Dayna: Fixing feedback of quiz 3 (when the answer is wrong, instead of letting the player go to the next question, provide a “retry” button and only let the user go to the next once the correct answer is chosen.)
+
+Zikora: Score/Total Score: Change the score so that every level only displays the score for that level. In the end, have a final score page that shows the Total score AND information about each level. (Ex: Level 1: 4/6, Level 2: 5/5, Level 3: 6/6 … Total score: 15/17)
+Also send us a prototype of how he things we should reorganize the learning portion.
+
+Everyone: Send ideas of a picture for the main page/homepage
