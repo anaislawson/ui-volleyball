@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   //displayPopular(data)
   //$(".top3").hover(function(){ $(this).toggleClass('cn'); });
-  $("#lesson").click(function(){
+  $("#vballinfo").click(function(){
     view_teamlayout();         
   })
   $("#see_it_in_action").click(function(){

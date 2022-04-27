@@ -20,9 +20,11 @@ function init() {
 
   // Create the pile of shuffled cards
   let roledict = {1:'setter', 2:'libero', 3:'outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter', 6:'Middle blocker'};
-
-  for ( var key in roledict ) {
-    $('<div>' + roledict[key] + '</div>').data( 'number', key ).attr( 'id', 'card'+key ).appendTo( '#cardPile' ).draggable( {
+  let numbers = [ 1, 2, 3, 4, 5, 6 ]
+  numbers.sort( function() { return Math.random() - .5 } );
+  console.log(numbers)
+  for ( var i=0; i<6; i++ ) {
+    $('<div>' + roledict[numbers[i]] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
       cursor: 'move',

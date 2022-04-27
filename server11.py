@@ -220,6 +220,10 @@ quiz_level_2_empty_dic = {
 def home_page():
     return render_template('home_page.html')
 
+@app.route('/vballinfo')
+def vballinfo():
+    return render_template('vballinfo.html')
+
 
 @app.route('/teamlayout')
 def teamlayout():

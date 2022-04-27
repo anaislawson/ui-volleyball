@@ -1,15 +1,19 @@
 
 .home_cont{
-   background-color: #cbe6ef63;
    height: 100vh;
+  /* background-color: #eceffc;
+   */
+   /* background-color: #EEE6F0; */
+   background-color: #D3E7EE;
 }
 
 .Home_title{
-  padding-top: 10px;
+ padding-top: 10px;
  text-align: center;
- color: #FD9800;
+ color:  #FC814A;
  font-size: 75px;
- font-family: 'Cinzel Decorative', cursive;
+ font-family: 'Permanent Marker', cursive;
+
 }
 
 .correct{
