@@ -125,7 +125,7 @@ function createNextButton() {
     $('<button/>',{
         id: 'next',
         text: 'Next',
-        class:'quiz_buttons quiz_button_2',
+        class:'quiz_button_1_next',
         click: function () {
             console.log('Next clicked');
             window.location.href ="/quiz/1/" + question.next_id

@@ -305,17 +305,17 @@ label {
 .level_1_question_header_number{
   font-weight: bold;
   font-size: xx-large;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 20px;
 }
 
 #level_1_question{
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 5px;
  
 }
 #level_1_options {
-  margin-left: 20%;
+  margin-left: 10%;
   margin-top: 10px;
 }
 
@@ -330,9 +330,17 @@ label {
 
 .quiz_button_1 {
     float: left;
+    margin-left: 10%;
 }
-.quiz_1_next_button{
-  margin-top: -40%;
+.quiz_button_1_next{
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    color:  #7f5e94;
+    background-color: #eceffc ;
+    float:right;
+    margin-right: 10%;
+  
 }
 .quiz_button_2 {
     float: right;
@@ -344,7 +352,7 @@ label {
   text-align: center;
   font-weight: bold;
   font-size: x-large;
-  color: #7f5e94;
+  color: #4f4d50;
 }
 
 .quiz_img {
@@ -357,8 +365,13 @@ label {
   white-space:pre-line;
 }
 
+.column_for_picture_quiz_2{
+  margin-left: 70px;
+  margin-right: 50px;
+}
 .quiz_2_photo{
   float: left;
+  
 }
 .pictureformat{
   width: 120%;
@@ -459,22 +472,14 @@ label {
 
 /* only for purple container for droppables  */
 #cardSlots {
-  /* margin: 50px auto 0 auto; */
-  background: #ddf;
   width: fit-content;
 }
 
 
-/* only of yellow container for roles */
+/* container for roles */
 #cardPile {
-  background-color: #ffffdd;
   margin-right: 20px;
 
-}
-
-#cardSlots, #cardPile {
-  border-radius: 3px;
-  box-shadow: 0 0 .1em rgba(0, 0, 0, .8);
 }
 
 
@@ -500,7 +505,7 @@ label {
 /* only for purple smaller boxes */
 #cardSlots div {
   border-style: dashed;
-  background-color: rgb(244, 239, 252);
+  background-color: rgba(208, 207, 207, 0.719);
 }
 
 /*  only for orange smaller boxes */

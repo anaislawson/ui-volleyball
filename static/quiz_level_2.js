@@ -67,19 +67,9 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == 6 ) {
-    // let ttlscore = 6
-    // ttlscore+=totalquizscore
-    // updateScore(ttlscore)
+  
     display_btn()
     
-    // $('#successMessage').show();
-    // $('#successMessage').animate( {
-    //   left: '380px',
-    //   top: '200px',
-    //   width: '400px',
-    //   height: '100px',
-    //   opacity: 1
-    // } );
   }
 
 }
