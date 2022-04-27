@@ -219,9 +219,16 @@
 }
 
 #quiz_intertile_container {
-  margin: auto;
-  width: 60%;
-  padding-top: 50px;
+  /* width:max-content; */
+  padding-top: 5px;
+  height: 100vh;
+  background-color: #cbe6ef63 ;
+  background-image: url("/static/images/volley_trophy.png");
+  background-size: 190px;
+  background-repeat: no-repeat;
+  background-position: 140px;
+  background-attachment: scroll;
+  
 }
 
 .question_instructions {
@@ -240,15 +247,28 @@
 }
 
 #quiz_intertile_body {
+  color: rgb(98, 97, 97);
   text-align: center;
   font-weight: bold;
   font-size: xx-large;
+  margin-top: 70px;
+  
 }
 
 #quiz_intertile_header {
   color: darkorange;
   font-weight: bold;
-  font-size: xx-large;
+  font-size: 55px;
+  font-family:'Permanent Marker', cursive;
+  text-align: center;
+}
+
+#intertile_img{
+  height: 150px;
+  width: auto;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
 }
 
 /* not sure if needed */
@@ -278,6 +298,8 @@ label {
 
 .quiz_button_2 {
     float: right;
+    margin-right: 7%;
+    margin-top: 17%;
 }
 
 .score {

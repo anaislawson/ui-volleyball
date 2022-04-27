@@ -6,11 +6,14 @@
         let score = {{ score | tojson }}
     </script>
 
-    <div id="quiz_intertile_container" class="container">
+    <div id="quiz_intertile_container" class="container-fluid">
     <br>
         <br>
         <div id="quiz_intertile_header">
             Level Completed
+        </div>
+        <div class="quiz_intertile_photo">
+            <img scr="https://cdn0.iconfinder.com/data/icons/volleyball-1/64/trophy-award-cup-volleyball-512.png">
         </div>
         <div id="quiz_intertile_body">
             Score : {{ score }} / 11
