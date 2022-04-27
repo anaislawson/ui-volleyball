@@ -136,7 +136,7 @@ function createNextButton() {
         // }
 
     }
-    }).appendTo('#quiz_container');
+    }).appendTo('.quiz_1_next_button');
 
 }
 

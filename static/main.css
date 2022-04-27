@@ -217,7 +217,7 @@
 /*For Quiz*/
 #quiz_container {
   padding-top: 10px;
-  background-color: #cbe6ef63;
+  background-color: #D3E7EE;
   height: 100vh;
   
 }
@@ -237,17 +237,35 @@
 
 .question_instructions {
   color: darkorange;
-  font-size: xx-large;
+  font-size: 35px;
   justify-content: center;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .level_no {
-  font-weight: bold;
+  /* font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  justify-content: center;
+
+  align-items: center; */
+}
+
+#class_level_sentence{
+  color: darkorange;
+  font-size: 39px;
+  justify-content: center;
+  font-family:'Caveat Brush', cursive;
+
+  
 }
 
 .question_no {
   font-weight: bold;
   font-size: xx-large;
+  /* margin-left: 10px; */
+  text-align: center;
+  justify-content: center;
 }
 
 #quiz_intertile_body {
@@ -284,11 +302,25 @@ label {
   padding-left: 20px;
 }
 
+.level_1_question_header_number{
+  font-weight: bold;
+  font-size: xx-large;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+
+#level_1_question{
+  margin-left: 20%;
+  margin-top: 5px;
+ 
+}
 #level_1_options {
-  padding-left: 40px;
+  margin-left: 20%;
+  margin-top: 10px;
 }
 
 .quiz_buttons {
+    margin-left: 20%;
     font-size: 25px;
     border-radius: 10px;
     padding: 15px;
@@ -299,7 +331,9 @@ label {
 .quiz_button_1 {
     float: left;
 }
-
+.quiz_1_next_button{
+  margin-top: -40%;
+}
 .quiz_button_2 {
     float: right;
     margin-right: 7%;
