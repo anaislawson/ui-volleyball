@@ -17,8 +17,10 @@
 }
 
 .correct{
-  background-color:lightgreen !important;
+  background-color:rgb(149, 212, 149) !important;
   color: darkgreen !important;
+  border: solid darkgreen !important;
+  
   
 }
 
@@ -242,14 +244,6 @@
   font-family: 'Permanent Marker', cursive;
 }
 
-.level_no {
-  /* font-weight: bold;
-  font-size: 35px;
-  text-align: center;
-  justify-content: center;
-
-  align-items: center; */
-}
 
 #class_level_sentence{
   color: darkorange;
@@ -343,9 +337,18 @@ label {
   
 }
 .quiz_button_2 {
-    float: right;
-    margin-right: 7%;
-    margin-top: 17%;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 15px;
+  color:  #7f5e94;
+  background-color: #eceffc ;
+  
+}
+
+.newbtn{
+  float: right;
+  margin-right: 12%;
+  margin-top: -5%;
 }
 
 .score {
@@ -400,7 +403,8 @@ label {
 }
 
 .quiz_2_row{
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-left: 5%;
 }
 
 #level_2_score_div{
@@ -476,13 +480,6 @@ label {
 }
 
 
-/* container for roles */
-#cardPile {
-  margin-right: 20px;
-
-}
-
-
 /* for both orange and purple smaller boxes */
 #cardSlots div, #cardPile div {
   width: 100px;
@@ -506,6 +503,7 @@ label {
 #cardSlots div {
   border-style: dashed;
   background-color: rgba(208, 207, 207, 0.719);
+  margin-left: -7px;
 }
 
 /*  only for orange smaller boxes */

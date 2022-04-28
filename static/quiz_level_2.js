@@ -19,7 +19,7 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
-  let roledict = {1:'setter', 2:'libero', 3:'outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter', 6:'Middle blocker'};
+  let roledict = {1:'Setter', 2:'Libero', 3:'Outside hitter', 4:'Outside hitter (left)', 5:'Opposite hitter(right)', 6:'Middle blocker'};
   let numbers = [ 1, 2, 3, 4, 5, 6 ]
   numbers.sort( function() { return Math.random() - .5 } );
   console.log(numbers)
@@ -140,7 +140,7 @@ function increaseScore() {
 
 function display_btn(){
     $(".newbtn").empty()
-    let btn = "<button id='results' class='quiz_button_2'> Results➜ </button>"
+    let btn = "<button id='results' class='quiz_button_2'> Next </button>"
     $(".newbtn").append(btn)
     $("#results").click(function () {
         get_and_view_intertitle2()      
