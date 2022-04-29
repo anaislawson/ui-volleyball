@@ -351,8 +351,15 @@ label {
   margin-left: 28%;
   padding: 15px;
   color:  rgb(98, 98, 98);
-  background-color: lightgray ;
+  background-color: lightgray;
 
+}
+
+.quiz_button_2:hover{
+  background-color: rgb(227, 226, 226);
+}
+.quiz_button_1:hover{
+  background-color: rgb(227, 226, 226);
 }
 
 .quiz_button_for_intertiles {
