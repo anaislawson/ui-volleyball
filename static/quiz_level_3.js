@@ -56,24 +56,28 @@ function submitAnswer(){
             if(correct){
                 $("#submission-results").append("Correct!")
                 $(".answer").addClass("correct")
+                $("#submission-buttons").html("")
+                $('<button/>',{
+                    id: 'next',
+                    text: 'Next',
+                    class:'quiz_buttons',
+                    click: function () {
+                        window.location.href ="/quiz/3/" + question.next_id
+                }
+                }).appendTo('#submission-buttons');
             } else {
-                display_correct_answer(correct_answer)
                 $("#submission-inc-results").append("Incorrect!")
                 $(".answer").addClass("incorrect")
+                $("#submission-buttons").html("")
+                $('<button/>',{
+                    id: 'retry',
+                    text: 'Retry',
+                    class:'quiz_buttons',
+                    click: function () {
+                        window.location.href ="/quiz/3/" + question_id
+                }
+                }).appendTo('#submission-buttons');
             }
-
-            let button = document.querySelector("#submit");
-            button.disabled = true;
-
-            $("#submission-buttons").html("")
-            $('<button/>',{
-                id: 'next',
-                text: 'Next',
-                class:'quiz_buttons',
-                click: function () {
-                    window.location.href ="/quiz/3/" + question.next_id
-            }
-            }).appendTo('#submission-buttons');
 
         },
         error: function(request, status, error){
