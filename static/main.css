@@ -1,5 +1,6 @@
 
 .home_cont{
+
    height: 100vh;
    background-color: #D3E7EE;
 }
@@ -16,6 +17,12 @@
 .homepage_picture{
 
   justify-content: center;
+}
+
+.navbarheader{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+
 }
 
 .correct{
@@ -637,3 +644,17 @@ label {
  
 }
 
+#goback {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 2.5px 15px 2.5px 15px;
+
+}
+
+#vballinfo {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 50px;
+
+}
