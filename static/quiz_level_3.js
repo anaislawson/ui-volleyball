@@ -54,11 +54,11 @@ function submitAnswer(){
             let correct_answer = result['answer']
 
             if(correct){
-                $("#submission-results").append("Correct")
+                $("#submission-results").append("Correct!")
                 $(".answer").addClass("correct")
             } else {
                 display_correct_answer(correct_answer)
-                $("#submission-results").append("Incorrect")
+                $("#submission-inc-results").append("Incorrect!")
                 $(".answer").addClass("incorrect")
             }
 
@@ -69,7 +69,7 @@ function submitAnswer(){
             $('<button/>',{
                 id: 'next',
                 text: 'Next',
-                class:'quiz_buttons quiz_button_2',
+                class:'quiz_buttons',
                 click: function () {
                     window.location.href ="/quiz/3/" + question.next_id
             }
@@ -127,11 +127,4 @@ $(document).ready(function() {
         submitAnswer()
     });
 
-    $("#replay").click(function () {
-         window.location.href = '/quiz/'
-    });
-
-    $("#home").click(function () {
-         window.location.href = '/'
-    });
 })

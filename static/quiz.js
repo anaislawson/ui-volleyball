@@ -41,7 +41,7 @@ function disableButtons() {
     radioboxes.each(function () {
         $(this).attr('disabled', 'disabled');
     });
-    $('#submit').attr('disabled', 'disabled');
+    $('#submit_1').attr('disabled', 'disabled');
 }
 
 function submitAnswer() {
@@ -169,7 +169,7 @@ $(document).ready(function () {
         displayQuestion(question)
     }
     
-    $("#submit").click(function () {
+    $("#submit_1").click(function () {
         submitAnswer()
     })
     $("#quiz_intertile_button_2").click(function () {

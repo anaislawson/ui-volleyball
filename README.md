@@ -4,7 +4,8 @@ TO DOs for Homework 13/Soft turn in
 
 Anaïs: Choose a lighter orange for the title of homepage, move text and video to second page, and mix roles of quiz 2 so that it is challenging for the user. Change the gif to the gif + voice over -> instead of text and audio.
 
-Mari: Design pages between levels - passed level / final page
+Mari: Design pages between levels - passed level/ also adjusted all quiz pages / final page
+(ALL DONE)
 
 Dayna: Fixing feedback of quiz 3 (when the answer is wrong, instead of letting the player go to the next question, provide a “retry” button and only let the user go to the next once the correct answer is chosen.)
 

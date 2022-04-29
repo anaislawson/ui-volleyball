@@ -1,9 +1,6 @@
 
 .home_cont{
    height: 100vh;
-  /* background-color: #eceffc;
-   */
-   /* background-color: #EEE6F0; */
    background-color: #D3E7EE;
 }
 
@@ -228,7 +225,7 @@
   /* width:max-content; */
   padding-top: 5px;
   height: 100vh;
-  background-color: #cbe6ef63 ;
+  background-color: #D3E7EE;
   background-image: url("/static/images/volley_trophy.png");
   background-size: 190px;
   background-repeat: no-repeat;
@@ -325,7 +322,19 @@ label {
 .quiz_button_1 {
     float: left;
     margin-left: 10%;
+    /* margin-left: 20%; */
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    color:  rgb(98, 98, 98);
+    background-color: lightgray;
 }
+
+#submit_1{
+  float: left;
+  margin-left: 10%;
+}
+
 .quiz_button_1_next{
     font-size: 25px;
     border-radius: 10px;
@@ -337,12 +346,19 @@ label {
   
 }
 .quiz_button_2 {
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 10px;
+  margin-left: 28%;
   padding: 15px;
-  color:  #7f5e94;
-  background-color: #eceffc ;
-  
+  color:  rgb(98, 98, 98);
+  background-color: lightgray ;
+
+}
+
+.quiz_button_for_intertiles {
+  margin-top: 18%;
+  float: right;
+  margin-right: 10%;
 }
 
 .newbtn{
@@ -362,10 +378,12 @@ label {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  
 }
 
 .question_prompt {
   white-space:pre-line;
+  text-align: center;
 }
 
 .column_for_picture_quiz_2{
@@ -427,10 +445,6 @@ label {
   font-weight: bold;
 }
 
-.submit_box {
-  max-width: 100%;
-  color: #797573;
-}
 
 .drag_box {
   width: 180px;
@@ -439,9 +453,6 @@ label {
   padding: 6px 12px;
   border: 2px solid black;
   height: auto;
-}
-
-.submit_btn{
 }
 
 /* Main content area */
@@ -513,24 +524,59 @@ label {
   
 }
 
-/* "You did it!" message */
-/* #successMessage {
-  position: absolute;
-  left: 580px;
-  top: 250px;
-  width: 0;
-  height: 0;
-  z-index: 100;
-  background: rgba(82, 144, 82, 0.783);
-  border: 2px solid rgba(82, 144, 82, 0.783);
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  padding: 20px;
-} */
+/*  quiz 3 */
+
+.quiz_3_first_col{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.main_row_quiz_3{
+  justify-content: center;
+}
+.submission_row_quiz_3{
+  justify-content: center;
+  margin-left: 27%;
+}
+.question_submit{
+  text-align: center;
+}
+.submit_box {
+  max-width: 100%;
+  color: #797573;
+  background-color: rgb(231, 231, 231);
+}
+
+#submit{
+  background-color: #fce3c1;  
+  color: #f67f00;
+  border: solid 1px #ce7c24;
+}
+#level_3_score_div{
+  margin-top: -18%;
+  text-align: center;
+  margin-left: 20px;
+}
+
+#submission-results{
+  margin-top: 12px;
+  margin-left: -25px;
+  color: green;
+  font-size: large;
+
+}
+
+#submission-inc-results{
+  margin-top: 12px;
+  margin-left: -25px;
+  color: red;
+  font-size: large;
+}
+
+/* final page  */
+
+.final_quiz_row_1{
+  align-items: center;
+}
 
 .congrats_text {
   text-align: center;
@@ -546,12 +592,27 @@ label {
 
 .final_score {
   margin: auto;
+  font-size: 18px;
+  border-radius: 0.25rem;
+  border: dotted darkgray;
+  padding: 6px 12px;
+  height: auto;
+  color: #FF8C00;
+  background: rgb(255, 222, 157);
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+
+}
+
+.final_score_levels{
+  margin: auto;
   font-size: 16px;
   border-radius: 0.25rem;
   padding: 6px 12px;
   height: auto;
-  color: #bf9000;
-  background: #fff2ccff;
+  color: #e2aa01;
+  background: rgb(252, 244, 223);
   font-weight: bold;
   text-align: center;
   width: 50%
@@ -559,5 +620,8 @@ label {
 }
 
 .final_text {
-  padding: 140px 15px;
+  margin-top: -25px;
+  padding-left: 10%;
+ 
 }
+

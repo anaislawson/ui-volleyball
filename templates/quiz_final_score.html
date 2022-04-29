@@ -2,15 +2,15 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_3.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_final_score.js') }}"></script>
     <script>
         let score = {{score}};
     </script>
 
-    <div id="quiz_container" class="container ">
+    <div class="container-fluid home_cont">
         <br>
-        <div class="row">
-            <div class="col-md-6 final_text">
+        <div class="row final_quiz_row_1">
+            <div class="col-md-7 final_text">
                 <div class="congrats_text">
                     YOU MASTERED ALL
                 </div>
@@ -20,11 +20,25 @@
                 <div class="congrats_text orange">
                     CONGRATULATIONS!
                 </div>
+                <p>
+                <div class="level_1_final_score final_score_levels">
+                    LEVEL 1:  /5
+                </div>
+                <p>
+                <div class="level_2_final_score final_score_levels">
+                    LEVEL 2:  /6
+                </div>
+                <p></p>
+                <div class="level_3_final_score final_score_levels">
+                    LEVEL 3:  /5
+                </div>
+                <p></p>
                 <div class="final_score">
                     TOTAL SCORE: {{ score }}/16
                 </div>
             </div>
-            <div class="col-md-6">
+            <br>
+            <div class="col-md-5">
                 <img class="quiz_img"
                      src="/static/images/dancing-volleyball-player.png"
                      alt="Celebratory Volleyball Player">
@@ -32,8 +46,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button id="replay" class="quiz_buttons quiz_button_1">Replay</button>
-                <button id="home" class="quiz_buttons quiz_button_2">Home</button>
+                <button id="replay" class="quiz_button_1">Replay</button>
+                <button id="3_home" class="quiz_button_2">Home</button>
             </div>
 
         </div>

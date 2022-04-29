@@ -138,7 +138,7 @@ quiz_level_2 = {
 }
 
 quiz_level_3 = {
-    'roles':{
+    'roles': {
         '1': "Outside Hitter",
         '2': "Middle Blocker",
         '3': "Libero",
@@ -170,7 +170,7 @@ quiz_level_3 = {
             'question_id': '3',
             'question_prompt': 'You are the quarterback of the team. \n '
                                'The coach relies on you to make sound consistent decisions. \n '
-                               'By applying your strategy well, you should position properly for the hitter to '
+                               'You should position properly for the hitter to '
                                'attack. \n ',
             'answer_id': 4,
             'next_id': '4'
@@ -188,9 +188,9 @@ quiz_level_3 = {
 
         '5': {
             'question_id': '5',
-            'question_prompt': 'You are the “bag of tools. \n '
+            'question_prompt': 'You are the “bag of tools". \n '
                                'You play both the front row and the back row and should develop a variety of ways to '
-                               '<b> attack </b> the ball. \n '
+                               'attack the ball. \n '
                                'You should read the opponent’s defense and call out hitters. \n',
             'answer_id': 1,
             'next_id': 'end'
@@ -220,6 +220,7 @@ quiz_level_2_empty_dic = {
 def home_page():
     return render_template('home_page.html')
 
+
 @app.route('/vballinfo')
 def vballinfo():
     return render_template('vballinfo.html')
@@ -248,6 +249,7 @@ def quiz():
     score = 0
     return quiz_lv1('1')
 
+
 @app.route('/get_score', methods=['GET'])
 def get_score():
     global score
@@ -268,24 +270,27 @@ def update_response():
     return jsonify(responses=quiz_level_1_responses)
 
 # for quiz 3
+
+
 @app.route('/submit_role', methods=['GET', 'POST'])
 def submit_role():
-    global score 
+    global score
     json_data = request.get_json()
     question_id = json_data["question_id"]
-   
+
     user_answer = json_data["answer"]
-    
+
     correct = False
 
     answer_id = quiz_level_3.get('questions')[question_id].get("answer_id")
     answer = quiz_level_3.get('roles').get(str(answer_id))
     print(user_answer, answer)
     if user_answer == answer:
-        score +=1 
-        correct=True
-    
+        score += 1
+        correct = True
+
     return jsonify(correct=correct, answer=answer)
+
 
 @app.route('/increase_score', methods=['GET'])
 def increase_score():
@@ -306,11 +311,12 @@ def quiz_lv1(question_id):
 def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
     test_roles = quiz_level_2_empty_dic.get('empty_roles')
-    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles,totalquizscore=score)
+    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles, totalquizscore=score)
+
 
 @app.route('/quiz2_intertitle')
 def quiz2_intertitle():
-    return render_template('quiz2_intertitle.html',score=score)
+    return render_template('quiz2_intertitle.html', score=score)
 # ajax for quiz2
 
 
@@ -339,15 +345,16 @@ def quiz_lv3(question_id):
         return render_template('quiz_final_score.html', score=score)
 
     active = {
-     1: "Outside Hitter",
-     2: "Middle Blocker",
-     3: "Libero",
-     4: "Setter",
-     5: "Opposite Hitter"
+        1: "Outside Hitter",
+        2: "Middle Blocker",
+        3: "Libero",
+        4: "Setter",
+        5: "Opposite Hitter"
     }
 
     for x in range(int(question_id)-1):
-        active.pop(int(quiz_level_3.get('questions').get(str(x+1)).get('answer_id')))
+        active.pop(int(quiz_level_3.get(
+            'questions').get(str(x+1)).get('answer_id')))
 
     question = quiz_level_3['questions'][question_id]
     return render_template('quiz_level_3.html', roles=active, score=score, question=question, question_id=question_id)

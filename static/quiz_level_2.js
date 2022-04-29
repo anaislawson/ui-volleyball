@@ -140,7 +140,7 @@ function increaseScore() {
 
 function display_btn(){
     $(".newbtn").empty()
-    let btn = "<button id='results' class='quiz_button_2'> Next </button>"
+    let btn = "<button id='results' class='quiz_buttons'> Next </button>"
     $(".newbtn").append(btn)
     $("#results").click(function () {
         get_and_view_intertitle2()      
