@@ -13,6 +13,11 @@
 
 }
 
+.homepage_picture{
+
+  justify-content: center;
+}
+
 .correct{
   background-color:rgb(149, 212, 149) !important;
   color: darkgreen !important;
@@ -57,7 +62,7 @@
 }
 
 .strategies_row {
-  margin-top: 55px;
+  margin-top: 15px;
   justify-content: center;
 }
 .quiz_row {
