@@ -693,3 +693,4 @@ label {
   margin-top: 50px;
 
 }
+.quizcard:hover {cursor:move;}

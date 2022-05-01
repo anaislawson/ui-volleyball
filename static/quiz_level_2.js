@@ -24,7 +24,7 @@ function init() {
   numbers.sort( function() { return Math.random() - .5 } );
   console.log(numbers)
   for ( var i=0; i<6; i++ ) {
-    $('<div>' + roledict[numbers[i]] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+    $('<div class="quizcard">' + roledict[numbers[i]] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
       cursor: 'move',
@@ -156,6 +156,6 @@ $(document).ready(function() {
     $("#quiz2_intertile_button_2").click(function () {
         get_and_view_quiz3("1")      
     })
-
+    
 
 })
