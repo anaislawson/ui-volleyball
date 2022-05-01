@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("#homebuttons").click(function() {
 
-        window.location.href = "/vballinfo";
+        window.location.href = "/teamlayout";
 
     })
 
