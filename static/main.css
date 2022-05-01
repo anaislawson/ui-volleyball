@@ -1,16 +1,35 @@
-
+/* .navbar-custom {
+  background-color: #c7c8ca;
+} */
 .home_cont{
 
    height: 100vh;
    background-color: #D3E7EE;
 }
 
+#homepage_container{
+  background-image: url("/static/images/option.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: right;
+}
+
+.short_sentence{
+  font-size: 20px;
+  color: rgb(96, 96, 96); 
+  text-align: center;
+  margin-top: 40px;
+  margin-left: -50%;
+  /* font-family: 'Caveat Brush', cursive ; */
+}
+
 .Home_title{
- padding-top: 10px;
- text-align: center;
+ padding-top: 5%;
+ text-align: left;
  color:  #FC814A;
  font-size: 75px;
  font-family: 'Permanent Marker', cursive;
+ margin-left: 8%;
 
 }
 
@@ -69,7 +88,7 @@
 }
 
 .strategies_row {
-  margin-top: 15px;
+  margin-top: 55px;
   justify-content: center;
 }
 .quiz_row {
@@ -81,6 +100,8 @@
   padding-left: 45px;
   padding-right: 45px;
   color:#797573;
+  margin-left: -50%;
+  width: 275px;
 
 }
 #homebuttons2 {
@@ -90,6 +111,16 @@
   padding-right: 50px;
   padding-left: 50px;
   color:#797573;
+  margin-left: -50%;
+  /* width: 233px; */
+  text-align: left;
+}
+
+.descript_team_layout{
+  color: #666;
+  margin-top: 7%;
+  margin-left: -15%;
+  text-align: center;
 }
 .strategy_pic_row {
   padding-top: 15px;
@@ -104,10 +135,10 @@
   height: auto;
 }
 .strategy_button_row {
-  margin-top: 55px;
+  margin-top: -9px;
 }
 .second_page_div{
-  margin-left: 250px;
+  margin-left: 150px;
 }
 #see_it_in_action {
   font-size: 25px;
@@ -207,7 +238,7 @@
   margin-top: 10px;
 }
 #button_row_inaction{
-  padding-left: 175px;
+  padding-left: 80px;
   padding-top: 45px;
 }
 .pictureformat{
@@ -426,7 +457,7 @@ label {
 }
 
 #learn_icon{
-  width: 120px;
+  width: 75px;
 
 }
 
