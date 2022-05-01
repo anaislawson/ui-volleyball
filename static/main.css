@@ -300,6 +300,7 @@
   /* margin-left: 10px; */
   text-align: center;
   justify-content: center;
+  color:  #4f4d50;
 }
 
 #quiz_intertile_body {
@@ -346,11 +347,13 @@ label {
 #level_1_question{
   margin-left: 10%;
   margin-top: 5px;
+  color:  #4f4d50;
  
 }
 #level_1_options {
   margin-left: 10%;
   margin-top: 10px;
+  color:  #4f4d50;
 }
 
 .quiz_buttons {
@@ -434,6 +437,7 @@ label {
 .question_prompt {
   white-space:pre-line;
   text-align: center;
+  color:  #4f4d50;
 }
 
 .column_for_picture_quiz_2{
