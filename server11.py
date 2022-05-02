@@ -285,6 +285,14 @@ def increase_score(level_id):
 
 @app.route('/quiz')
 def quiz():
+    global score_lvl_1
+    global score_lvl_2
+    global score_lvl_3
+    
+    score_lvl_1 = 0
+    score_lvl_2 = 0
+    score_lvl_3 = 0
+    
     global score
     score = 0
     return quiz_lv1('1')
