@@ -72,7 +72,7 @@ lessons = {
         "title": "OPPOSITE HITTER",
         "image": "https://i.ibb.co/dGkJ8XH/oppositehitter.png",
         "gif": "https://i.ibb.co/MV62r1r/opposite.gif",
-        "text": "You most often scores the most points in the team - no pressure!",
+        "text": "You most often score the most points in the team - no pressure!",
         "summary": "Your role is to score and block the ball. Be the backup of the setter when the traditional setter "
                    "is unable to get to the ball.",
         "demands": ["1. Attack the ball when receiving a set.", "2. Work with the middle hitter on blocks.",
