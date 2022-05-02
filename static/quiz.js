@@ -56,7 +56,7 @@ function submitAnswer() {
 function updateScore(score) {
     console.log(score)
     let scoreContainer = $('#level_1_score');
-    scoreContainer.text(score + '/ 5')
+    scoreContainer.text(score + '/5')
 }
 
 function updateResponse(question_id, option_id) {
@@ -85,7 +85,7 @@ function getScore() {
     console.log('Inside getScore')
     $.ajax({
         type: "GET",
-        url: "/get_score",
+        url: "/get_score/1",
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         success: function(result){
@@ -105,7 +105,7 @@ function increaseScore() {
     console.log('Inside getScore')
     $.ajax({
         type: "GET",
-        url: "/increase_score",
+        url: "/increase_score/1",
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         success: function(result){
@@ -129,12 +129,6 @@ function createNextButton() {
         click: function () {
             console.log('Next clicked');
             window.location.href ="/quiz/1/" + question.next_id
-        // if(question.next_id === "e"){
-        //     window.location.href = "/quiz/2"
-        // }else{
-        //     window.location.href ="/quiz/1/" + question.next_id
-        // }
-
     }
     }).appendTo('.quiz_1_next_button');
 

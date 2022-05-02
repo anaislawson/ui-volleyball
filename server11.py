@@ -5,6 +5,13 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 score = 0
+
+score_lvl_1 = 0
+
+score_lvl_2 = 0
+
+score_lvl_3 = 0
+
 lessons = {
 
     "1": {
@@ -214,8 +221,6 @@ quiz_level_2_empty_dic = {
 }
 
 # ROUTES
-
-
 @app.route('/')
 def home_page():
     return render_template('home_page.html')
@@ -235,6 +240,7 @@ def teamlayout():
 def inaction():
     return render_template('inaction.html')
 
+# Learning Section
 
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
@@ -242,6 +248,40 @@ def learn(lesson_id):
     lesson = lessons[lesson_id]
     return render_template('learn.html', lesson=lesson, lesson_id=lesson_id)
 
+# Quiz Utilities
+
+@app.route('/get_score/<level_id>', methods=['GET'])
+def get_score(level_id):
+    global score_lvl_1
+    global score_lvl_2
+    global score_lvl_3
+
+    if level_id == '1':
+        return jsonify(score=str(score_lvl_1))
+    elif level_id == '2':
+        return jsonify(score=str(score_lvl_2))
+    else:
+        return jsonify(score=str(score_lvl_3))
+
+
+@app.route('/increase_score/<level_id>', methods=['GET'])
+def increase_score(level_id):
+    global score_lvl_1
+    global score_lvl_2
+    global score_lvl_3
+
+    if level_id == '1':
+        score_lvl_1 += 1
+        return jsonify(score=str(score_lvl_1))
+    elif level_id == '2':
+        score_lvl_2 += 1
+        return jsonify(score=str(score_lvl_2))
+    else:
+        score_lvl_3 += 1
+        return jsonify(score=str(score_lvl_3))
+
+
+# For Quiz 1
 
 @app.route('/quiz')
 def quiz():
@@ -250,11 +290,12 @@ def quiz():
     return quiz_lv1('1')
 
 
-@app.route('/get_score', methods=['GET'])
-def get_score():
-    global score
-    print('Inside get_score')
-    return jsonify(score=str(score))
+@app.route('/quiz/1/<question_id>')
+def quiz_lv1(question_id):
+    if question_id == 'end':
+        return render_template('quiz_intertitle.html', question_id=question_id, score=score_lvl_1)
+    question = quiz_level_1[question_id]
+    return render_template('quiz_level_1.html', question=question, question_id=question_id)
 
 
 @app.route('/update_response', methods=['GET', 'POST'])
@@ -269,12 +310,25 @@ def update_response():
 
     return jsonify(responses=quiz_level_1_responses)
 
-# for quiz 3
+# For Quiz 2
 
+@app.route('/quiz/2/<quiz_id>')
+def quiz_lv2(quiz_id):
+    roles = quiz_level_2.get('roles')
+    test_roles = quiz_level_2_empty_dic.get('empty_roles')
+    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles, totalquizscore=score)
+
+
+@app.route('/quiz2_intertitle')
+def quiz2_intertitle():
+    return render_template('quiz2_intertitle.html', score=score_lvl_2)
+
+
+# For Quiz 3
 
 @app.route('/submit_role', methods=['GET', 'POST'])
 def submit_role():
-    global score
+    global score_lvl_3
     json_data = request.get_json()
     question_id = json_data["question_id"]
 
@@ -286,63 +340,22 @@ def submit_role():
     answer = quiz_level_3.get('roles').get(str(answer_id))
     print(user_answer, answer)
     if user_answer == answer:
-        score += 1
+        score_lvl_3 += 1
         correct = True
 
     return jsonify(correct=correct, answer=answer)
 
-
-@app.route('/increase_score', methods=['GET'])
-def increase_score():
-    global score
-    score += 1
-    return jsonify(score=str(score))
-
-
-@app.route('/quiz/1/<question_id>')
-def quiz_lv1(question_id):
-    if question_id == 'end':
-        return render_template('quiz_intertitle.html', question_id=question_id, score=score)
-    question = quiz_level_1[question_id]
-    return render_template('quiz_level_1.html', question=question, question_id=question_id)
-
-
-@app.route('/quiz/2/<quiz_id>')
-def quiz_lv2(quiz_id):
-    roles = quiz_level_2.get('roles')
-    test_roles = quiz_level_2_empty_dic.get('empty_roles')
-    return render_template('quiz_level_2.html', roles=roles, test_roles=test_roles, totalquizscore=score)
-
-
-@app.route('/quiz2_intertitle')
-def quiz2_intertitle():
-    return render_template('quiz2_intertitle.html', score=score)
-# ajax for quiz2
-
-
-# @app.route('/check_quiz_2', methods=['POST'])
-# def check_quiz_2():
-
-#     current_id_2 += 1
-#     json_data = request.get_json()
-#     new_role = json_data[0]
-
-#     confirmed_dict = {
-
-#         "id": current_id_2,
-#         "role": new_role
-
-#     }
-
-#     return jsonify(confirmed_dict=confirmed_dict)
-
-
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):
-    global score
+    global score_lvl_3
 
     if(question_id == "end"):
-        return render_template('quiz_final_score.html', score=score)
+        total_score = int(score_lvl_1) + int(score_lvl_2) + int(score_lvl_3)
+        return render_template('quiz_final_score.html',
+                               score_lvl_1=score_lvl_1,
+                               score_lvl_2=score_lvl_2,
+                               score_lvl_3=score_lvl_3,
+                               total_score=total_score)
 
     active = {
         1: "Outside Hitter",
@@ -357,7 +370,7 @@ def quiz_lv3(question_id):
             'questions').get(str(x+1)).get('answer_id')))
 
     question = quiz_level_3['questions'][question_id]
-    return render_template('quiz_level_3.html', roles=active, score=score, question=question, question_id=question_id)
+    return render_template('quiz_level_3.html', roles=active, score=score_lvl_3, question=question, question_id=question_id)
 
 
 if __name__ == '__main__':

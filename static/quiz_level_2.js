@@ -97,7 +97,7 @@ function getScore() {
     console.log('Inside getScore')
     $.ajax({
         type: "GET",
-        url: "/get_score",
+        url: "/get_score/2",
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         success: function(result){
@@ -117,7 +117,7 @@ function increaseScore() {
     console.log('Inside getScore')
     $.ajax({
         type: "GET",
-        url: "/increase_score",
+        url: "/increase_score/2",
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         success: function(result){
@@ -134,10 +134,6 @@ function increaseScore() {
 }
 
 
-
-
-
-
 function display_btn(){
     $(".newbtn").empty()
     let btn = "<button id='results' class='quiz_buttons'> Next </button>"
@@ -145,17 +141,11 @@ function display_btn(){
     $("#results").click(function () {
         get_and_view_intertitle2()      
     })
-    
-    
-
   }
 
 $(document).ready(function() {
-
     init()
     $("#quiz2_intertile_button_2").click(function () {
         get_and_view_quiz3("1")      
     })
-    
-
 })

@@ -4,7 +4,10 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_final_score.js') }}"></script>
     <script>
-        let score = {{score}};
+        let score_lvl_1 = {{score_lvl_1}};
+        let score_lvl_2 = {{score_lvl_2}};
+        let score_lvl_3 = {{score_lvl_3}};
+        let total_score = {{total_score}};
     </script>
 
     <div class="container-fluid home_cont">
@@ -22,19 +25,19 @@
                 </div>
                 <p>
                 <div class="level_1_final_score final_score_levels">
-                    LEVEL 1:  /5
+                    LEVEL 1: {{ score_lvl_1 }}/5
                 </div>
                 <p>
                 <div class="level_2_final_score final_score_levels">
-                    LEVEL 2:  /6
+                    LEVEL 2: {{ score_lvl_2 }}/6
                 </div>
                 <p></p>
                 <div class="level_3_final_score final_score_levels">
-                    LEVEL 3:  /5
+                    LEVEL 3:  {{ score_lvl_3 }}/5
                 </div>
                 <p></p>
                 <div class="final_score">
-                    TOTAL SCORE: {{ score }}/16
+                    TOTAL SCORE: {{ total_score }}/16
                 </div>
             </div>
             <br>
