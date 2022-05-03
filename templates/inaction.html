@@ -1,35 +1,44 @@
-
 {% extends "layout.html" %}
 
 {% block content %}
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'inaction.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'inaction.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'sidebar.js') }}"></script>
+    <script>
+        let contents = {{ contents|tojson }};
+    </script>
 
-<div class="container-fluid home_cont">
-    <div class="row no-gutters" id="button_row_inaction">
-        <button type='button' id='back'>←</button>
-    </div>
-    <div class ="row strategy_pic_row justify-content-center">
-        <div class="col-md-5">
-        <img src="https://i.ibb.co/zrkXLnP/ezgif-com-gif-maker.gif" id="strategy_picture" alt="volleyball animation">
-        </div>
-        <div class="col-md-2" id="inaction_text">
-            ➜ One team serves the ball over the net to the opposing team<br> 
-            ➜ Serve is received (usually by the Libero)<br> 
-            ➜ Then, the receiving team has up to <b>three touches</b> before sending the ball back over the net to continue the game.<br>
-            ➜ Either team makes a <b>kill</b>, by grounding the ball on the opponent’s court, scoring a point.</br></br>
+    <link rel="stylesheet" href="/static/css/learn.css">
 
+    {% include "learn_sidebar.html" %}
+    <div class="container-fluid home_cont">
+        <div class="row no-gutters" id="button_row_inaction">
+            <button type='button' id='back'>←</button>
+        </div>
+        <div class="row strategy_pic_row justify-content-center">
+            <div class="col-md-5">
+                <img src="https://i.ibb.co/zrkXLnP/ezgif-com-gif-maker.gif" id="strategy_picture"
+                     alt="volleyball animation">
+            </div>
+            <div class="col-md-2" id="inaction_text">
+                ➜ One team serves the ball over the net to the opposing team<br>
+                ➜ Serve is received (usually by the Libero)<br>
+                ➜ Then, the receiving team has up to <b>three touches</b> before sending the ball back over the net to
+                continue the game.<br>
+                ➜ Either team makes a <b>kill</b>, by grounding the ball on the opponent’s court, scoring a
+                point.</br></br>
+
+            </div>
+        </div>
+        <!-- <div class="row audio_row">
+            <audio controls>
+                <source src="https://www.mboxdrive.com/Columbia-University-39.mp3" type="audio/mp3" />
+            </audio>
+        </div> -->
+        <p></p>
+        <div class="row strategy_button_row justify-content-center">
+            <button type="button" id="learn1">Learn Strategy 1/5 ➜</button>
         </div>
     </div>
-    <!-- <div class="row audio_row">
-        <audio controls>
-            <source src="https://www.mboxdrive.com/Columbia-University-39.mp3" type="audio/mp3" />
-        </audio>
-    </div> -->
-    <p></p>
-    <div class="row strategy_button_row justify-content-center">
-        <button type="button" id="learn1">Learn Strategy 1/5 ➜</button> 
-    </div>
-</div>
 {% endblock %}

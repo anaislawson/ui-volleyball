@@ -248,7 +248,7 @@ contents = {
     '4': {
         'content_id': '4',
         'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
-        'short_title': 'Strategy',
+        'short_title': 'Set Strategy',
         'url': '/learn/1/2',
         'prev_id': '3',
         'next_id': '5',
@@ -264,7 +264,7 @@ contents = {
     '6': {
         'content_id': '6',
         'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
-        'short_title': 'Strategy',
+        'short_title': 'Libero Strategy',
         'url': '/learn/2/2',
         'prev_id': '5',
         'next_id': '7',
@@ -280,7 +280,7 @@ contents = {
     '8': {
         'content_id': '8',
         'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
-        'short_title': 'Strategy',
+        'short_title': 'Hit Strategy',
         'url': '/learn/3/2',
         'prev_id': '7',
         'next_id': '9',
@@ -296,7 +296,7 @@ contents = {
     '10': {
         'content_id': '10',
         'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
-        'short_title': 'Strategy',
+        'short_title': 'Block Strategy',
         'url': '/learn/4/2',
         'prev_id': '9',
         'next_id': '11',
@@ -312,10 +312,18 @@ contents = {
     '12': {
         'content_id': '12',
         'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
-        'short_title': 'Strategy',
+        'short_title': 'Hit Strategy',
         'url': '/learn/5/2',
         'prev_id': '11',
-        'next_id': 'quiz',
+        'next_id': '13',
+    },
+    '13': {
+        'content_id': '13',
+        'long_title': '',
+        'short_title': 'Quiz',
+        'url': '/quiz/1/1',
+        'prev_id': '12',
+        'next_id': '',
     },
 }
 
@@ -327,17 +335,17 @@ def home_page():
 
 @app.route('/vballinfo')
 def vballinfo():
-    return render_template('vballinfo.html')
+    return render_template('vballinfo.html',contents=contents)
 
 
 @app.route('/teamlayout')
 def teamlayout():
-    return render_template('team-layout.html')
+    return render_template('team-layout.html', contents=contents)
 
 
 @app.route('/inaction')
 def inaction():
-    return render_template('inaction.html')
+    return render_template('inaction.html', contents=contents)
 
 # Learning Section
 

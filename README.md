@@ -13,3 +13,10 @@ Zikora: Score/Total Score: Change the score so that every level only displays th
 Also send us a prototype of how he things we should reorganize the learning portion.
 
 Everyone: Send ideas of a picture for the main page/homepage
+
+Zikora To Do: 
+
+- Standardize all the Learning Pages in Format
+- Add same font throughout site
+- Reformat Quiz Level 1
+- 

@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
-/* .navbar-custom {
-  background-color: #c7c8ca;
-} */
 
 body {
   background-color: #D3E7EE;
 }
 .home_cont{
-   height: 100vh;
-    /*background-color: #D3E7EE;*/
+  height: 100vh;
+  padding-left:20%;
 }
 
 #homepage_container{

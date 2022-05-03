@@ -5,6 +5,13 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'teamlayout.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'sidebar.js') }}"></script>
+    <script>
+        let contents = {{ contents|tojson }};
+    </script>
+
+    {% include "learn_sidebar.html" %}
+
 <div class="container-fluid home_cont">
     <div class ="row strategy_pic_row justify-content-center">
         

@@ -1,8 +1,8 @@
 function updateButtons() {
     let prev_button = $('#learn_prev_btn');
-    console.log(prev_button)
     let next_button = $('#learn_next_btn');
     let button_info = getButtons();
+    console.log(button_info)
     let prev_info = button_info[0]
     let next_info = button_info[1]
     let prev_name = prev_info[0]
@@ -31,17 +31,7 @@ function getButtons(){
     }
 }
 
-function fillSidebar() {
-    let sidebar =  $('#sidebar_list')
-    for (let content of Object.entries(contents)) {
-        let list_item = $('<li><a href='+ content[1].url +
-            '>' + content[1].long_title + '</a></li>')
-        sidebar.append(list_item)
-    }
-}
-
 $(document).ready(function(){
-    fillSidebar()
     updateButtons()
     $('.learn_button').click(function () {
         window.location.href = $(this).attr('href')
