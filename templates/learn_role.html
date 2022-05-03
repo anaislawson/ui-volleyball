@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn_alt.js') }}"></script>
+    <link rel="stylesheet" href="/static/css/learn.css">
+
+    <script>
+        let lesson = {{lesson|tojson}};
+        let lesson_id = {{lesson_id|tojson}};
+        let contents = {{ contents|tojson }};
+    </script>
+
+    <div class="learn_page">
+        {% include "learn_sidebar.html" %}
+        <div class="container learn_container">
+            <div id="header" class="learn_header">
+                {{ lesson.title }}
+            </div>
+            <div class="row learn_role_container">
+                <div class="col-md-6 learn_role_text">
+                    <div class="learn_role_text_header">
+                        {{ lesson.text }}
+                    </div>
+                    <div class="learn_role_text_summary">
+                        {{ lesson.summary }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src='{{ lesson.image }}'
+                         alt='picture of volleyball lesson'
+                         class="learn_role_image">
+                </div>
+            </div>
+            <div class="row buttons_container">
+                <div class="col-md-6">
+                    <button id="learn_prev_btn"
+                            class="learn_button learn_button_left">
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button id="learn_next_btn"
+                            class="learn_button learn_button_right">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -220,6 +220,105 @@ quiz_level_2_empty_dic = {
     },
 }
 
+contents = {
+    '1': {
+        'content_id': '1',
+        'long_title': 'Team Layout',
+        'short_title': 'Team Layout',
+        'url': '/teamlayout',
+        'prev_id': 'home',
+        'next_id': '2',
+    },
+    '2': {
+        'content_id': '2',
+        'long_title': 'Gameplay',
+        'short_title': 'Gameplay',
+        'url': '/inaction',
+        'prev_id': '1',
+        'next_id': '3',
+    },
+    '3': {
+        'content_id': '3',
+        'long_title': 'Role 1: Setter',
+        'short_title': 'Setter',
+        'url': '/learn/1/1',
+        'prev_id': '2',
+        'next_id': '4',
+    },
+    '4': {
+        'content_id': '4',
+        'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
+        'short_title': 'Strategy',
+        'url': '/learn/1/2',
+        'prev_id': '3',
+        'next_id': '5',
+    },
+    '5': {
+        'content_id': '5',
+        'long_title': 'Role 2: Libero',
+        'short_title': 'Libero',
+        'url': '/learn/2/1',
+        'prev_id': '4',
+        'next_id': '6',
+    },
+    '6': {
+        'content_id': '6',
+        'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
+        'short_title': 'Strategy',
+        'url': '/learn/2/2',
+        'prev_id': '5',
+        'next_id': '7',
+    },
+    '7': {
+        'content_id': '7',
+        'long_title': 'Role 3: Outside Hitter',
+        'short_title': 'Outside Hitter',
+        'url': '/learn/3/1',
+        'prev_id': '6',
+        'next_id': '8',
+    },
+    '8': {
+        'content_id': '8',
+        'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
+        'short_title': 'Strategy',
+        'url': '/learn/3/2',
+        'prev_id': '7',
+        'next_id': '9',
+    },
+    '9': {
+        'content_id': '9',
+        'long_title': 'Role 4: Middle Blocker',
+        'short_title': 'Middle Blocker',
+        'url': '/learn/4/1',
+        'prev_id': '8',
+        'next_id': '10',
+    },
+    '10': {
+        'content_id': '10',
+        'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
+        'short_title': 'Strategy',
+        'url': '/learn/4/2',
+        'prev_id': '9',
+        'next_id': '11',
+    },
+    '11': {
+        'content_id': '11',
+        'long_title': 'Role 5: Opposite Hitter',
+        'short_title': 'Opposite Hitter',
+        'url': '/learn/5/1',
+        'prev_id': '10',
+        'next_id': '12',
+    },
+    '12': {
+        'content_id': '12',
+        'long_title': '&nbsp;&nbsp;&nbsp;&nbsp;Strategy',
+        'short_title': 'Strategy',
+        'url': '/learn/5/2',
+        'prev_id': '11',
+        'next_id': 'quiz',
+    },
+}
+
 # ROUTES
 @app.route('/')
 def home_page():
@@ -242,11 +341,29 @@ def inaction():
 
 # Learning Section
 
-@app.route('/learn/<lesson_id>')
+@app.route('/learn_old/<lesson_id>')
 def learn(lesson_id):
     print(lesson_id)
     lesson = lessons[lesson_id]
     return render_template('learn.html', lesson=lesson, lesson_id=lesson_id)
+
+@app.route('/learn/<lesson_id>/1')
+def learn_role(lesson_id):
+    print(lesson_id)
+    lesson = lessons[lesson_id]
+    return render_template('learn_role.html',
+                           contents=contents,
+                           lesson=lesson,
+                           lesson_id=lesson_id)
+
+@app.route('/learn/<lesson_id>/2')
+def learn_strategy(lesson_id):
+    print(lesson_id)
+    lesson = lessons[lesson_id]
+    return render_template('learn_strategy.html',
+                           contents=contents,
+                           lesson=lesson,
+                           lesson_id=lesson_id)
 
 # Quiz Utilities
 
@@ -288,13 +405,10 @@ def quiz():
     global score_lvl_1
     global score_lvl_2
     global score_lvl_3
-    
+
     score_lvl_1 = 0
     score_lvl_2 = 0
     score_lvl_3 = 0
-    
-    global score
-    score = 0
     return quiz_lv1('1')
 
 
@@ -378,7 +492,11 @@ def quiz_lv3(question_id):
             'questions').get(str(x+1)).get('answer_id')))
 
     question = quiz_level_3['questions'][question_id]
-    return render_template('quiz_level_3.html', roles=active, score=score_lvl_3, question=question, question_id=question_id)
+    return render_template('quiz_level_3.html',
+                           roles=active,
+                           score=score_lvl_3,
+                           question=question,
+                           question_id=question_id)
 
 
 if __name__ == '__main__':

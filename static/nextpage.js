@@ -10,7 +10,7 @@ function view_inaction(){
 }
 
 function view_learn(idval){
-    let url = "/learn/"+idval
+    let url = "/learn/"+idval+"/1"
     window.location.href = url
     
   }

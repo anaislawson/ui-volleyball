@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
 /* .navbar-custom {
   background-color: #c7c8ca;
 } */
-.home_cont{
 
+body {
+  background-color: #D3E7EE;
+}
+.home_cont{
    height: 100vh;
-   background-color: #D3E7EE;
+    /*background-color: #D3E7EE;*/
 }
 
 #homepage_container{
@@ -243,6 +248,7 @@
   padding-left: 80px;
   padding-top: 45px;
 }
+
 .pictureformat{
   max-width: 100%;
   height: auto;
@@ -696,3 +702,4 @@ label {
 
 }
 .quizcard:hover {cursor:move;}
+
