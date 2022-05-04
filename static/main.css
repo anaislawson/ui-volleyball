@@ -123,16 +123,16 @@ body {
   margin-top: 4%;
   margin-left: -15%;
   text-align: center;
-  font-size: 30px;
+  font-size: x-large;
   padding-bottom: 30px;
 }
 .strategy_pic_row {
   padding-top: 15px;
 }
 #strategy_picture {
-  width: 600px;
-  height: auto;
-  text-align: center;
+  /*width: 600px;*/
+  /*height: auto;*/
+  /*text-align: center;*/
 }
 #strategy_picture_image{
   width: 800px;
@@ -224,17 +224,19 @@ body {
   text-align: left;
 }
 #inaction_text{
-  color: #797573;
-  background-color: #fce5cd;
-  border-radius: 5px;
-  width:fit-content;
-  height: fit-content;
-  padding-left: 15px;
-  padding-top: 15px;
-  justify-content: center;
-  margin-left: 40px;
-  font-size: 14px;
-  margin-top: 20px;
+  /*white-space: nowrap;*/
+  display: inline;
+  /*color: #797573;*/
+  /*background-color: #fce5cd;*/
+  /*border-radius: 5px;*/
+  /*width:fit-content;*/
+  /*height: fit-content;*/
+  /*padding-left: 15px;*/
+  /*padding-top: 15px;*/
+  /*justify-content: center;*/
+  /*margin-left: 40px;*/
+  /*font-size: 14px;*/
+  /*margin-top: 20px;*/
   
 }
 .audio_row{
@@ -694,7 +696,7 @@ label {
   font-size: 25px;
   border-radius: 10px;
   padding: 15px;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
 
 }
 .quizcard:hover {cursor:move;}

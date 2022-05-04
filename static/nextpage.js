@@ -18,6 +18,11 @@ $(document).ready(function(){
 
   //displayPopular(data)
   //$(".top3").hover(function(){ $(this).toggleClass('cn'); });
+
+    $("#home").click(function(){
+        window.location.href = "/";
+    })
+
   $("#vballinfo").click(function(){
     view_teamlayout();         
   })

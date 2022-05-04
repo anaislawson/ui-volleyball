@@ -2,8 +2,7 @@
 $(document).ready(function(){
 
     $("#back").click(function(){
-        parent.history.back();
-        return false;
+        window.location.href = "/";
     })
 
 })

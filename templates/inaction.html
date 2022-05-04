@@ -11,34 +11,52 @@
 
     <link rel="stylesheet" href="/static/css/learn.css">
 
-    {% include "learn_sidebar.html" %}
-    <div class="container-fluid home_cont">
-        <div class="row no-gutters" id="button_row_inaction">
-            <button type='button' id='back'>←</button>
-        </div>
-        <div class="row strategy_pic_row justify-content-center">
-            <div class="col-md-5">
-                <img src="https://i.ibb.co/zrkXLnP/ezgif-com-gif-maker.gif" id="strategy_picture"
-                     alt="volleyball animation">
+    <div class="learn_page">
+        {% include "learn_sidebar.html" %}
+        <div class="container learn_container">
+            <div id="header" class="learn_header">
+                Gameplay
             </div>
-            <div class="col-md-2" id="inaction_text">
-                ➜ One team serves the ball over the net to the opposing team<br>
-                ➜ Serve is received (usually by the Libero)<br>
-                ➜ Then, the receiving team has up to <b>three touches</b> before sending the ball back over the net to
-                continue the game.<br>
-                ➜ Either team makes a <b>kill</b>, by grounding the ball on the opponent’s court, scoring a
-                point.</br></br>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://i.ibb.co/zrkXLnP/ezgif-com-gif-maker.gif"
+                         id="strategy_picture"
+                         alt="volleyball animation"
+                         class="learn_role_image">
+                </div>
+                <div class="col-md-6 learn_role_text" id="inaction_text">
+                    <div class="learn_role_text_summary">
+                        ➜ One team serves the ball over the net to the opposing team<br>
+                        ➜ Serve is received (usually by the Libero)<br>
+                        ➜ Then, the receiving team has up to <strong>three touches</strong> before sending the ball back
+                        over the net
+                        to continue the game.<br>
+                        ➜ Either team makes a <b>kill</b>, by grounding the ball on the opponent’s court, scoring a
+                        point.
+                    </div>
 
+
+                </div>
             </div>
-        </div>
-        <!-- <div class="row audio_row">
-            <audio controls>
-                <source src="https://www.mboxdrive.com/Columbia-University-39.mp3" type="audio/mp3" />
-            </audio>
-        </div> -->
-        <p></p>
-        <div class="row strategy_button_row justify-content-center">
-            <button type="button" id="learn1">Learn Strategy 1/5 ➜</button>
+            <!-- <div class="row audio_row">
+                <audio controls>
+                    <source src="https://www.mboxdrive.com/Columbia-University-39.mp3" type="audio/mp3" />
+                </audio>
+            </div> -->
+            <div class="row buttons_container">
+                <div class="col-md-6">
+                    <button id="vballinfo"
+                            class="learn_button learn_button_left">
+                        ← Team Layout
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button id="learn1"
+                            class="learn_button learn_button_right">
+                        Role 1: Setter
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
