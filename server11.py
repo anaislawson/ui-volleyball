@@ -43,7 +43,7 @@ lessons = {
     "3": {
         "lesson_id": "3",
         "title": "OUTSIDE HITTER",
-        "image": "https://i.ibb.co/K7c3Hfg/outsidehitter.png",
+        "image": "https://i.ibb.co/pZKk0KT/layout-2.png",
         "gif": "https://i.ibb.co/qx9J19b/outside-hitter.gif",
         "text": "You are the “bag of tools”. ",
         "summary": "You play both the front row and the back row and should develop a variety of ways to attack the "
@@ -328,6 +328,8 @@ contents = {
 }
 
 # ROUTES
+
+
 @app.route('/')
 def home_page():
     return render_template('home_page.html')
@@ -335,7 +337,7 @@ def home_page():
 
 @app.route('/vballinfo')
 def vballinfo():
-    return render_template('vballinfo.html',contents=contents)
+    return render_template('vballinfo.html', contents=contents)
 
 
 @app.route('/teamlayout')
@@ -349,11 +351,13 @@ def inaction():
 
 # Learning Section
 
+
 @app.route('/learn_old/<lesson_id>')
 def learn(lesson_id):
     print(lesson_id)
     lesson = lessons[lesson_id]
     return render_template('learn.html', lesson=lesson, lesson_id=lesson_id)
+
 
 @app.route('/learn/<lesson_id>/1')
 def learn_role(lesson_id):
@@ -363,6 +367,7 @@ def learn_role(lesson_id):
                            contents=contents,
                            lesson=lesson,
                            lesson_id=lesson_id)
+
 
 @app.route('/learn/<lesson_id>/2')
 def learn_strategy(lesson_id):
@@ -374,6 +379,7 @@ def learn_strategy(lesson_id):
                            lesson_id=lesson_id)
 
 # Quiz Utilities
+
 
 @app.route('/get_score/<level_id>', methods=['GET'])
 def get_score(level_id):
@@ -442,6 +448,7 @@ def update_response():
 
 # For Quiz 2
 
+
 @app.route('/quiz/2/<quiz_id>')
 def quiz_lv2(quiz_id):
     roles = quiz_level_2.get('roles')
@@ -474,6 +481,7 @@ def submit_role():
         correct = True
 
     return jsonify(correct=correct, answer=answer)
+
 
 @app.route('/quiz/3/<question_id>')
 def quiz_lv3(question_id):

@@ -5,7 +5,6 @@ body {
 }
 .home_cont{
   height: 100vh;
-  padding-left:20%;
 }
 
 #homepage_container{
@@ -30,7 +29,7 @@ body {
  color:  #FC814A;
  font-size: 75px;
  font-family: 'Permanent Marker', cursive;
- margin-left: 8%;
+ margin-left: 10%;
 
 }
 
