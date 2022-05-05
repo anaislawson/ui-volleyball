@@ -18,12 +18,12 @@
             <div id="header" class="learn_header">
                 {{ lesson.title }}
             </div>
-            <div class="row learn_role_container">
-                <div class="col-md-6 learn_role_text">
-                    <div class="learn_role_text_header">
+            <div class="row learn_content_container">
+                <div class="col-md-6 learn_content_text">
+                    <div class="learn_content_text_header">
                         Strategic Demands
                     </div>
-                    <div class="learn_role_text_summary">
+                    <div class="learn_content_text_summary">
                         <ul>
                             {% for demand in lesson.demands %}
                                 <li>
@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                     <img src='{{ lesson.gif }}'
                          alt='Gif of volleyball play'
-                         class="learn_role_image">
+                         class="learn_content_image">
                 </div>
             </div>
             <div class="row buttons_container">

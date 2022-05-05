@@ -5,21 +5,21 @@
   background-position: right;
 }
 
-.landing_content {
+.home_page_content {
   margin-left: 15%;
 }
 
-.landing_header{
+.home_page_header{
  padding-top: 150px;
  text-align: left;
- color:  #FC814A;
+ color:  var(--header_orange);
  font-size: 75px;
  font-family: 'Permanent Marker', cursive;
 }
 
-.landing_text{
+.home_page_text{
   font-size: x-large;
-  color: rgb(96, 96, 96);
+  color: var(--dark-gray);
   margin-top: 30px;
 }
 
@@ -36,7 +36,7 @@
   border-radius: 10px;
   padding-left: 45px;
   padding-right: 45px;
-  color:#797573;
+  color:var(--dark-gray);
   width: 275px;
 
 }
@@ -46,7 +46,7 @@
   padding: 8px;
   padding-right: 50px;
   padding-left: 50px;
-  color:#797573;
+  color:var(--dark-gray);
   /* width: 233px; */
   text-align: left;
 }

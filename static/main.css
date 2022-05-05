@@ -7,12 +7,6 @@ body {
   height: 100vh;
 }
 
-
-
-
-
-
-
 .navbarheader{
   font-family: 'Permanent Marker', cursive;
   font-size: 25px;
@@ -32,43 +26,8 @@ body {
   color: red !important;
 }
 
-.homepage_first_row{
-  justify-content: center;
-  align-items: center;
-}
-
-.homepage_text {
-  color: #797573;
-  margin-left: 50%;
-  padding-top: 20px;
-  padding-left: 25px;
-  padding-right: 15px;
-  background-color: #fce5cd;
-  border-radius: 13% 13% 13% 13% / 30% 30% 30% 30%;
-  width:fit-content;
-  height: fit-content;
-  align-items: center;
-  border: 15px solid FCE5CD;
-
-}
-.homepage_video{
-  padding-top: 7px;
-  justify-content:right;
-  background-image: url(https://i.ibb.co/HP30wtd/Picture1.png);
-   background-repeat: no-repeat;
-   background-size: 162px;
-   background-position-x: -16px;
-   background-position-y: -2px;
-  padding-right: 50px;
-
-}
 
 
-#strategy_picture {
-  /*width: 600px;*/
-  /*height: auto;*/
-  /*text-align: center;*/
-}
 
 /* Learning part I */
 .learn_first_row{
@@ -97,11 +56,7 @@ body {
   align-items: flex-end;
   text-align: end; */
 }
-#learn1 {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 15px;
-}
+
 #learn {
   font-size: 25px;
   border-radius: 10px;
@@ -143,29 +98,13 @@ body {
 .demands {
   text-align: left;
 }
-#inaction_text{
-  /*white-space: nowrap;*/
+#gameplay_text{
   display: inline;
-  /*color: #797573;*/
-  /*background-color: #fce5cd;*/
-  /*border-radius: 5px;*/
-  /*width:fit-content;*/
-  /*height: fit-content;*/
-  /*padding-left: 15px;*/
-  /*padding-top: 15px;*/
-  /*justify-content: center;*/
-  /*margin-left: 40px;*/
-  /*font-size: 14px;*/
-  /*margin-top: 20px;*/
-  
 }
+
 .audio_row{
   justify-content: center;
   margin-top: 10px;
-}
-#button_row_inaction{
-  padding-left: 80px;
-  padding-top: 45px;
 }
 
 .pictureformat{
@@ -610,12 +549,5 @@ label {
 
 }
 
-#vballinfo {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 15px;
-  /*margin-top: 50px;*/
-
-}
 .quizcard:hover {cursor:move;}
 

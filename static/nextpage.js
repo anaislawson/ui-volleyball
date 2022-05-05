@@ -3,8 +3,8 @@ function view_team_layout(){
   window.location.href = url
   
 }
-function view_inaction(){
-    let url = "/inaction"
+function view_gameplay(){
+    let url = "/gameplay"
     window.location.href = url
     
 }
@@ -23,11 +23,11 @@ $(document).ready(function(){
         window.location.href = "/";
     })
 
-  $("#vballinfo").click(function(){
+  $("#team_layout").click(function(){
     view_team_layout();         
   })
   $("#see_it_in_action").click(function(){
-    view_inaction();         
+    view_gameplay();         
   })
   $("#learn1").click(function(){
     view_learn("1");                                    
@@ -36,7 +36,7 @@ $(document).ready(function(){
 //     let idval = $(this).attr('id');
 //     get_and_view_item(idval)           
 //   })
-//   $("#inaction").click(function(){
+//   $("#gameplay").click(function(){
 //     let idval = $(this).attr('id');
 //     get_and_view_item(idval)           
 //   })

@@ -1,19 +1,10 @@
-.strategy_pic_row {
-    padding-top: 15px;
-}
-
-.second_page_div {
-    /*margin-left: 150px;*/
-}
-
 .team_layout_container {
     justify-content: center;
-    /*margin: auto;*/
-
 }
 
+
 .team_layout_text {
-    color: #666;
+    color: var(--dark-gray);
     margin: -10px auto;
     text-align: center;
     font-size: x-large;

@@ -233,7 +233,7 @@ contents = {
         'content_id': '2',
         'long_title': 'Gameplay',
         'short_title': 'Gameplay',
-        'url': '/inaction',
+        'url': '/gameplay',
         'prev_id': '1',
         'next_id': '3',
     },
@@ -335,19 +335,14 @@ def home_page():
     return render_template('home_page.html')
 
 
-@app.route('/vballinfo')
-def vballinfo():
-    return render_template('vballinfo.html', contents=contents)
-
-
 @app.route('/team_layout')
-def teamlayout():
+def team_layout():
     return render_template('team_layout.html', contents=contents)
 
 
-@app.route('/inaction')
-def inaction():
-    return render_template('inaction.html', contents=contents)
+@app.route('/gameplay')
+def gameplay():
+    return render_template('gameplay.html', contents=contents)
 
 # Learning Section
 
