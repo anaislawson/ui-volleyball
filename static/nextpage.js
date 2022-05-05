@@ -1,5 +1,5 @@
-function view_teamlayout(){
-  let url = "/teamlayout"
+function view_team_layout(){
+  let url = "/team_layout"
   window.location.href = url
   
 }
@@ -24,7 +24,7 @@ $(document).ready(function(){
     })
 
   $("#vballinfo").click(function(){
-    view_teamlayout();         
+    view_team_layout();         
   })
   $("#see_it_in_action").click(function(){
     view_inaction();         

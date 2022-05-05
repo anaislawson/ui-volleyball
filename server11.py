@@ -225,7 +225,7 @@ contents = {
         'content_id': '1',
         'long_title': 'Team Layout',
         'short_title': 'Team Layout',
-        'url': '/teamlayout',
+        'url': '/team_layout',
         'prev_id': 'home',
         'next_id': '2',
     },
@@ -340,9 +340,9 @@ def vballinfo():
     return render_template('vballinfo.html', contents=contents)
 
 
-@app.route('/teamlayout')
+@app.route('/team_layout')
 def teamlayout():
-    return render_template('team-layout.html', contents=contents)
+    return render_template('team_layout.html', contents=contents)
 
 
 @app.route('/inaction')

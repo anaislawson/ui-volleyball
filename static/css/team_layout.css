@@ -1,0 +1,30 @@
+.strategy_pic_row {
+    padding-top: 15px;
+}
+
+.second_page_div {
+    /*margin-left: 150px;*/
+}
+
+.team_layout_container {
+    justify-content: center;
+    /*margin: auto;*/
+
+}
+
+.team_layout_text {
+    color: #666;
+    margin: -10px auto;
+    text-align: center;
+    font-size: x-large;
+    padding-bottom: 30px;
+}
+
+#team_layout_image {
+    width: 800px;
+    height: auto;
+    margin-left: 200px;
+}
+
+
+

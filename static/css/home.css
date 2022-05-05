@@ -1,0 +1,52 @@
+#homepage_container{
+  background-image: url("/static/images/option.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: right;
+}
+
+.landing_content {
+  margin-left: 15%;
+}
+
+.landing_header{
+ padding-top: 150px;
+ text-align: left;
+ color:  #FC814A;
+ font-size: 75px;
+ font-family: 'Permanent Marker', cursive;
+}
+
+.landing_text{
+  font-size: x-large;
+  color: rgb(96, 96, 96);
+  margin-top: 30px;
+}
+
+.strategies_row {
+  margin-top: 60px;
+}
+
+.quiz_row {
+    margin-top: 20px;
+}
+
+#homebuttons {
+  font-size: 25px;
+  border-radius: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  color:#797573;
+  width: 275px;
+
+}
+#homebuttons2 {
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 8px;
+  padding-right: 50px;
+  padding-left: 50px;
+  color:#797573;
+  /* width: 233px; */
+  text-align: left;
+}

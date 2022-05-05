@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("#homebuttons").click(function() {
 
-        window.location.href = "/teamlayout";
+        window.location.href = "/team_layout";
 
     })
 

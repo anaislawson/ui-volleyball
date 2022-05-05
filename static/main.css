@@ -7,37 +7,11 @@ body {
   height: 100vh;
 }
 
-#homepage_container{
-  background-image: url("/static/images/option.png");
-  background-repeat: no-repeat;
-  background-size: 55%;
-  background-position: right;
-}
 
-.short_sentence{
-  font-size: 20px;
-  color: rgb(96, 96, 96); 
-  text-align: center;
-  margin-top: 40px;
-  margin-left: -50%;
-  /* font-family: 'Caveat Brush', cursive ; */
-}
 
-.Home_title{
- padding-top: 5%;
- text-align: left;
- /* color:  #FC814A; */
- color: #FF9B0E;
- font-size: 75px;
- font-family: 'Permanent Marker', cursive;
- margin-left: 10%;
 
-}
 
-.homepage_picture{
 
-  justify-content: center;
-}
 
 .navbarheader{
   font-family: 'Permanent Marker', cursive;
@@ -62,6 +36,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .homepage_text {
   color: #797573;
   margin-left: 50%;
@@ -88,67 +63,13 @@ body {
 
 }
 
-.strategies_row {
-  margin-top: 55px;
-  justify-content: center;
-}
-.quiz_row {
-  justify-content: center;
-}
-#homebuttons {
-  font-size: 25px;
-  border-radius: 10px;
-  padding-left: 45px;
-  padding-right: 45px;
-  color:#797573;
-  margin-left: -50%;
-  width: 275px;
 
-}
-#homebuttons2 {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 8px;
-  padding-right: 50px;
-  padding-left: 50px;
-  color:#797573;
-  margin-left: -50%;
-  /* width: 233px; */
-  text-align: left;
-}
-
-.descript_team_layout{
-  color: #666;
-  margin-top: 4%;
-  margin-left: -15%;
-  text-align: center;
-  font-size: x-large;
-  padding-bottom: 30px;
-}
-.strategy_pic_row {
-  padding-top: 15px;
-}
 #strategy_picture {
   /*width: 600px;*/
   /*height: auto;*/
   /*text-align: center;*/
 }
-#strategy_picture_image{
-  width: 800px;
-  height: auto;
-}
-.strategy_button_row {
-  margin-top: -9px;
-}
-.second_page_div{
-  margin-left: 150px;
-}
-#see_it_in_action {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 50px;
-}
+
 /* Learning part I */
 .learn_first_row{
   padding-top: 35px;
