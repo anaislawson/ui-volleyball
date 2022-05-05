@@ -283,19 +283,17 @@ body {
 }
 
 .question_instructions {
-  color: darkorange;
+  color: #FF9B0E;
   font-size: 35px;
   justify-content: center;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 
 #class_level_sentence{
-  color: darkorange;
+  color: #FF9B0E;
   font-size: 39px;
   justify-content: center;
-  font-family:'Caveat Brush', cursive;
-
   
 }
 
@@ -318,7 +316,7 @@ body {
 }
 
 #quiz_intertile_header {
-  color: darkorange;
+  color: #FF9B0E;
   font-weight: bold;
   font-size: 55px;
   font-family:'Permanent Marker', cursive;
@@ -645,7 +643,7 @@ label {
 }
 
 .orange {
-  color: darkorange;
+  color: #FF9B0E;
 }
 
 .final_score {
