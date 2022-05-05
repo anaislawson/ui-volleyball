@@ -26,7 +26,8 @@ body {
 .Home_title{
  padding-top: 5%;
  text-align: left;
- color:  #FC814A;
+ /* color:  #FC814A; */
+ color: #FF9B0E;
  font-size: 75px;
  font-family: 'Permanent Marker', cursive;
  margin-left: 10%;
