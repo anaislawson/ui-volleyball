@@ -48,7 +48,7 @@ lessons = {
         "text": "You are the “bag of tools”. ",
         "summary": "You play both the front row and the back row and should develop a variety of ways to attack the "
                    "ball.",
-        "demands": ["1. After the serve place yourself to the left front position",
+        "demands": ["1. After the serve, place yourself to the left front position",
                     "2. Read the opponent’s defense and call out hitters."],
         "next_lesson": "4"
     },
@@ -345,14 +345,6 @@ def gameplay():
     return render_template('gameplay.html', contents=contents)
 
 # Learning Section
-
-
-@app.route('/learn_old/<lesson_id>')
-def learn(lesson_id):
-    print(lesson_id)
-    lesson = lessons[lesson_id]
-    return render_template('learn.html', lesson=lesson, lesson_id=lesson_id)
-
 
 @app.route('/learn/<lesson_id>/1')
 def learn_role(lesson_id):

@@ -14,10 +14,7 @@ function view_learn(idval){
     window.location.href = url
     
   }
-$(document).ready(function(){                       
-
-  //displayPopular(data)
-  //$(".top3").hover(function(){ $(this).toggleClass('cn'); });
+$(document).ready(function(){
 
     $("#home").click(function(){
         window.location.href = "/";
@@ -32,13 +29,4 @@ $(document).ready(function(){
   $("#learn1").click(function(){
     view_learn("1");                                    
   })
-//   $("#quiz").click(function(){
-//     let idval = $(this).attr('id');
-//     get_and_view_item(idval)           
-//   })
-//   $("#gameplay").click(function(){
-//     let idval = $(this).attr('id');
-//     get_and_view_item(idval)           
-//   })
-
 })

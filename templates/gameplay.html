@@ -3,14 +3,12 @@
 {% block content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'gameplay.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'sidebar.js') }}"></script>
     <script>
         let contents = {{ contents|tojson }};
     </script>
 
     <link rel="stylesheet" href="/static/css/learn.css">
-    <link rel="stylesheet" href="/static/css/gameplay.css">
 
     <div class="learn_page">
         {% include "learn_sidebar.html" %}
@@ -35,8 +33,6 @@
                         ➜ Either team makes a <b>kill</b>, by grounding the ball on the opponent’s court, scoring a
                         point.
                     </div>
-
-
                 </div>
             </div>
             <div class="row buttons_container">
