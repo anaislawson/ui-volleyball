@@ -2,7 +2,6 @@ function updateButtons() {
     let prev_button = $('#learn_prev_btn');
     let next_button = $('#learn_next_btn');
     let button_info = getButtons();
-    console.log(button_info)
     let prev_info = button_info[0]
     let next_info = button_info[1]
     let prev_name = prev_info[0]

@@ -329,7 +329,6 @@ contents = {
 
 # ROUTES
 
-
 @app.route('/')
 def home_page():
     return render_template('home_page.html')
@@ -343,6 +342,7 @@ def team_layout():
 @app.route('/gameplay')
 def gameplay():
     return render_template('gameplay.html', contents=contents)
+
 
 # Learning Section
 
@@ -365,8 +365,8 @@ def learn_strategy(lesson_id):
                            lesson=lesson,
                            lesson_id=lesson_id)
 
-# Quiz Utilities
 
+# Quiz Utilities
 
 @app.route('/get_score/<level_id>', methods=['GET'])
 def get_score(level_id):
@@ -433,8 +433,8 @@ def update_response():
 
     return jsonify(responses=quiz_level_1_responses)
 
-# For Quiz 2
 
+# For Quiz 2
 
 @app.route('/quiz/2/<quiz_id>')
 def quiz_lv2(quiz_id):
