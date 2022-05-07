@@ -125,7 +125,7 @@ function createNextButton() {
     $('<button/>',{
         id: 'quiz_lvl_1_next',
         text: 'Next',
-        class:'progress_button progress_button_right',
+        class:'progress_button progress_button_right quiz_button',
         click: function () {
             console.log('Next clicked');
             window.location.href ="/quiz/1/" + question.next_id
@@ -159,6 +159,10 @@ $(document).ready(function () {
     $("#quiz_lvl_1_submit").click(function () {
         submitAnswer()
     })
+
+        $('.progress_button').each(function (index) {
+        console.log($(this).text() + $(this).width());
+    });
 
     
 })

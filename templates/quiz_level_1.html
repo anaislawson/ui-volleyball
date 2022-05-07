@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_1.js') }}"></script>
     <script>
         let question = {{ question | tojson }};
         let question_id = {{ question_id | tojson }};
@@ -35,7 +35,7 @@
         <div class="row progress_buttons_container">
             <div class="col-md-6">
                 <button id="quiz_lvl_1_submit"
-                        class="progress_button progress_button_left">
+                        class="progress_button progress_button_left quiz_button">
                     Submit
                 </button>
             </div>

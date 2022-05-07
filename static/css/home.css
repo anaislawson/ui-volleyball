@@ -1,3 +1,7 @@
+.home_page{
+  height: 100vh;
+}
+
 #homepage_container{
   background-image: url("/static/images/option.png");
   background-repeat: no-repeat;
@@ -23,8 +27,16 @@
   margin-top: 30px;
 }
 
-.strategies_row {
+#learn_icon {
+    width: 75px;
+}
+
+.learn_row {
   margin-top: 60px;
+}
+
+#quiz_icon {
+    width: 60px;
 }
 
 .quiz_row {

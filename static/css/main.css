@@ -1,262 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 body {
-  background-color: var(--background_blue);
+    background-color: var(--background_blue);
 }
 
-
-.home_cont{
-  height: 100vh;
-}
-
-.navbarheader{
-  font-family: 'Permanent Marker', cursive;
-  font-size: 25px;
-
-}
-
-
-/* Quiz */
-
-.title{
-  text-align: center;
-  font-size: 50px;
-  color: #FF9B0E;
-}
-
-
-.quiz_2_photo{
-  max-width: 100%;
-  height: auto;
-}
-
-
-/*For Quiz*/
-
-#intertile_img{
-  height: 150px;
-  width: auto;
-  justify-content: left;
-  text-align: left;
-}
-
-
-label {
-  padding-left: 20px;
-}
-
-
-.quiz_button_1 {
-    float: left;
-    margin-left: 10%;
-    /* margin-left: 20%; */
+.navbarheader {
+    font-family: 'Permanent Marker', cursive;
     font-size: 25px;
-    border-radius: 10px;
-    padding: 15px;
-    color:  rgb(98, 98, 98);
-    background-color: lightgray;
 }
 
-
-.quiz_button_1_next{
-    font-size: 25px;
-    border-radius: 10px;
-    padding: 15px;
-    color: #4c4a48;
-    float:right;
-    margin-right: 10%;
-  
-}
-.quiz_button_2 {
-  font-size: 22px;
-  border-radius: 10px;
-  margin-left: 28%;
-  padding: 15px;
-  color:  rgb(98, 98, 98);
-  background-color: lightgray;
-
-}
-
-.quiz_button_2:hover{
-  background-color: rgb(227, 226, 226);
-}
-.quiz_button_1:hover{
-  background-color: rgb(227, 226, 226);
-}
-
-.quiz_button_for_intertiles {
-  margin-top: 18%;
-  float: right;
-  margin-right: 10%;
-}
-
-.newbtn{
-  float: right;
-  margin-right: 12%;
-  margin-top: -5%;
-}
-
-
-
-
-.gif_format{
-  width: fit-content;
-}
-
-.ui-widget-content{
-  cursor: pointer;
-}
-
-#learn_icon{
-  width: 75px;
-
-}
-
-#quiz_icon{
-  width: 60px;
-}
-
-#titles_drags{
-  text-align: center;
-  background-color: lightgray;
-}
-
-
-
-
-/* Main content area */
-
-#quiz2content {
-  text-align: center;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* Header/footer boxes */
-
-.wideBox {
-  clear: both;
-  text-align: center;
-  /* margin: 70px; */
-  padding: 10px;
-  background: #ebedf2;
-  border: 1px solid #333;
-}
-
-.wideBox h1 {
-  font-weight: bold;
-  /* margin: 20px; */
-  color: #666;
-  font-size: 1.5em;
-}
-
-
-/* only for purple container for droppables  */
-#cardSlots {
-  width: fit-content;
-}
-
-
-/* for both orange and purple smaller boxes */
-#cardSlots div, #cardPile div {
-  width: 100px;
-  height: 60px;
-  border: 2px solid #333;
-  border-radius: 10px;
-  margin-bottom: 3px;
-  background: #fff;
-  text-align:center;
-  font-size: 15px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  margin-left: 23%;
-  
-}
-
-#cardSlots div.hovered {
-  background: #aaa;
-}
-
-/* only for purple smaller boxes */
-#cardSlots div {
-  border-style: dashed;
-  background-color: rgba(208, 207, 207, 0.719);
-  margin-left: -7px;
-}
-
-/*  only for orange smaller boxes */
-#cardPile div {
-  background-color: #FEEDD9;
-  border-color: #FF9901;
-  
-}
-
-
-/* final page  */
-
-.final_quiz_row_1{
-  align-items: center;
-}
-
-.congrats_text {
-  text-align: center;
-  margin: auto;
-  font-size: xxx-large;
-  font-weight: bold;
-  color: gray;
-}
-
-.orange {
-  color: #FF9B0E;
-}
-
-.final_score {
-  margin: auto;
-  font-size: 18px;
-  border-radius: 0.25rem;
-  border: dotted darkgray;
-  padding: 6px 12px;
-  height: auto;
-  color: #FF8C00;
-  background: rgb(255, 222, 157);
-  font-weight: bold;
-  text-align: center;
-  width: 50%;
-
-}
-
-.final_score_levels{
-  margin: auto;
-  font-size: 16px;
-  border-radius: 0.25rem;
-  padding: 6px 12px;
-  height: auto;
-  color: #e2aa01;
-  background: rgb(252, 244, 223);
-  font-weight: bold;
-  text-align: center;
-  width: 50%
-
-}
-
-.final_text {
-  margin-top: -25px;
-  padding-left: 10%;
- 
-}
-
-#goback {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 2.5px 15px 2.5px 15px;
-
-}
-
-.quizcard:hover {cursor:move;}
-
-.progress_buttons_container{
+.progress_buttons_container {
 
 }
 
@@ -265,6 +18,15 @@ label {
     border-radius: 10px;
     padding: 10px;
     color: var(--dark-gray);
+}
+
+.progress_button:disabled {
+    opacity: 0.5;
+}
+
+.progress_button:hover {
+    background-color: var(--header_orange);
+    color: black;
 }
 
 .progress_button_left {

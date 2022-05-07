@@ -21,3 +21,10 @@ Change Home -> Volleyball - Zikora DONE ✓
 Change Color of Headers to same learning orange - Dayna
 
 VIDEO OF FINAL -> Anaïs
+
+FOr ZIK:
+
+- Redo Home Page
+- Redesign Nav Bar
+- Redesign Final Page
+- Match the drag div format of Quiz 2 to match Quiz 3

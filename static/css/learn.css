@@ -6,8 +6,10 @@
     text-decoration: none;
 }
 
-body {
-    background-color: var(--background_blue);
+.learn_button {
+    width: 225px;
+    justify-content: center;
+    text-align: center;
 }
 
 .learn_page {
@@ -20,6 +22,8 @@ body {
     height: 100%;
     margin: 0 auto;
 }
+
+/*Sidebar*/
 
 .wrapper {
     display: flex;

@@ -204,7 +204,7 @@ contents = {
     '13': {
         'content_id': '13',
         'long_title': '',
-        'short_title': 'Quiz',
+        'short_title': 'Go to Quiz',
         'url': '/quiz/1/1',
         'prev_id': '12',
         'next_id': '',

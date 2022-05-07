@@ -4,6 +4,7 @@
 
     <script type="text/javascript" src="/static/quiz_final_score.js"></script>
     <link rel="stylesheet" href="/static/css/quiz.css">
+    <link rel="stylesheet" href="/static/css/quiz_intertitle.css">
 
     <script>
         let score_lvl_1 = {{score_lvl_1}};
@@ -53,19 +54,17 @@
         <div class="row progress_buttons_container">
             <div class="col-md-6">
                 <button id="replay"
-                        class="progress_button progress_button_left">
+                        class="progress_button progress_button_left quiz_button">
                     Replay
                 </button>
             </div>
             <div class="col-md-6">
                 <button id="3_home"
-                        class="progress_button progress_button_right">
+                        class="progress_button progress_button_right quiz_button">
                     Home
                 </button>
             </div>
         </div>
-
-
     </div>
 
 {% endblock %}
