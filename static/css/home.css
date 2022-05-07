@@ -14,7 +14,7 @@
 }
 
 .home_page_header{
- padding-top: 150px;
+ padding-top: 100px;
  text-align: left;
  color:  var(--header_orange);
  font-size: 75px;
@@ -24,7 +24,10 @@
 .home_page_text{
   font-size: x-large;
   color: var(--dark-gray);
-  margin-top: 30px;
+  margin-top: 25px;
+  text-align: center;
+  margin-left: -68%;
+
 }
 
 #learn_icon {
@@ -33,14 +36,17 @@
 
 .learn_row {
   margin-top: 60px;
+  margin-left: 3%;
 }
 
 #quiz_icon {
     width: 60px;
+   
 }
 
 .quiz_row {
     margin-top: 20px;
+    margin-left: 3%;
 }
 
 #homebuttons {
