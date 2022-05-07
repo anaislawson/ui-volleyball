@@ -10,7 +10,7 @@ function view_gameplay(){
 }
 
 function view_learn(idval){
-    let url = "/learn/"+idval+"/1"
+    let url = "/learn/1/1"
     window.location.href = url
     
   }

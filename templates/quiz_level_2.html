@@ -3,39 +3,45 @@
 {% block content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_2.js') }}"></script>
-    <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_2_alternative.js') }}"></script> -->
-  
+    <link rel="stylesheet" href="/static/css/quiz.css">
+
     <script>
         let totalquizscore = {{ totalquizscore | tojson }};
-
     </script>
-    <div class="container-fluid" id="quiz_container">
-    <br>
-        <div class="row question_instructions">
-            <span id="level_1">
-                <b>LEVEL 2 </b>- MATCH THE PLAYER TO ITS NUMBER
-            </span>
-           <!-- MATCH THE PLAYER TO ITS ROLE -->
-        </div>
-        <div class ="row quiz_2_row flex-nowrap">
-            <div class="col-md-6 column_for_picture_quiz_2" id="quiz_2_photo">
-                <img class="pictureformat" src="https://i.ibb.co/mySpg0L/QUIZ2.png"> 
-            <!-- I changed the image size but definitely add a different class to resize how you desire -->
+
+    <div class="container quiz_container ">
+        <div id="level_2_question_instructions" class=" quiz_instructions">
+            <div id="level_2" class="row level_number">
+                LEVEL 2:
             </div>
-    
-            <!-- <div class="row" id="quiz2content"> -->
-                    <div class="col-md-2" id="cardPile"> </div>
-                    <div class="col-md-2" id="cardSlots"> </div>
-            <!-- </div> -->
+            <div class="row level_instruction" >
+                Match the player to its number
+            </div>
+        </div>
+
+
+        <div class="row quiz_2_row ">
+            <div class="col-md-8 " id="quiz_2_photo">
+                <img class="quiz_2_photo" src="/static/images/quiz_level_2.png">
+            </div>
+
+            <div class="col-md-2" id="cardPile"></div>
+            <div class="col-md-2" id="cardSlots"></div>
         </div>
         <br>
         <br>
         <div id="level_2_score_div" class="score">
             Score : 0/6
         </div>
-        <div class="row newbtn"></div>
-        <br>
-</div>
+        <div class="row progress_buttons_container">
+            <div class="col-md-12 next_container">
+
+            </div>
+        </div>
+        <div class="col-md-12">
+
+        </div>
+    </div>
 
 {% endblock %}
 

@@ -3,7 +3,7 @@
 {% block content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'nextpage.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'sidebar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learning.js') }}"></script>
     <script>
         let contents = {{ contents|tojson }};
     </script>
@@ -35,16 +35,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row buttons_container">
+            <div class="row progress_buttons_container">
                 <div class="col-md-6">
                     <button id="team_layout"
-                            class="learn_button learn_button_left">
-                        ← Team Layout
+                            class="progress_button progress_button_left"
+                            href="/team_layout">
+                        <i class="fa-solid fa-arrow-left"></i>Team Layout
                     </button>
                 </div>
                 <div class="col-md-6">
                     <button id="learn1"
-                            class="learn_button learn_button_right">
+                            class="progress_button progress_button_right"
+                            href="/learn/1/1">
                         Role 1: Setter
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>

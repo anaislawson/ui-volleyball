@@ -41,7 +41,7 @@ function disableButtons() {
     radioboxes.each(function () {
         $(this).attr('disabled', 'disabled');
     });
-    $('#submit_1').attr('disabled', 'disabled');
+    $('#quiz_lvl_1_submit').attr('disabled', 'disabled');
 }
 
 function submitAnswer() {
@@ -123,14 +123,14 @@ function increaseScore() {
 
 function createNextButton() {
     $('<button/>',{
-        id: 'next',
+        id: 'quiz_lvl_1_next',
         text: 'Next',
-        class:'quiz_button_1_next',
+        class:'progress_button progress_button_right',
         click: function () {
             console.log('Next clicked');
             window.location.href ="/quiz/1/" + question.next_id
     }
-    }).appendTo('.quiz_1_next_button');
+    }).appendTo('#quiz_lvl_1_next_div');
 
 }
 
@@ -150,24 +150,15 @@ function formatAndGrading(chosen_id, answer_id) {
     updateResponse(question.question_id, chosen_id)
 }
 
-function get_and_view_quiz2(idval){
-    let url = "/quiz/2/"+idval;
-    window.location.href = url
-    //go to quiz 2
-    
-}
-
 
 $(document).ready(function () {
     if(question_id != "end"){
         displayQuestion(question)
     }
     
-    $("#submit_1").click(function () {
+    $("#quiz_lvl_1_submit").click(function () {
         submitAnswer()
     })
-    $("#quiz_intertile_button_2").click(function () {
-        get_and_view_quiz2("1")
-    })
+
     
 })

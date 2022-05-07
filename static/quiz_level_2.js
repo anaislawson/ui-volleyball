@@ -52,7 +52,7 @@ function handleCardDrop( event, ui ) {
   // on top of the slot, and prevent it being dragged
   // again
 
-  if ( slotNumber == cardNumber ) {
+  if ( slotNumber === cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
@@ -66,7 +66,7 @@ function handleCardDrop( event, ui ) {
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
 
-  if ( correctCards == 6 ) {
+  if ( correctCards === 6 ) {
   
     display_btn()
     
@@ -77,7 +77,7 @@ function handleCardDrop( event, ui ) {
 function updateScore(score) {
     console.log(score)
     let scoreContainer = $('#level_2_score_div');
-    scoreContainer.text('Score: ' + score + '/ 6')
+    scoreContainer.text('Score: ' + score + '/6')
 }
 
 function get_and_view_quiz3(idval){
@@ -88,7 +88,7 @@ function get_and_view_quiz3(idval){
 }
 
 function get_and_view_intertitle2(){
-    let url = "/quiz2_intertitle"
+    let url = "/quiz/2/end"
     window.location.href = url
     //go to quiz 2 intertitle
     
@@ -135,9 +135,9 @@ function increaseScore() {
 
 
 function display_btn(){
-    $(".newbtn").empty()
-    let btn = "<button id='results' class='quiz_buttons'> Next </button>"
-    $(".newbtn").append(btn)
+    $(".next_container").empty()
+    let btn = "<button id='results' class='progress_button progress_button_right'> Next </button>"
+    $(".next_container").append(btn)
     $("#results").click(function () {
         get_and_view_intertitle2()      
     })

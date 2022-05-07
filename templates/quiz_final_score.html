@@ -2,7 +2,9 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_final_score.js') }}"></script>
+    <script type="text/javascript" src="/static/quiz_final_score.js"></script>
+    <link rel="stylesheet" href="/static/css/quiz.css">
+
     <script>
         let score_lvl_1 = {{score_lvl_1}};
         let score_lvl_2 = {{score_lvl_2}};
@@ -10,20 +12,20 @@
         let total_score = {{total_score}};
     </script>
 
-    <div class="container-fluid home_cont">
-        <br>
+    <div class="container quiz_container">
+
+        <div id="final_question_instructions" class=" quiz_instructions">
+            <div id="final" class="row level_number">
+                CONGRATULATIONS!
+            </div>
+            <div class="row level_instruction">
+                You mastered all three levels
+            </div>
+        </div>
+
         <div class="row final_quiz_row_1">
-            <div class="col-md-7 final_text">
-                <div class="congrats_text">
-                    YOU MASTERED ALL
-                </div>
-                <div class="congrats_text">
-                    THREE LEVELS
-                </div>
-                <div class="congrats_text orange">
-                    CONGRATULATIONS!
-                </div>
-                <p>
+            <div class="col-md-7 ">
+
                 <div class="level_1_final_score final_score_levels">
                     LEVEL 1: {{ score_lvl_1 }}/5
                 </div>
@@ -33,7 +35,7 @@
                 </div>
                 <p></p>
                 <div class="level_3_final_score final_score_levels">
-                    LEVEL 3:  {{ score_lvl_3 }}/5
+                    LEVEL 3: {{ score_lvl_3 }}/5
                 </div>
                 <p></p>
                 <div class="final_score">
@@ -47,13 +49,23 @@
                      alt="Celebratory Volleyball Player">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <button id="replay" class="quiz_button_1">Replay</button>
-                <button id="3_home" class="quiz_button_2">Home</button>
-            </div>
 
+        <div class="row progress_buttons_container">
+            <div class="col-md-6">
+                <button id="replay"
+                        class="progress_button progress_button_left">
+                    Replay
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button id="3_home"
+                        class="progress_button progress_button_right">
+                    Home
+                </button>
+            </div>
         </div>
+
+
     </div>
 
 {% endblock %}

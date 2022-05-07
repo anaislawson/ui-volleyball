@@ -3,6 +3,8 @@
 {% block content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_level_3.js') }}"></script>
+    <link rel="stylesheet" href="/static/css/quiz.css">
+
     <script>
         let roles = {{roles | tojson}};
         let question = {{ question | tojson }};
@@ -11,59 +13,63 @@
     </script>
 
 
-    <div id="quiz_container" class="container-fluid">
-        <div class="row question_instructions">
-            
-            <span id="level_3" class="level_no">
-                LEVEL 3 -
-            </span>
-                Drag the right answer to the box:
+    <div class="container quiz_container ">
+
+        <div id="level_3_question_instructions" class=" quiz_instructions">
+            <div id="level_3" class="row level_number">
+                LEVEL 3:
+            </div>
+            <div class="row level_instruction">
+                Drag the right answer to the box
+            </div>
         </div>
+
         <br>
         <div class="row main_row_quiz_3">
             <div class="col-md-3  quiz_3_first_col">
                 <img class="quiz_img"
                      src="/static/images/volleyball-player.png">
             </div>
-            <div class="col-md-5 color_test">
-                <div class="row">
-
-                    <div class="col-md-12 question_no color_test">
-                        Question {{ question_id }}
-                    </div>
-                    <div class="col-md-12 question_prompt color_test">
-                        {{ question.question_prompt + '\n'}}
-                    </div>
+            <div class="col-md-5">
+                <div class="row question_header_number"
+                     id="quiz_3_question_header">
+                    Question {{ question_id }}
+                </div>
+                <div class="row quiz_question"
+                     id="quiz_3_question_prompt">
+                    {{ question.question_prompt + '\n' }}
                 </div>
                 <div class="row submission_row_quiz_3">
                     <div class="col-md-8 question_submit">
-                        <div class="drag_box submit_box color_test" id="submission">
+                        <div class="drag_box submit_box submit_format" id="submission">
                             Drag Answer Here
                         </div>
-                        <div id = "submission-results"></div>
-                        <div id = "submission-inc-results"></div>
                     </div>
                     <div class="col-md-4 submit_quiz_3_col" id="submission-buttons">
                         <button
-                                class="submit_btn btn btn-outline-success my-2 my-sm-0"
+                                class="submit_btn btn  my-2 my-sm-0"
                                 type="submit" disabled id="submit">
                             Submit
                         </button>
                     </div>
                 </div>
+                <div class="row answer_response">
+                    <div id="submission-results"></div>
+                    <div id="submission-inc-results"></div>
+                </div>
             </div>
-            <div class="col-md-3 options_div color_test">
-                    <div id = "roles">
-                    </div>
+            <div class="col-md-3 options_div ">
+                <div id="roles">
                 </div>
             </div>
         </div>
-        <div id="level_3_score_div" class="score">
-            Score : {{score}} / 5
-            <!-- <span id="level_3_score">
-            </span> -->
-        </div>
-        <br>
+    </div>
+    <div id="level_3_score_div" class="score">
+        Score : {{ score }}/5
+        <!-- <span id="level_3_score">
+        </span> -->
+    </div>
+    <br>
     </div>
 
 {% endblock %}

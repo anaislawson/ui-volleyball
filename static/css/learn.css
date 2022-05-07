@@ -106,17 +106,8 @@ body {
     font-size: x-large;
 }
 
-.learn_button {
-    font-size: 25px;
-    border-radius: 10px;
-    padding: 10px;
-    color: var(--dark-gray);
-}
 
-.learn_button_left {
-    float: left;
-}
 
-.learn_button_right {
-    float: right;
+#gameplay_text{
+  display: inline;
 }

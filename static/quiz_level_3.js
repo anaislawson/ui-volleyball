@@ -7,7 +7,7 @@ function display_roles(roles){
     $("#roles").html("");
     console.log(roles)
     $.each(roles, function(index,value){
-        let newRole = ('<div class="role row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
+        let newRole = ('<div class="role row drag_box options_box options_format" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
         $("#roles").append(newRole);
         $(".ui-widget-content").draggable({
             revert: "invalid",
@@ -21,8 +21,9 @@ function display_roles(roles){
 function display_answer(){
     $.each(used, function(index, value){
         //make the draggable name object
-        newName = $("<div class='role row answer options_box' id = 'answer' data-role=" + value + ">").text(value);
-        $("#submission").append(newName);
+        $("#submission").removeClass('submit_format')
+        $("#submission").addClass('answer options_box')
+        $("#submission").append(value);
     });
 }
 function display_correct_answer(ans){
@@ -30,7 +31,7 @@ function display_correct_answer(ans){
     $.each(roles, function(index,value){
         let newRole = ('<div class="role row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
         
-        if(value == ans){
+        if(value === ans){
             newRole = ('<div class="role correct row drag_box options_box" data-role=\"'+value+'\"data-ans='+(index+1)+'>'+ value + '</div>');
         }
         
@@ -60,7 +61,7 @@ function submitAnswer(){
                 $('<button/>',{
                     id: 'next',
                     text: 'Next',
-                    class:'quiz_buttons',
+                    class:'btn submit_btn',
                     click: function () {
                         window.location.href ="/quiz/3/" + question.next_id
                 }
@@ -72,7 +73,7 @@ function submitAnswer(){
                 $('<button/>',{
                     id: 'retry',
                     text: 'Retry',
-                    class:'quiz_buttons',
+                    class:'btn submit_btn',
                     click: function () {
                         window.location.href ="/quiz/3/" + question_id
                 }
@@ -112,7 +113,7 @@ $(document).ready(function() {
         used.push(role_name);
         console.log(roles)
         $("#submission").html("");
-        $("#submission").append("Your Answer:");
+        // $("#submission").append("Your Answer:");
        
         let button = document.querySelector("#submit");
         button.disabled = false;

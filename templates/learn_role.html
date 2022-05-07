@@ -2,7 +2,6 @@
 {% block content %}
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'learning.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'sidebar.js') }}"></script>
 
     <script>
         let lesson = {{lesson|tojson}};
@@ -31,15 +30,15 @@
                          class="learn_content_image">
                 </div>
             </div>
-            <div class="row buttons_container">
+            <div class="row progress_buttons_container">
                 <div class="col-md-6">
                     <button id="learn_prev_btn"
-                            class="learn_button learn_button_left">
+                            class="progress_button progress_button_left">
                     </button>
                 </div>
                 <div class="col-md-6">
                     <button id="learn_next_btn"
-                            class="learn_button learn_button_right">
+                            class="progress_button progress_button_right">
                     </button>
                 </div>
             </div>

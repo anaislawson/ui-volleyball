@@ -5,45 +5,45 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
     <script>
         let question = {{ question | tojson }};
-            console.log(question)
         let question_id = {{ question_id | tojson }};
-            {#console.log(question_id)#}
     </script>
+    <link rel="stylesheet" href="/static/css/quiz.css">
 
-
-    <div id="quiz_container" class="container-fluid">
+    <div id="quiz_container" class="container ">
         <br>
-        <div id="level_1_question_instructions" class="row question_instructions">
-            <div id="level_1" class="level_no">
-                LEVEL 1  
+        <div id="level_1_question_instructions" class=" quiz_instructions">
+            <div id="level_1" class="row level_number">
+                LEVEL 1:
+            </div>
+            <div class="row level_instruction" >
+                Select the correct answer from the options
             </div>
         </div>
-            <!-- <br> -->
-        <div class="row" id="class_level_sentence">
-                <!-- SELECT THE CORRECT ANSWER FROM THE OPTIONS: -->
-                Select the correct answer from the options:
+        <div id="level_1_question_header" class="row question_header_number">
         </div>
-    
-        <div id="level_1_question_header" class="row level_1_question_header_number">
-        </div>
-        <div class="row" id="level_1_question">
+        <div class="row quiz_question" id="level_1_question">
         </div>
         <div id="level_1_options">
         </div>
         <br>
         <div id="level_1_score_div" class="score">
             Score :
-            <span id="level_1_score" >
-
+            <span id="level_1_score">
             </span>
         </div>
-        <!-- <div class="quiz_buttons_alignment"> -->
-        <button id="submit_1" class="quiz_buttons">Submit</button>
-        <div class="quiz_1_next_button"></div>
-        <!-- </div> -->
-        <br>
-        <br>
-        <br>
+
+        <div class="row progress_buttons_container">
+            <div class="col-md-6">
+                <button id="quiz_lvl_1_submit"
+                        class="progress_button progress_button_left">
+                    Submit
+                </button>
+            </div>
+            <div id="quiz_lvl_1_next_div"
+                 class="col-md-6">
+
+            </div>
+        </div>
     </div>
 
 {% endblock %}

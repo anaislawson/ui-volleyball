@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $("#replay").click(function () {
-         window.location.href = "/quiz"
+        window.location.href = "/quiz"
     });
 
     $("#3_home").click(function () {
-         window.location.href = "/"
+        window.location.href = "/"
     })
 })
