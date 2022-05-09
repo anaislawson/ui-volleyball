@@ -37,6 +37,9 @@
     font-weight: bold;
     font-size: x-large;
     color: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .quiz_button {
@@ -88,9 +91,9 @@ label {
     margin-top: 30px;
 }
 
-.quiz_2_photo{
-  max-width: 100%;
-  height: auto;
+.quiz_2_photo {
+    max-width: 100%;
+    height: auto;
 }
 
 /* only for purple container for droppables  */
@@ -100,16 +103,21 @@ label {
 
 /* for both orange and purple smaller boxes */
 #cardSlots div, #cardPile div {
-    width: 100px;
+    width: 140px;
     height: 60px;
-    border: 2px solid #333;
+    border: 2px solid;
     border-radius: 10px;
-    margin-bottom: 3px;
-    background: #fff;
+    margin-bottom: 5px;
+    padding: 10px;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 23%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: bold;
 
 }
 
@@ -122,13 +130,21 @@ label {
     border-style: dashed;
     background-color: rgba(208, 207, 207, 0.719);
     margin-left: -7px;
+    color: var(--drag_submit_grey);
 }
 
 /*  only for orange smaller boxes */
 #cardPile div {
-    background-color: #FEEDD9;
     border-color: #FF9901;
+    color: #bf9000;
+    background: #fff2ccff;
+    margin-left: 20px;
 
+}
+
+#results {
+    margin-left: 10px;
+    margin-top: -15px;
 }
 
 .quizcard:hover {
@@ -177,19 +193,49 @@ label {
     text-align: center;
 }
 
+.drag_box {
+    width: 200px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+    border: 2px solid;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center;
+}
+
 .submit_box {
     margin-left: 60px;
 }
 
 .submit_format {
-    color: #797573;
+    color: var(--drag_submit_grey);
     background-color: rgb(231, 231, 231);
+    border-style: dashed;
+}
+
+.answer_btn {
+    font-size: 16px;
+    padding: 10px;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.answer_btn:hover {
+    filter: brightness(85%);
 }
 
 .submit_btn {
     background-color: #fce3c1;
     color: #f67f00;
     border: solid 1px #ce7c24;
+}
+
+.next_btn {
+    background-color: #EFEFEF;
+    color: var(--dark-gray);
+    border: solid 1px;
 }
 
 .options_div {
@@ -202,20 +248,9 @@ label {
 }
 
 .options_box {
-    text-transform: uppercase;
     color: #bf9000;
     background: #fff2ccff;
-    font-weight: bold;
-    justify-content: center;
-}
-
-.drag_box {
-    width: 180px;
-    font-size: 16px;
-    border-radius: 0.25rem;
-    padding: 6px 12px;
-    border: 2px solid black;
-    height: auto;
+    border-color: #FF9901;
 }
 
 #level_3_score_div {
@@ -238,13 +273,13 @@ label {
     color: red;
 }
 
-.correct{
-  background-color:rgb(149, 212, 149) !important;
-  color: darkgreen !important;
-  border: solid darkgreen !important;
+.correct {
+    background-color: rgb(149, 212, 149) !important;
+    color: darkgreen !important;
+    border: solid darkgreen !important;
 }
 
-.incorrect{
-  background-color: rgb(237, 183, 183) !important;
-  color: red !important;
+.incorrect {
+    background-color: rgb(237, 183, 183) !important;
+    color: red !important;
 }

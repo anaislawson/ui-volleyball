@@ -61,7 +61,7 @@ function submitAnswer(){
                 $('<button/>',{
                     id: 'next',
                     text: 'Next',
-                    class:'btn submit_btn',
+                    class:'btn next_btn answer_btn',
                     click: function () {
                         window.location.href ="/quiz/3/" + question.next_id
                 }
@@ -73,7 +73,7 @@ function submitAnswer(){
                 $('<button/>',{
                     id: 'retry',
                     text: 'Retry',
-                    class:'btn submit_btn',
+                    class:'btn submit_btn answer_btn',
                     click: function () {
                         window.location.href ="/quiz/3/" + question_id
                 }
@@ -96,7 +96,7 @@ $(document).ready(function() {
     });
 
     display_roles(roles_labels)
-    $(".role").draggable({ cursor: "crosshair", revert: "invalid", helper: "clone", stack: ".name"});
+    $(".role").draggable({ revert: true, cursor: 'move', stack: ".options_box"});
     $(".submit_box").addClass("droppable");
 
     $(".submit_box").droppable({ accept: ".role",
