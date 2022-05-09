@@ -1,64 +1,54 @@
-.home_page{
-  height: 100vh;
-}
 
-#homepage_container{
-  background-image: url("/static/images/option.png");
-  background-repeat: no-repeat;
-  background-size: 55%;
-  background-position: right;
-}
 
 .home_page_content {
-  margin-left: 15%;
+    margin-left: 200px;
 }
 
-.home_page_header{
- padding-top: 150px;
- text-align: left;
- color:  var(--header_orange);
- font-size: 75px;
- font-family: 'Permanent Marker', cursive;
+.home_page_header {
+    margin-top: 150px;
+    text-align: center;
+    color: var(--header_orange);
+    font-size: 75px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
 }
 
-.home_page_text{
-  font-size: x-large;
-  color: var(--dark-gray);
-  margin-top: 30px;
+
+.home_page_image {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-top: 50px;
+
 }
 
-#learn_icon {
-    width: 75px;
+.home_page_text {
+    font-size: x-large;
+    text-align: center;
+    color: var(--dark-gray);
+    margin-top: 15px;
 }
 
-.learn_row {
-  margin-top: 60px;
+.button_row {
+    margin-top: 50px;
 }
 
-#quiz_icon {
-    width: 60px;
-}
-
-.quiz_row {
-    margin-top: 20px;
+.home_button {
+    width: 250px;
+    height: 60px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
 }
 
 #homebuttons {
-  font-size: 25px;
-  border-radius: 10px;
-  padding-left: 45px;
-  padding-right: 45px;
-  color:var(--dark-gray);
-  width: 275px;
-
+    background-color: var(--header_orange);
+    color: white;
+    float: left;
 }
+
 #homebuttons2 {
-  font-size: 25px;
-  border-radius: 10px;
-  padding: 8px;
-  padding-right: 50px;
-  padding-left: 50px;
-  color:var(--dark-gray);
-  /* width: 233px; */
-  text-align: left;
+    background-color: white;
+    color: var(--dark-gray);
+    float: right;
 }

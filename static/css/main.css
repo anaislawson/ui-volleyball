@@ -4,14 +4,26 @@ body {
     background-color: var(--background_blue);
 }
 
-.navbarheader {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 25px;
+/*Navigation Bar*/
+
+.navbar_container {
+    width: 400px;
+    margin: auto;
 }
 
-.progress_buttons_container {
-
+.navbar {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
+.nav-link {
+    margin-left: 50px;
+    color: var(--light-gray);
+}
+
+/*Progress Buttons*/
 
 .progress_button {
     font-size: 25px;
