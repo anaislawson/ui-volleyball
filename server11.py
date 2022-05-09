@@ -18,7 +18,7 @@ lessons = {
         "gif": "/static/images/learning/setting.gif", "text": "You are the quarterback of the team!",
         "summary": "Setters set the ball up for the attackers/hitters to score. A coach must be able to rely on the "
                    "setter to make sound, consistent decisions.",
-        "demands": ["1.Ability to set the ball to the left-front position", "2. Move all around the court",
+        "demands": ["1. Ability to set the ball to the left-front position", "2. Move all around the court",
                     "3. Set high enough and position properly for the hitter to attack."], "next_lesson": "2"},
 
     "2": {"lesson_id": "2", "title": "LIBERO", "image": "/static/images/learning/libero.png",
